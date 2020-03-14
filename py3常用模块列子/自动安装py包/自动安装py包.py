@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 2020-02-07 13:45
-# @Author  : Lemon
-# @File    : 自动安装requirements.py.py
+# @Author  : asi
+# @File    : 自动安装py包.py.py
 # @Software: PyCharm
 
 import os
