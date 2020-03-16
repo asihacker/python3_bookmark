@@ -1,2 +1,11 @@
-nsq适配java
-./nsqd --lookupd-tcp-address=0.0.0.0:4160 --broadcast-address=外网地址
+
+#安装过程
+wget https://github.com/nsqio/nsq/releases/download/v1.2.0/nsq-1.2.0.linux-amd64.go1.12.9.tar.gz #需要翻墙，建议先开小飞机
+下载本地，再scp
+tar -zxvf nsq-1.2.0.linux-amd64.go1.12.9.tar.gz
+nohup ./nsqlookupd >/dev/null 2>&1 &
+nohup ./nsqd --lookupd-tcp-address=0.0.0.0:4160 --broadcast-address=39.100.77.40 >/dev/null 2>&1 &
+nohup ./nsqadmin --lookupd-http-address=0.0.0.0:4161 >/dev/null 2>&1 &
+#nphup ./nsq_to_file --topic=test --output-dir=/tmp --lookupd-http-address=0.0.0.0:4161 >dev/null 2>&1 &
+
+curl -d 'hello world 1' 'http://39.100.77.40:4151/pub?topic=test'
