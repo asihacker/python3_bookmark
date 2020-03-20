@@ -46,3 +46,6 @@ stdout_logfile_backups = 20   ; stdout 日志文件备份数，默认是10
 stdout_logfile=/opt/apache-tomcat-8.0.35/logs/catalina.out
 stopasgroup=false     ;默认为false,进程被杀死时，是否向这个进程组发送stop信号，包括子进程
 killasgroup=false     ;默认为false，向进程组发送kill信号，包括子进程
+
+[inet_http_server]         ; inet (TCP) server disabled by default
+port=0.0.0.0:4888       ; (ip_address:port specifier, *:port for all iface)
