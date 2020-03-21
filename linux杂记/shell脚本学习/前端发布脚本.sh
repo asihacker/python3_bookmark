@@ -24,7 +24,7 @@ function publish_to() {
   chown www:www $what_path/dist/* -R
 }
 
-cd /www/wwwroot/git/order-fe
+cd /www/wwwroot/git/order-fe || exit
 
 git pull
 

@@ -1,16 +1,5 @@
 #!/usr/bin/python
 # coding=utf-8
-# TODO:推导式
-a_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
-a_list = [key for key in a_dict]
-print(a_list)
-a_list = [a_dict[key] for key in a_dict]
-print(a_list)
-a_list = [k for k, v in a_dict.items()]
-print(a_list)
-b_dict = {k: v for k, v in a_dict.items() if v > 3}
-print(b_dict)
-# TODO:strip,lstrip,rstrip
 a_str = '<abCDefgaaa>'
 b_str = 'asi'
 print(a_str.strip('>'))  # 去除头部和尾部包含'<'
@@ -41,34 +30,6 @@ print(a_str.upper())
 print(a_str.lower())
 # <abCDefgaaa>********
 # ********<abCDefgaaa>
-# TODO:all(),any()
 print(all([1, 1, 1, 1]))
 print(all([1, 1, 1, 0]))
 print(any([1, 1, 1, 0]))
-# TODO:lambda匿名函数
-
-
-# TODO:列表排序与字典排序
-students = [{"name": "zhangsan1", "math": "89", "english": "87"},
-            {"name": "zhangsan2", "math": "65", "english": "87"},
-            {"name": "zhangsan3", "math": "99", "english": "87"},
-            {"name": "zhangsan4", "math": "55", "english": "87"},
-            ]
-aaa = lambda item: item.get('math')
-print(aaa(students[0]))
-students.sort(key=lambda item: item.get('math'), reverse=True)
-print(students)
-students = [{"name": "zhangsan1", "math": "89", "english": "87"},
-            {"name": "zhangsan2", "math": "65", "english": "87"},
-            {"name": "zhangsan3", "math": "99", "english": "87"},
-            {"name": "zhangsan4", "math": "55", "english": "87"},
-            ]
-result = sorted(students, key=lambda student: student['math'], reverse=True)
-print(result)
-print(students)
-
-zhangsan = {"math": "89", "english": "87", "chinese": "99"}
-result = sorted(zhangsan.items(), key=lambda item: item[1], reverse=True)
-print(result)
-print(zhangsan)
-print(zhangsan.items())

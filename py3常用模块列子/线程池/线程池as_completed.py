@@ -12,14 +12,14 @@ def get_page():
 if __name__ == '__main__':
     t1 = time.time()
     obj_list = list()
-    executor = ThreadPoolExecutor(max_workers=50)
-    for key in range(50):
+    executor = ThreadPoolExecutor(max_workers=100)
+    for key in range(100):
         obj = executor.submit(get_page)
         obj_list.append(obj)
     for future in as_completed(obj_list):
         data = future.result()
         print(f"main: {data}",future)
-    # print(123)
+    print(123)
     # t2 = time.time() - t1
     # print(t2)
     # t1 = time.time()

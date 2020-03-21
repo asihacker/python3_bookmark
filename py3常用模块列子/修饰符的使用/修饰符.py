@@ -25,6 +25,7 @@ def get_used_time(func):
         t2 = time.time()
         used_time = round(t2 - t1, 5)
         print(f'{func.__name__},used time is {used_time} ms')
+        print(func.__doc__)
         return result
 
     return wrapper
@@ -33,6 +34,12 @@ def get_used_time(func):
 @get_used_time
 @check_args
 def add(x, y):
+    """
+    hahahahahah
+    :param x:
+    :param y:
+    :return:
+    """
     print(threading.current_thread().getName())
     list = [key for key in range(100000000)]
     return x * y
@@ -41,9 +48,15 @@ def add(x, y):
 @get_used_time
 @check_args
 def add2(x, y):
+    """
+    hahahahah2
+    :param x:
+    :param y:
+    :return:
+    """
     print(threading.current_thread())
     a = list()
-    for key in range(100000000):
+    for key in range(100000):
         a.append(a)
     return x * y
 

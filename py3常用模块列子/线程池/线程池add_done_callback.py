@@ -20,4 +20,3 @@ with ThreadPoolExecutor(max_workers=50, thread_name_prefix='asi') as executor:
     for key in range(250):
         executor.submit(add_num, 1).add_done_callback(parse)  # 提交线程池处理数据,设置线程回调
 print('全部执行完毕！')
-
