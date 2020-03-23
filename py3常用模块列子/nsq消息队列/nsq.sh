@@ -1,13 +1,11 @@
 #!/bin/bash
 NSQ_URL="https://0302b-1257892566.cos.ap-guangzhou.myqcloud.com/nsq-1.2.0.linux-amd64.go1.12.9.tar.gz"
 IP_ADDR="$(curl ip.sb -s)"
-local_path="$(pwd)"
 function install_supervisor() {
   yum install -y supervisor
   systemctl enable supervisord.service
   systemctl start supervisord.service
-  cd /etc/supervisord.d/ || exit
-  cat <<EOF >web.ini
+  cat <<EOF >/etc/supervisord.d/web.ini
 [inet_http_server]
 port=0.0.0.0:5000
 EOF
@@ -15,8 +13,7 @@ EOF
 }
 
 function install_nsq() {
-  cd "$local_path" || exit
-  wget $NSQ_URL
+  wget ${NSQ_URL}
   tar zxvf nsq-1.2.0.linux-amd64.go1.12.9.tar.gz
   cd nsq-1.2.0.linux-amd64.go1.12.9/bin/ || exit
 
@@ -27,10 +24,9 @@ function nohup_start_nsq() {
   nohup ./nsqadmin --lookupd-http-address=0.0.0.0:4161 >/dev/null 2>&1 &
 }
 function supervisor_start_nsq() {
-  cd /etc/supervisord.d/ || exit
-  cat <<EOF >nsqlookupd.ini
+  cat <<EOF >/etc/supervisord.d/nsqlookupd.ini
 [program:nsqlookupd]
-command=$(pwd)/nsqlookupd >/dev/null 2>&1 &  ; 程序启动命令
+command=$(pwd)/nsq-1.2.0.linux-amd64.go1.12.9/bin/nsqlookupd >/dev/null 2>&1 &  ; 程序启动命令
 autostart=true       ; 在supervisord启动的时候也自动启动
 startsecs=10         ; 启动10秒后没有异常退出，就表示进程正常启动了，默认为1秒
 autorestart=true     ; 程序退出后自动重启,可选值：[unexpected,true,false]，默认为unexpected，表示进程意外杀死后才重启
@@ -45,9 +41,9 @@ stdout_logfile=/opt/apache-tomcat-8.0.35/logs/catalina.out
 stopasgroup=false     ;默认为false,进程被杀死时，是否向这个进程组发送stop信号，包括子进程
 killasgroup=false     ;默认为false，向进程组发送kill信号，包括子进程
 EOF
-  cat <<EOF >nsqd.ini
+  cat <<EOF >/etc/supervisord.d/nsqd.ini
 [program:nsqd]
-command=$(pwd)/nsqd --lookupd-tcp-address=0.0.0.0:4160 --broadcast-address=${IP_ADDR} >/dev/null 2>&1 &  ; 程序启动命令
+command=$(pwd)/nsq-1.2.0.linux-amd64.go1.12.9/bin/nsqd --lookupd-tcp-address=0.0.0.0:4160 --broadcast-address=${IP_ADDR} >/dev/null 2>&1 &  ; 程序启动命令
 autostart=true       ; 在supervisord启动的时候也自动启动
 startsecs=10         ; 启动10秒后没有异常退出，就表示进程正常启动了，默认为1秒
 autorestart=true     ; 程序退出后自动重启,可选值：[unexpected,true,false]，默认为unexpected，表示进程意外杀死后才重启
@@ -62,9 +58,9 @@ stdout_logfile=/opt/apache-tomcat-8.0.35/logs/catalina.out
 stopasgroup=false     ;默认为false,进程被杀死时，是否向这个进程组发送stop信号，包括子进程
 killasgroup=false     ;默认为false，向进程组发送kill信号，包括子进程
 EOF
-  cat <<EOF >nsqadmin.ini
+  cat <<EOF >/etc/supervisord.d/nsqadmin.ini
 [program:nsqadmin]
-command=$(pwd)/nsqadmin --lookupd-http-address=0.0.0.0:4161 >/dev/null 2>&1 & ; 程序启动命令
+command=$(pwd)/nsq-1.2.0.linux-amd64.go1.12.9/bin/nsqadmin --lookupd-http-address=0.0.0.0:4161 >/dev/null 2>&1 & ; 程序启动命令
 autostart=true       ; 在supervisord启动的时候也自动启动
 startsecs=10         ; 启动10秒后没有异常退出，就表示进程正常启动了，默认为1秒
 autorestart=true     ; 程序退出后自动重启,可选值：[unexpected,true,false]，默认为unexpected，表示进程意外杀死后才重启
@@ -82,21 +78,19 @@ EOF
   supervisorctl reload
 }
 function test_nsq() {
+  echo "wait test nsq ......"
+  sleep 3
   postdata=$1
-  result=$(curl -d "$postdata" 'http://39.100.77.40:4151/pub?topic=test' -s)
-  if [ "$result" == "ok" ]; then
-    echo "NSQ install is succeed!thanks"
-    exit
-  else
-    echo "NSQ install is fail!"
-  fi
+  result=$(curl -d "${postdata}" "http://0.0.0.0:4151/pub?topic=test" -s)
+  echo "result=${result}"
+
 }
 read -e -r -p "is use the supervisor start nsq?(yes || no):" result
 if [ "${result}" == "yes" ]; then
   install_supervisor
   install_nsq
-  supervisor_start_nsq
-  test_nsq "fuck you"
+  #  supervisor_start_nsq
+  #  test_nsq "fuck you"
   exit
 elif [ "${result}" == "no" ]; then
   install_nsq
