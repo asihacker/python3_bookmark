@@ -157,3 +157,5 @@ print(os.path.basename('~/test.txt'))
 # c = time.time() - start
 # print('程序运行耗时:%0.2f'%(c))
 # print('总共处理了 %s 张图片'%(i))
+# print(os.listdir())
+print(eval("1+2-4+(10*2/1)"))

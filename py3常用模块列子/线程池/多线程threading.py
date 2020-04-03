@@ -50,9 +50,9 @@ def get_event_id_content(event_id):
 
 if __name__ == '__main__':
     eid = creat_event_id()
-    threading.Thread(target=set_content, args=[eid, '1hahahah', 6]).start()
-    threading.Timer(3, function=print, args=[111111, 111]).start()  # 启动线程后多少秒执行
-    print(333)
+    threading.Thread(target=set_content, args=[eid, '1hahahah', 10]).start()
+    # threading.Timer(3, function=print, args=[111111, 111]).start()  # 启动线程后多少秒执行
+    # print(333)
     print(get_event_id_content(eid))
     print('ok')
 

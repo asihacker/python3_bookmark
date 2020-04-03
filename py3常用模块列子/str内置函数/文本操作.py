@@ -18,12 +18,12 @@ print(a_str.center(20, "*"))
 print(b_str.center(20, "*"))
 # ********asi*********
 print(a_str.count('f'))  # 计算字符串出现的次数
-print(a_str.isalnum())  # isal类型，都是判断字符串是否存在，返回正假
+print(a_str.isalnum())  # isal类型，都是判断字符串是否存在，返回真假
 print(b_str.isalpha())
 print(a_str.endswith('>'))  # 用于判断字符串是否以指定后缀结尾
 print(a_str.startswith('<'))  # 用于判断字符串是否以指定后缀结尾
 print(a_str.replace('a', 'A', 2))  # 替换字符串
-print(a_str.split('a'))  # 分割字符串
+print(a_str.split())  # 分割字符串
 print(a_str.ljust(20, '*'))
 print(a_str.rjust(20, '*'))
 print(a_str.upper())

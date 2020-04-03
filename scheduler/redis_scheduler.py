@@ -37,9 +37,9 @@ def redis_job(key: str):
     pass
 
 
-jobtime = datetime.datetime.now() + datetime.timedelta(minutes=1)
+jobtime = datetime.datetime.now() + datetime.timedelta(seconds=1)
 scheduler.add_job(func=redis_job,
-                  trigger='date',  # 触发器（date,cron,interval有3种）
+                  trigger='interval',  # 触发器（date,cron,interval有3种）
                   args=['hahahah'],  # func的参数
                   id='firstjob',  # 定时任务的id，设置replace_existing = True 那么重复id就替换，反之亦然。
                   replace_existing=True,  # 看上一行。

@@ -10,6 +10,7 @@ def get_html(times):
 
 
 executor = ThreadPoolExecutor(max_workers=2)
+
 # 通过submit函数提交执行的函数到线程池中，submit函数立即返回，不阻塞
 task1 = executor.submit(get_html, (3))
 task2 = executor.submit(get_html, (2))
@@ -19,6 +20,7 @@ print(task1.done())
 print(task2.cancel())
 time.sleep(4)
 print(task1.done())
+
 # result方法可以获取task的执行结果
 print(task1.result())
 

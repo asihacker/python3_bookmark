@@ -15,8 +15,11 @@ if __name__ == '__main__':
     t1 = time.time()
     executor = ThreadPoolExecutor(max_workers=50, thread_name_prefix='asi')
     c_list = [1, 2, 3, 3, 2, 1, 2, 3, 1]
+    result_list = []
     for data in executor.map(get_page, c_list):
-        print(f"main: {data}")
+        # print(f"main: {data}")
+        result_list.append(data)
+    print(result_list)
     # t1 = time.time()
     # for key in range(50):
     #     get_page()

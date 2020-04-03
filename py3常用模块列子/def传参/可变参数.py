@@ -3,8 +3,8 @@ def add(x: int, y: int):  # 默认参数
     return x + y
 
 
-def add2(*x):  # 可变参数
-    print(x)
+def add2(*args):  # 可变参数
+    print(args)
     return
 
 

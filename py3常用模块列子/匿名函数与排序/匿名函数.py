@@ -25,3 +25,9 @@ result = sorted(zhangsan.items(), key=lambda item: item[1], reverse=True)
 print(result)
 print(zhangsan)
 print(zhangsan.items())
+a = [3, 4, 5, 6, 2, 2, 3, 1, 2, 4, 6, 7, 86, 554, 45, 5]
+a.sort(reverse=True)
+print(a)
+
+print(students.sort(key=lambda items: items['math']))
+print(students)

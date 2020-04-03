@@ -1,12 +1,13 @@
 import random
 import string
 
+# random.seed() 随机数种子
 # TODO：choices和sample的区别
 # 随机整数：
 print(random.randint(1, 50))
 
 # 随机选取0到100间的偶数：
-print(random.randrange(0, 101, 2))
+print(random.randrange(0, 101, 1))
 
 # 随机浮点数：
 print(random.random())
@@ -14,6 +15,7 @@ print(random.uniform(1, 10))
 
 # 随机字符：
 print(random.choice('abcdefghijklmnopqrstuvwxyz!@#$%^&*()'))
+print(random.choices('abcdefghijklmnopqrstuvwxyz!@#$%^&*()', k=100))
 
 # 多个字符中生成指定数量的随机字符：
 print(random.sample('zyxwvutsrqponmlkjihgfedcba', 5))
@@ -32,5 +34,5 @@ print(random.choice(['剪刀', '石头', '布']))
 
 # 打乱排序
 items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-print(random.shuffle(items))
+print(random.shuffle(items),items)
 # https://blog.csdn.net/weixin_41084236/article/details/81457949

@@ -3,6 +3,8 @@
 import time
 from functools import wraps
 import threading
+# https://www.zhangshengrong.com/p/8AaY32blX2/
+from py3常用模块列子.修饰符的使用 import 类修饰符
 
 
 def check_args(func):
@@ -35,7 +37,6 @@ def get_used_time(func):
 @check_args
 def add(x, y):
     """
-    hahahahahah
     :param x:
     :param y:
     :return:
@@ -60,12 +61,22 @@ def add2(x, y):
         a.append(a)
     return x * y
 
+@类修饰符.check_time()
+def add5(x, y):
+    """
+    :param x:
+    :param y:
+    :return:
+    """
+    print(threading.current_thread().getName())
+    list = [key for key in range(100000000)]
+    return x * y
+
 
 if __name__ == '__main__':
-    threading.Thread(target=add, args=[1, 1]).start()
-    threading.Thread(target=add2, args=[1, 1]).start()
-    print(threading.active_count())
-    print(threading.activeCount())
-    print(threading.enumerate())
-
-
+    add5(1, 1)
+# threading.Thread(target=add, args=[1, 1]).start()
+# threading.Thread(target=add2, args=[1, 1]).start()
+# print(threading.active_count())
+# print(threading.activeCount())
+# print(threading.enumerate())

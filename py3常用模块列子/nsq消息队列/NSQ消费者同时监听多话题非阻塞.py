@@ -30,7 +30,7 @@ def starnsq():
                topic='dsqUpdateFriendFormal',
                channel='asi_debug2',
                lookupd_poll_interval=15)
-    tornado.ioloop.IOLoop.instance().start()
+    tornado.ioloop.IOLoop.instance().start()  # 这里可以串联多个loop事件，比如websocket的listen
 
 
 if __name__ == '__main__':

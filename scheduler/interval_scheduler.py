@@ -13,7 +13,13 @@ sched = BlockingScheduler()
 
 # 每2小时触发
 sched.add_job(job_function, 'interval', hours=2)
-
+"""
+weeks (int) 间隔几周
+days (int) 间隔几天
+hours (int) 间隔几小时
+minutes (int) 间隔几分钟
+seconds (int) 间隔多少秒
+"""
 # 周期触发的时间范围在2010-10-10 9:30 至 2014-06-15 11:00
 sched.add_job(job_function, 'interval', hours=2, start_date='2010-10-10 09:30:00', end_date='2014-06-15 11:00:00')
 

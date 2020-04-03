@@ -29,7 +29,7 @@ def my_job(text):
 
 
 # 在2019年9月20日18点27分10秒执行
-sched.add_job(my_job, 'date', run_date=datetime(2019, 9, 20, 18, 27, 10), args=['text'])
+sched.add_job(my_job, 'date', run_date=datetime(2020, 4, 1, 19, 40, 0), args=['text'])
 
 # sched.add_job(my_job, 'date', run_date=date(2019, 9, 20), args=['text'])
 
