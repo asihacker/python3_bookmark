@@ -2,7 +2,10 @@
 # coding=utf-8
 import datetime
 from apscheduler.jobstores.redis import RedisJobStore
+import tornado.ioloop
+from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.tornado import TornadoScheduler
 
 job_store = {
     'redis': RedisJobStore(db=15,
@@ -29,7 +32,7 @@ job_store = {
     # TODO:这里可以导入多个不同类型的存储对象。然后在下面实例化的时候加入对应参数就可以了。目前是redis的demo。
 }
 
-scheduler = BlockingScheduler(jobstores=job_store)  # 实例化调度器，这里使用的是redis的作为存储器的调度器。
+scheduler = TornadoScheduler(jobstores=job_store)  # 实例化调度器，这里使用的是redis的作为存储器的调度器。
 
 
 def redis_job(key: str):
@@ -47,3 +50,5 @@ scheduler.add_job(func=redis_job,
                   next_run_time=jobtime)
 
 scheduler.start()  # 阻塞调度器，可以通过一条线程去调用。
+tornado.ioloop.IOLoop.instance().start()
+print('777')

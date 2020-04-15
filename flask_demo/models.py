@@ -11,7 +11,6 @@ from flask_demo import db
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True, unique=True, index=True, comment='自增ID')
-    pid = db.Column(db.Integer, unique=True, autoincrement=True)  # 自动递增
     name = db.Column(db.String(32), index=True, unique=True, comment='用户姓名')
     age = db.Column(db.Integer, nullable=False, default=18, comment='年龄')
     sign = db.Column(db.Text, comment='用户签名')
@@ -20,26 +19,23 @@ class User(db.Model):
 
 
 def get_random_text(cnt: int = 1):
-    return ''.join(random.sample(string.ascii_letters + string.digits, 8))
+    return ''.join(random.sample(string.ascii_letters + string.digits, cnt))
 
 
 # db.create_all()
 if __name__ == '__main__':
-    # db.create_all()
+    db.create_all()
     # 创建session对象:
     session = db.session()
     # 创建新User对象:
-    print(time.time())
-    for key in range(2500):
-        new_user = User(name=f'Bob{get_random_text(3)}',
+    t0 = time.time()
+    for key in range(5000):
+        new_user = User(name=f'Bob{get_random_text(2)}',
                         age=17, sign='fuck you', email=f'{get_random_text(10)}@qq.com')
-        # 添加到session:
         session.add(new_user)
+        session.commit()
 
-    print(time.time())
-    # 提交即保存到数据库:
-    session.commit()
-    print(time.time())
 
-    # 关闭session:
+    print(time.time() - t0)
+
     session.close()

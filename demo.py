@@ -4,7 +4,7 @@
 from fake_useragent import UserAgent
 
 ua = UserAgent()
-for key in range(1000000):
+for key in range(100):
     print(ua.ie)
 
 # 每一次都是随机的

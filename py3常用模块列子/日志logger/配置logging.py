@@ -3,10 +3,12 @@
 import logging
 
 logging.basicConfig(
-    filename='test.log',
-    level=logging.DEBUG,
+    # filename='test.log',
+    level=logging.INFO,
     format='%(asctime)s %(filename)s[line:%(lineno)d] %(message)s',
     datefmt='%Y-%m-%d')
+logger = logging.getLogger(__name__)
+
 """
 format参数中可能用到的格式化串：
 %(name)s Logger的名字
@@ -30,3 +32,4 @@ logging.debug('test debug')
 logging.warning('test warning')
 logging.error('test error')
 logging.critical('test critical')
+logger.info('44444')

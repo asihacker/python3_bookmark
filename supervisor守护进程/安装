@@ -65,3 +65,27 @@ killasgroup=false     ;默认为false，向进程组发送kill信号，包括子
 
 [inet_http_server]         ; inet (TCP) server disabled by default
 port=0.0.0.0:5000       ; (ip_address:port specifier, *:port for all iface)
+
+[program:yktDev]
+command=python3 /home/ykt_storeroom/Dev/cloud_flask/run.py >/dev/null 2>&1 &  ; 程序启动命令
+autostart=true       ; 在supervisord启动的时候也自动启动
+
+[program:yktDev]
+command=/usr/bin/python3.6 /home/ykt_storeroom/Dev/cloud_flask/run.py
+directory=/home/ykt_storeroom/Dev/cloud_flask/
+autorestart=true
+stdout_logfile=/home/ykt_storeroom/Dev/cloud_flask/Debug.out.log
+redirect_stderr=true
+user=root
+
+[program:yktProd]
+command=/usr/bin/python3.6 /home/ykt_storeroom/Prod/cloud_flask/run.py
+directory=/home/ykt_storeroom/Prod/cloud_flask/
+autorestart=true
+stdout_logfile=/home/ykt_storeroom/Prod/cloud_flask/Debug.out.log
+redirect_stderr=true
+user=root
+
+[program:yktProd]
+command=python3 /home/ykt_storeroom/Prod/cloud_flask/run.py >/dev/null 2>&1 &  ; 程序启动命令
+autostart=true       ; 在supervisord启动的时候也自动启动
