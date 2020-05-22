@@ -1,58 +1,15 @@
-#配置负载均衡池
-upstream httpProduct_pool{#http正式服务器入口
-    server 127.0.0.1:81;
-}
-
-upstream httpDebug_pool{#http测试服务器入口
-    server 127.0.0.1:82;
-}
-upstream webSocketProduct_pool{#webSocket正式服务器入口(webSocket只是给客户端调用，微信终端「因为这里来源不可控」还是使用ip+端口的模式)
-    server 127.0.0.1:9991;
-}
-
-upstream webSocketDebug_pool{#webSocket测试服务器入口
-    server 127.0.0.1:9992;
-}
-
-#80端口转发
 server {
-    listen       80;
-    server_name  *.fqwang.net;
-    access_log logs/book.log;
-    error_log logs/book.error;
-    client_header_buffer_size 16k;
-    #将所有请求转发给demo_pool池的应用处理
-    location / {
-    	set $default http://httpProduct_pool;#默认的路由
-    	proxy_set_header Host $host;
-	    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	    if ($http_origin ~* "w.fqwang.net"){
-	    	set $default http://httpProduct_pool;
-	    }
-	    if ($http_origin ~* "w-test.fqwang.net"){
-	    	set $default http://httpDebug_pool;
-	    }
-    	proxy_pass $default;
-	}
+    listen       30003;
+    server_name  120.78.5.207;
+    access_log logs/xingyun.log;
+    error_log logs/xingyun.error;
+      location ~ /xingyun(.*)$ {
+        sub_filter '/xingyun/' '/';#替换链接
+        proxy_pass         http://res.ewesell.cn;
+        #proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header REMOTE-HOST $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
 }
-#9999端口转发
-server {
-    listen       9999;
-    server_name  *.fqwang.net;
-    access_log logs/book.log;
-    error_log logs/book.error;
-    client_header_buffer_size 16k;
-    #将所有请求转发给demo_pool池的应用处理
-    location / {
-    	set $default http://webSocketProduct_pool;#默认的路由
-    	proxy_set_header Host $host;
-	    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	    if ($http_origin ~* "w.fqwang.net"){
-	    	set $default http://webSocketProduct_pool;
-	    }
-	    if ($http_origin ~* "w-test.fqwang.net"){
-	    	set $default http://webSocketDebug_pool;
-	    }
-    	proxy_pass $default;
-	}
-}
+
