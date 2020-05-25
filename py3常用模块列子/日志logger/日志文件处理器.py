@@ -5,7 +5,7 @@ import logging
 # 创建一个Logger 记录器
 pf = logging.getLogger('test')
 pf.setLevel(logging.DEBUG)
-#创建一个Handler 处理器 写入日志到文件
+# 创建一个Handler 处理器 写入日志到文件
 fh = logging.FileHandler('atp43.log')
 # 设置日志等级
 fh.setLevel(logging.DEBUG)

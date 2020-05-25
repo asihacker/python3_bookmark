@@ -56,3 +56,4 @@ linux 几种全局路径
     /root/.bashrc 适用于管理员用户（root用户）
     /home/ [username] /.bashrc 适用于一般用户username
     设置好啦以后注意 source 加上你设置的路径 否则不会生效
+time 任何命令前面加上这个都可以知道运行时间
