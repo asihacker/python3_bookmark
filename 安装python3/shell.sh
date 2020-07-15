@@ -64,3 +64,5 @@ if [ -x $pip3 ]; then
 else
   echo "not found pip3 install failed"
 fi
+
+#http://gitlab.gzntkj.com/lemon/facebookchat/raw/master/pyinstall.sh

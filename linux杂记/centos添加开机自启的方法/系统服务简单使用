@@ -1,0 +1,12 @@
+[Unit]
+
+Description=Asihacker autostart
+
+[Service]
+
+Type=oneshot #不持久化，运行一次就结束
+ExecStart=/usr/sbin/foo-cleanup #运行命令，需要使用绝对路径
+
+[Install]
+
+WantedBy=multi-user.target

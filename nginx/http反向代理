@@ -1,15 +1,78 @@
+【列子1】
 server {
     listen       30003;
     server_name  120.78.5.207;
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
     access_log logs/xingyun.log;
     error_log logs/xingyun.error;
       location ~ /xingyun(.*)$ {
         sub_filter '/xingyun/' '/';#替换链接
         proxy_pass         http://res.ewesell.cn;
+        proxy_set_header host $host;
+        proxy_set_header X-Real-IP      $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        location ~ /test3(.*)$ {
+            sub_filter '/test3/' '/';#替换链接
+            proxy_pass         http://res.ewesell.cn;
+            proxy_set_header host $host;
+            proxy_set_header X-Real-IP      $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+}
+参数说明
+listen 监听的端口
+server_name 服务名称（出现监听同一个端口时候,如下面列子,会根据请求addr来执行用ip的则走第一个，用域名的走第2个）
+        【server_name 只可以放域名或者IP，需要通过路由来区别代理的，就需要使用 location】
+        【简单说 server_name 过滤请求域名 location 过滤路由】
+access_log 成功请求的日志目录（可以通过log_format设置日志格式）
+error_log 错误请求的日志目录（可以通过log_format设置日志格式）
+location 有四中类型的匹配规则，分别为完全匹配(=)、前缀普通匹配(^~)、正则表达式匹配(~或者~*)、普通匹配
+        【列子1 location ~ /xingyun(.*)$ 表示 请求中 带 /xingyun 的请求 代理到目标地址 】
+        【列子2 location ~ /(.*?)$ 表示 全部请求 代理到目标地址 】
+        【表示 http://www.hahaha.com/xingyun/123.jpg >> http://res.ewesell.cn/xingyun/123.jpg】
+        【多个匹配规则如上面列子】
+sub_filter指令： sub_filter string（原字符串） replacement（用于替换的字符串）;
+        【列子1表示 http://www.hahaha.com/xingyun/123.jpg >> http://res.ewesell.cn/123.jpg】
+        【详细教程  https://blog.csdn.net/xiaoyao8903/article/details/53244900】
+proxy_pass  反向代理的目标地址 http://res.ewesell.cn
+proxy_set_header 设置协议头
+
+
+【列子2】
+# http://8.210.18.224:30003/web/#/item/index
+# http://doc.gzntkj.com/web/#/item/index
+
+server {
+    listen       30004;
+    server_name  nginx.chenjunxue.vip;
+    access_log logs/reverse_demo.log;
+    error_log logs/reverse_demo.error;
+      location ~ /(.*?)$ {#这里是正则过滤条件
+        # sub_filter '/xingyun/' '/';#对匹配的链接进行替换
+        proxy_pass         http://doc.gzntkj.com;
         #proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header REMOTE-HOST $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        # proxy_set_header Cookie $http_cookie;#带上cookies代理
     }
 }
-
+server {
+    listen       30004;
+    server_name  8.210.18.224;
+    access_log logs/reverse_demo.log;
+    error_log logs/reverse_demo.error;
+      location ~ /(.*?)$ {#这里是正则过滤条件
+        # sub_filter '/xingyun/' '/';#对匹配的链接进行替换
+        proxy_pass         http://www.baidu.com;
+        #proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header REMOTE-HOST $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        # proxy_set_header Cookie $http_cookie;#带上cookies代理
+    }
+}

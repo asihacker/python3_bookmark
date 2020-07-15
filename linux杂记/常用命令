@@ -57,3 +57,8 @@ linux 几种全局路径
     /home/ [username] /.bashrc 适用于一般用户username
     设置好啦以后注意 source 加上你设置的路径 否则不会生效
 time 任何命令前面加上这个都可以知道运行时间
+
+nc 测试服务器端口是否正常工具  nc -w 10 127.0.0.1  8888
+
+设置别名命令（linux和mac）
+教程地址：https://blog.csdn.net/lisongjia123/article/details/77962144?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase

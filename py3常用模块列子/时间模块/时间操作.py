@@ -27,26 +27,26 @@ time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())  # 2018-12-12 15:53:01  str
 # 计算时间差
 now_time = datetime.datetime.now()
 now_time = now_time.strftime('%Y-%m-%d %H:%M:%S')
-d1 = datetime.datetime.strptime('2018-12-10 19:11:52', '%Y-%m-%d %H:%M:%S')
+d1 = datetime.datetime.strptime('2016-12-10 19:11:52', '%Y-%m-%d %H:%M:%S')
 d2 = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')
-# (d2 - d1).days  # 相差天数
-# (d2 - d1).seconds  # 相差秒数
+print((d2 - d1).days)  # 相差天数
+print((d2 - d1).seconds)  # 相差秒数)
 
-# 将时间转为时间戳
-a = datetime.datetime.strptime('2018-12-10 19:11:52', '%Y-%m-%d %H:%M:%S')
-time.mktime(a.timetuple())
-
-# 将时间戳转为datetime
-unix_ts = 1564635585.0
-times = datetime.datetime.fromtimestamp(unix_ts)
-# 将时间戳格式化为%Y-%m-%d %H:%M:%S格式
-# 通过淘宝api获取时间戳
-r = requests.get('http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp', timeout=10)
-b = r.json()['data']['t']
-# 淘宝的时间戳为12位，需要截取前10位
-a = time.localtime(int(b[:10]))
-c = time.strftime("%Y-%m-%d %H:%M:%S", a)
-print(c)
+# # 将时间转为时间戳
+# a = datetime.datetime.strptime('2018-12-10 19:11:52', '%Y-%m-%d %H:%M:%S')
+# time.mktime(a.timetuple())
+#
+# # 将时间戳转为datetime
+# unix_ts = 1564635585.0
+# times = datetime.datetime.fromtimestamp(unix_ts)
+# # 将时间戳格式化为%Y-%m-%d %H:%M:%S格式
+# # 通过淘宝api获取时间戳
+# r = requests.get('http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp', timeout=10)
+# b = r.json()['data']['t']
+# # 淘宝的时间戳为12位，需要截取前10位
+# a = time.localtime(int(b[:10]))
+# c = time.strftime("%Y-%m-%d %H:%M:%S", a)
+# print(c)
 """
 1555048106052
 
@@ -81,3 +81,6 @@ http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp
     %Z 当前时区的名称  # 乱码
     %% %号本身
 """
+a = datetime.datetime.strptime('2018-12-10 19:11:52', '%Y-%m-%d %H:%M:%S')
+print(time.mktime(a.timetuple()))
+print(time.time())

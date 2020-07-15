@@ -66,26 +66,35 @@ killasgroup=false     ;默认为false，向进程组发送kill信号，包括子
 [inet_http_server]         ; inet (TCP) server disabled by default
 port=0.0.0.0:5000       ; (ip_address:port specifier, *:port for all iface)
 
-[program:yktDev]
-command=python3 /home/ykt_storeroom/Dev/cloud_flask/run.py >/dev/null 2>&1 &  ; 程序启动命令
-autostart=true       ; 在supervisord启动的时候也自动启动
 
 [program:yktDev]
-command=/usr/bin/python3.6 /home/ykt_storeroom/Dev/cloud_flask/run.py
-directory=/home/ykt_storeroom/Dev/cloud_flask/
+command=/usr/bin/python3.6 /home/ykt_ip/Dev/central_control_system/test_run.py
+directory=/home/ykt_ip/Dev/central_control_system/
 autorestart=true
-stdout_logfile=/home/ykt_storeroom/Dev/cloud_flask/Debug.out.log
+stdout_logfile=/home/ykt_ip/Dev/central_control_system/Debug.out.log
 redirect_stderr=true
 user=root
 
 [program:yktProd]
-command=/usr/bin/python3.6 /home/ykt_storeroom/Prod/cloud_flask/run.py
-directory=/home/ykt_storeroom/Prod/cloud_flask/
+command=/usr/bin/python3.6 /home/ykt_ip/Prod/central_control_system/run.py
+directory=/home/ykt_ip/Prod/central_control_system/
 autorestart=true
-stdout_logfile=/home/ykt_storeroom/Prod/cloud_flask/Debug.out.log
+stdout_logfile=/home/ykt_ip/Prod/central_control_system/Debug.out.log
 redirect_stderr=true
 user=root
 
-[program:yktProd]
-command=python3 /home/ykt_storeroom/Prod/cloud_flask/run.py >/dev/null 2>&1 &  ; 程序启动命令
-autostart=true       ; 在supervisord启动的时候也自动启动
+[program:kafkaDev]
+command=/usr/local/bin/python3 /home/ykt_mq/Dev/cloud_flask_mq/run.py
+directory=/home/ykt_mq/Dev/cloud_flask_mq/
+autorestart=true
+stdout_logfile=/home/ykt_mq/Dev/cloud_flask_mq/Debug.out.log
+redirect_stderr=true
+user=root
+
+[program:kafkaProd]
+command=/usr/local/bin/python3 /home/ykt_mq/Prod/cloud_flask_mq/run.py
+directory=/home/ykt_mq/Prod/cloud_flask_mq/
+autorestart=true
+stdout_logfile=/home/ykt_mq/Prod/cloud_flask_mq/Debug.out.log
+redirect_stderr=true
+user=root

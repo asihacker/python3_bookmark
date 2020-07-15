@@ -6,7 +6,7 @@
 # @File    : class_demo.py
 # @Software: PyCharm
 
-
+# https://www.cnblogs.com/jayliu/p/9030725.html 一文详解python的类方法，普通方法和静态方法
 class Apple(object):
     """
     123

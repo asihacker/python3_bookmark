@@ -24,7 +24,7 @@ print(time.strftime('%Y-%m-%d %H:%M:%S'))
 st = '2018年3月20日'
 # 将指定时间字符串恢复成struct_time对象。
 print(time.strptime(st, '%Y年%m月%d日'))
-# 返回从1970年1970年1月1日0点整到现在过了多少秒。
-print(time.time())
-# 返回本地时区的时间偏移，以秒为单位
-print(time.timezone)  # 在国内东八区输出-28800
+# # 返回从1970年1970年1月1日0点整到现在过了多少秒。
+# print(time.time())
+# # 返回本地时区的时间偏移，以秒为单位
+# print(time.timezone)  # 在国内东八区输出-28800
