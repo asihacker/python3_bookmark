@@ -12,6 +12,12 @@ class StreamClient(object):
         self.host = host
         self.port = port
         self.heartbeat_int = heartbeat_int
+        """
+        初始情况下，get_event_loop() 只会在主线程帮您创建新的 event loop，
+        并且在主线程中多次调用始终返回该 event loop；
+        而在其他线程中调用 get_event_loop() 则会报错，
+        除非您在这些线程里面手动调用过 set_event_loop()。
+        """
         self.loop = asyncio.get_event_loop()
         # self.loop = asyncio.new_event_loop()
         self.sequence_number = 1
