@@ -3,7 +3,7 @@
 # @Time    : 2020/7/14 09:38
 # @Author  : AsiHacker
 # @Site    : 
-# @File    : demo.py
+# @File    : mingyanSpider.py
 # @Software: PyCharm
 import os
 from time import sleep

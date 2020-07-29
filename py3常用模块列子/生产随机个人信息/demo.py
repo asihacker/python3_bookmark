@@ -3,7 +3,7 @@
 # @Time    : 2020/6/5 13:08
 # @Author  : AsiHacker
 # @Site    : 
-# @File    : demo.py
+# @File    : mingyanSpider.py
 # @Software: PyCharm
 from faker import Faker
 

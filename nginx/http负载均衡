@@ -83,7 +83,7 @@ server {
 }
 #9999端口转发
 server {
-    listen       9991;#注意这里可以listen多个端口，然后根据$remote_port来代理
+    listen       9991;#注意这里可以listen多个端口，然后根据 $remote_port 来代理
     listen       9992;
     server_name  *.fqwang.net;
     access_log logs/book.log;

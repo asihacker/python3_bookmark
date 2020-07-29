@@ -16,7 +16,7 @@ server {
         }
 
         location ~ /test3(.*)$ {
-            sub_filter '/test3/' '/';#替换链接
+            sub_filter '/test3/' '/';#替换链接 有时候会不生效，可能是网站存在压缩。
             proxy_pass         http://res.ewesell.cn;
             proxy_set_header host $host;
             proxy_set_header X-Real-IP      $remote_addr;
@@ -38,6 +38,15 @@ location 有四中类型的匹配规则，分别为完全匹配(=)、前缀普�
 sub_filter指令： sub_filter string（原字符串） replacement（用于替换的字符串）;
         【列子1表示 http://www.hahaha.com/xingyun/123.jpg >> http://res.ewesell.cn/123.jpg】
         【详细教程  https://blog.csdn.net/xiaoyao8903/article/details/53244900】
+        【可能存在被代理网站压缩无法替换的情况 尝试设置
+                                                #proxy_set_header Accept-Encoding "";
+                                                #gunzip on;
+                                                #gzip_disable ".";】
+        【另外一中方法 重要！！！！
+                                                location ~ /aaa/(.*)$ {
+                                                resolver 8.8.8.8;#高版本的nginx需要设置这个
+                                                proxy_pass        https://tool.lu/$1;
+        】
 proxy_pass  反向代理的目标地址 http://res.ewesell.cn
 proxy_set_header 设置协议头
 

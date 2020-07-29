@@ -10,7 +10,7 @@
 # @Time    : 2020/6/3 23:28
 # @Author  : AsiHacker
 # @Site    :
-# @File    : demo.py
+# @File    : mingyanSpider.py
 # @Software: PyCharm
 import asyncio
 import threading
