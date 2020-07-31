@@ -20,12 +20,36 @@ class Apple(object):
         return self.ccc
 
     @classmethod
-    def clsss(cls, id: int):
-        cls.ddd.add(id)
+    def test(cls, id: int):
+        cls.ddd.add(id)  # 类方法调用
         return cls.ddd
 
+    def test1(self):
+        # 这里我想调用 test 类方法
+        Apple.test(id=3)
+        print(111)
 
-print(Apple.clsss(1))
-print(Apple.clsss(2))
-print(Apple.clsss(3))
-print(Apple.clsss(4))
+
+class Two(Apple):
+
+    def test1(self):
+        super().test1()  # 使用父类方法
+
+
+def ddd():
+    print(456)
+
+
+a = Two()
+yy = 'test1'
+print(hasattr(a, 'test1'))
+func = getattr(a, 'test1')
+print(func())
+# print(a.test1())
+# a.yyy = '123'
+# print(a.yyy)
+# b = Two()
+# print(Apple.test(1))
+# print(Apple.test(2))
+# print(Apple.test(3))
+# print(Apple.test(4))

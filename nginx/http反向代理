@@ -85,3 +85,41 @@ server {
         # proxy_set_header Cookie $http_cookie;#带上cookies代理
     }
 }
+下面是通过正则匹配！！！很重要的列子。
+server {
+    listen       8082;
+    server_name  127.0.0.1;
+    access_log logs/test.log;
+    error_log logs/test.error;
+      location ~ /(.*)$ {#这里是正则过滤条件
+         resolver 8.8.8.8;
+         proxy_pass         https://tool.lu/$1;
+    }
+}
+
+server {
+    listen       8082;
+    server_name  127.0.0.1;
+    access_log logs/test.log;
+    error_log logs/test.error;
+      location ~ /.*/(.*)$ {#这里是正则过滤条件
+         resolver 8.8.8.8;
+         proxy_pass         https://tool.lu/$1;
+    }
+}
+再一个列子
+server {
+    listen       8082;
+    server_name  127.0.0.1;
+    access_log logs/test.log;
+    error_log logs/test.error;
+      location ~ /.*/tool/(.*)$ {#这里是正则过滤条件
+      resolver 8.8.8.8;
+      echo $1 $2 $3;
+      echo https://tool.lu/$1;
+      #proxy_pass         https://tool.lu/$1;
+    }
+}
+curl http://127.0.0.1:8082/to123123/tool/coderunner/123/456/789
+coderunner/123/456/789
+https://tool.lu/coderunner/123/456/789

@@ -1,3 +1,7 @@
 export http_proxy=http://proxyAddress:port
 export ALL_PROXY=socks5://127.0.0.1:1080
 #教程地址：https://www.cnblogs.com/sunsky303/p/8024445.html
+
+brew list #显示安装列表
+brew install #安装
+brew uninstall #卸载
