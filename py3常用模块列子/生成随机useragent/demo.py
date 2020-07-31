@@ -5,16 +5,31 @@
 # @Site    : 
 # @File    : demo.py
 # @Software: PyCharm
+import random
 
 from fake_useragent import UserAgent
 
 ua = UserAgent()
-print(ua.ie)
-print(ua.msie)
-print(ua.opera)
-print(ua.chrome)
-print(ua.google)
-print(ua.firefox)
-print(ua.ff)
-print(ua.safari)
-print(ua.random)
+
+
+# print(ua.ie)
+# print(ua.msie)
+# print(ua.opera)
+# print(ua.chrome)
+# print(ua.google)
+# print(ua.firefox)
+# print(ua.ff)
+# print(ua.safari)
+# print(ua.random)
+
+
+def get_rondom_user_agent():
+    random.seed()
+    ua = UserAgent()
+    ua_type = ['ie', 'chrome', 'safari', 'google']
+    UA = getattr(ua, random.choice(ua_type))
+    return UA
+
+
+if __name__ == '__main__':
+    print(get_rondom_user_agent())

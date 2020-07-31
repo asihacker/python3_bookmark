@@ -23,16 +23,22 @@ browser = webdriver.Chrome(options=chrome_options)
 mainUrl = "https://www.facebook.com/"
 browser.get(mainUrl)
 # print(f"browser text = {browser.page_source}")
-cookies = [{"domain": "facebook.com", "expiry": 1619924175, "httpOnly": True, "name": "xs", "path": "/", "secure": True,
-            "value": "193%3ALB3RUFtDfhSMLQ%3A2%3A1588388184%3A8347%3A3538"},
-           {"domain": "facebook.com", "expiry": 1619924175, "httpOnly": False, "name": "c_user", "path": "/",
-            "secure": True, "value": "100004040823246"},
-           {"domain": "facebook.com", "expiry": 1651460142, "httpOnly": True, "name": "datr", "path": "/",
-            "secure": True, "value": "IOGsXprd8xxfYAuu6AW7ZmoL"},
-           {"domain": "facebook.com", "expiry": 1596164204, "httpOnly": True, "name": "fr", "path": "/", "secure": True,
-            "value": "1uKwm1LFev1sTKPOF.AWVgMi1UUBD1SRc7NqqRFCX1U30.BerOEg.4E.F6s.0.0.BerOF0.AWX0hwkg"},
-           {"domain": "facebook.com", "expiry": 1651460177, "httpOnly": True, "name": "sb", "path": "/", "secure": True,
-            "value": "IOGsXvx3Qx0Yn-1LmZd5cdoI"}]
+cookies = [
+    {'domain': '.facebook.com', 'expirationDate': 1596177585, 'hostOnly': False, 'httpOnly': False, 'name': 'c_user',
+     'path': '/', 'secure': False, 'session': True, 'storeId': '0', 'value': '100053687984351', 'id': 0},
+    {'domain': '.facebook.com', 'expirationDate': 1596177585, 'hostOnly': False, 'httpOnly': False, 'name': 'datr',
+     'path': '/', 'secure': False, 'session': True, 'storeId': '0', 'value': 'r7wjX4OG98nuAbxrNJgneO1C', 'id': 0},
+    {'domain': '.facebook.com', 'expirationDate': 1596177585, 'hostOnly': False, 'httpOnly': False, 'name': 'fr',
+     'path': '/', 'secure': False, 'session': True, 'storeId': '0',
+     'value': '1cj4Qa9Sk1YMXqwYX.AWUA8y3d7uCLVJr93sGtVEwyt2o.BfI7yp.PH.AAA.0.0.BfI7yv.AWVyQvlU', 'id': 0},
+    {'domain': '.facebook.com', 'expirationDate': 1596177585, 'hostOnly': False, 'httpOnly': False, 'name': 'sb',
+     'path': '/', 'secure': False, 'session': True, 'storeId': '0', 'value': 'qbwjX4Pctjqk_HOqWM7V7ABK', 'id': 0},
+    {'domain': '.facebook.com', 'expirationDate': 1596177585, 'hostOnly': False, 'httpOnly': False, 'name': 'spin',
+     'path': '/', 'secure': False, 'session': True, 'storeId': '0',
+     'value': 'r.1002447912_b.trunk_t.1596177579_s.1_v.2_', 'id': 0},
+    {'domain': '.facebook.com', 'expirationDate': 1596177585, 'hostOnly': False, 'httpOnly': False, 'name': 'xs',
+     'path': '/', 'secure': False, 'session': True, 'storeId': '0',
+     'value': '13%3AhABzjDHMSkFDdg%3A2%3A1596177578%3A-1%3A-1', 'id': 0}]
 for cookie in cookies:
     browser.add_cookie(cookie)
 # browser.find_element_by_xpath('//*[@id="email"]').send_keys('100053725548951')
