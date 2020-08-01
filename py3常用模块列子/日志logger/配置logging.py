@@ -1,13 +1,19 @@
 #!/usr/bin/python
 # coding=utf-8
+import datetime
 import logging
+import time
+from logging.handlers import TimedRotatingFileHandler
 
-logging.basicConfig(
-    # filename='test.log',
-    level=logging.DEBUG,
-    format='%(asctime)s %(filename)s[line:%(lineno)d] %(message)s',
-    datefmt='%Y-%m-%d')
-logger = logging.getLogger(__name__)
+# logging.basicConfig(
+#     filename=f'{datetime.datetime.now().strftime("%H:%M:%S")}test.log',
+#     level=logging.DEBUG,
+#     format='%(asctime)s %(filename)s[line:%(lineno)d] %(message)s',
+#     datefmt='%Y-%m-%d'
+# )
+log = logging.getLogger('asi')
+log_file_handler = TimedRotatingFileHandler(filename='asi', when="S", interval=1, backupCount=7)
+log.addHandler(log_file_handler)
 
 """
 format参数中可能用到的格式化串：
@@ -27,9 +33,11 @@ format参数中可能用到的格式化串：
 %(process)d 进程ID。可能没有
 %(message)s用户输出的消息
 """
-logging.info('test info')
-logging.debug('test debug')
-logging.warning('test warning')
-logging.error('test error')
-logging.critical('test critical')
-logger.info('44444')
+for _ in range(100):
+    time.sleep(1)
+    log.info('test info')
+    log.debug('test debug')
+    log.warning('test warning')
+    log.error('test error')
+    log.critical('test critical')
+    log.info('44444')

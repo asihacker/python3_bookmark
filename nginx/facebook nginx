@@ -1,0 +1,89 @@
+server {
+  listen 8999;
+  server_name 47.242.0.7;
+  server_tokens off; ## Don't show the nginx version number, a security best practice
+  rewrite ^ https://$server_name$request_uri? permanent;
+}
+
+server {
+  listen 443;
+  server_name 47.242.0.7;
+  ssl on;
+  ssl_certificate 4228202_nginx.chenjunxue.vip.pem;
+  ssl_certificate_key 4228202_nginx.chenjunxue.vip.key;
+  access_log logs/fb.log;
+  error_log logs/fb.error;
+  location / {
+    proxy_hide_header content-security-policy;
+    proxy_set_header Accept-Encoding "";
+    proxy_set_header User-Agent $http_user_agent;
+    proxy_pass https://www.facebook.com/;
+    proxy_cookie_domain .facebook.com nginx.chenjunxue.vip;
+    sub_filter www.facebook.com nginx.chenjunxue.vip;
+    sub_filter 'https://' '/';
+    sub_filter 'https:\/\/' '\/';
+    sub_filter 'http://' '/';
+    sub_filter 'http:\/\/' '\/';
+    sub_filter '/nginx.chenjunxue.vip' '';
+  }
+  location ~ ^/static.xx.fbcdn.net/(.*) {
+    resolver 8.8.8.8;
+    proxy_pass https://static.xx.fbcdn.net/$1;
+  }
+
+  location ~ ^/fbstatic-(.*).akamaihd.net/(.*) {
+    resolver 8.8.8.8;
+    proxy_pass https://fbstatic-$1.akamaihd.net/$2;
+  }
+
+  location ~ ^/fbcdn-profile-(.*).akamaihd.net/(.+) {
+    resolver 8.8.8.8;
+    proxy_pass https://fbcdn-profile-$1.akamaihd.net/$2?$args;
+  }
+
+  location ~ ^/fbcdn-photos-(.*)-(.*).akamaihd.net/(.*) {
+    resolver 8.8.8.8;
+    proxy_pass https://fbcdn-photos-$1-$2.akamaihd.net/$3;
+  }
+
+  location ~ ^/fbcdn-sphotos-(.*)-(.*).akamaihd.net/(.+) {
+    resolver 8.8.8.8;
+    proxy_pass https://fbcdn-sphotos-$1-$2.akamaihd.net/$3?$args;
+  }
+
+  location ~ ^/fbexternal-(.*).akamaihd.net/(.+) {
+    resolver 8.8.8.8;
+    proxy_pass https://fbexternal-$1.akamaihd.net/$2?$args;
+  }
+
+  location ~ ^/fbcdn-vthumb-(.*).akamaihd.net/(.+) {
+    resolver 8.8.8.8;
+    proxy_pass https://fbcdn-vthumb-$1.akamaihd.net/$2?$args;
+  }
+
+  location ~ ^/scontent-(.*).xx.fbcdn.net/(.+) {
+    resolver 8.8.8.8;
+    proxy_pass https://scontent-$1.xx.fbcdn.net/$2?$args;
+  }
+
+  location /scontent.xx.fbcdn.net/ {
+    resolver 8.8.8.8;
+    proxy_pass https://scontent.xx.fbcdn.net/;
+  }
+
+  location /l.facebook.com/ {
+    resolver 8.8.8.8;
+    proxy_pass http://l.facebook.com/;
+  }
+
+  location /error.facebook.com/ {
+    resolver 8.8.8.8;
+    proxy_pass https://error.facebook.com/;
+  }
+
+  location /pixel.facebook.com/ {
+    resolver 8.8.8.8;
+    proxy_pass https://pixel.facebook.com/;
+  }
+
+}
