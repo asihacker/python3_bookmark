@@ -1,0 +1,97 @@
+软件：宝塔    www.bt.com
+Zhangjinfeng#nic#0107
+
+pptp搭建：
+（ 1、    yum -y install wget
+
+   2、  wget https://raw.githubusercontent.com/DanylZhang/VPS/master/CentOS7-pptp-host1plus.sh
+
+  3、  chmod +x ./CentOS7-pptp-host1plus.sh
+
+  4、   ./CentOS7-pptp-host1plus.sh -u ntkj -p nantian888    ）手机连上可用，模拟器不行
+
+
+
+http代理：
+yum install squid -y
+
+vi /etc/squid/squid.conf
+
+------------------------------------
+
+
+http_port 59394#添加这一行
+http_access allow all#添加这一行
+via off#添加这一行
+forwarded_for delete#添加这一行
+
+#http_access allow localhost#屏蔽这一行
+
+------------------------------------------
+systemctl start squid.service
+systemctl restart squid.service
+systemctl enable squid.service
+
+service squid start
+service squid enable
+
+firewall-cmd --zone=public --add-port=59394/tcp --permanent
+firewall-cmd --reload
+-----------------------------------
+yum -y remove squid
+
+ubuntu sudo
+
+yum install -y iptables-services
+systemctl start iptables
+cp -a /etc/sysconfig/iptables /etc/sysconfig/iptables.bak
+iptables -I INPUT -p tcp --dport 59394 -m state --state NEW -j ACCEPT
+iptables-save > /etc/sysconfig/iptables
+systemctl enable iptables.service
+
+
+
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --reload
+
+
+
+
+s5代理搭建：
+yum -y install git wget curl zip unzip screen 安装必要工具
+
+wget https://raw.githubusercontent.com/qinghuas/socks5-install/master/ss5.sh 下载S5安装包
+
+bash ss5.sh  选择菜单
+选择安装BBR加速
+安装完毕 选Y 重启服务器
+
+bash ss5.sh 选择菜单
+选择安装S5
+
+bash ss5.sh 选择菜单
+添加用户
+
+设置自动启动脚本
+cd /etc/rc.d/init.d
+vi opens5.sh
+
+复制以下脚本
+#!/bin/bash
+#add for chkconfig
+#chkconfig: 2345 10 30
+#description: the description of the shell   #关于脚本的简短描述
+#processname: opens5                    #第一个进程名，后边设置自启动的时候会用到
+mkdir /var/run/ss5
+sleep 5
+bash ss5.sh start
+
+:wq 保存
+
+chmod 777 /etc/rc.d/init.d/opens5.sh
+chkconfig --add opens5.sh
+chkconfig opens5.sh on
+chkconfig --add ss5
+chkconfig ss5 on
+
+

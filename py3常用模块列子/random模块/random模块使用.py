@@ -15,7 +15,7 @@ print(random.uniform(1, 10))
 
 # 随机字符：
 print(random.choice('abcdefghijklmnopqrstuvwxyz!@#$%^&*()'))
-print(random.choices('abcdefghijklmnopqrstuvwxyz!@#$%^&*()', k=100))
+print(random.choices('abcdefghijklmnopqrstuvwxyz!@#$%^&*()', k=100),123123)
 
 # 多个字符中生成指定数量的随机字符：
 print(random.sample('zyxwvutsrqponmlkjihgfedcba', 5))

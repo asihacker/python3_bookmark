@@ -20,8 +20,8 @@ chrome_options = webdriver.ChromeOptions()
 # chrome_options.add_argument('--disable-gpu')  # 如果不加这个选项，有时定位会出现问题
 # 启动浏览器，获取网页源代码
 # chrome_options.add_argument('lang=zh_CN.UTF-8')
-#添加代理
-chrome_options.add_argument("--proxy-server=https://8.209.215.201:59394")
+# 添加代理
+# chrome_options.add_argument("--proxy-server=https://8.209.215.201:59394")
 # 更换头部
 chrome_options.add_argument(
     'user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"')

@@ -6,7 +6,8 @@
 # @File    : mingyanSpider.py
 # @Software: PyCharm
 from collections import Counter
-
+import collections
+collections.UserString
 a = Counter()  # a new, empty counter
 b = Counter('gallahad')  # a new counter from an iterable
 c = Counter({'a': 4, 'b': 2})  # a new counter from a mapping

@@ -27,3 +27,6 @@ if __name__ == '__main__':
     print(delattr(aaa, 'kg'))
     print(getattr(aaa, 'kg'))
     print(aaa.kg)
+    aaa.kg = 'asi'
+    print(aaa.kg)
+
