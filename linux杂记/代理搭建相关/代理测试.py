@@ -9,7 +9,10 @@ import requests
 
 if __name__ == '__main__':
     proxies = {
-        "https": "http://8.210.244.199:59394"
+        "https": "http://8.210.105.238:59394"
+        # "http": "http://8.210.61.97:59394"
     }
-    rep = requests.get('https://www.baidu.com', proxies=proxies)
+    # rep = requests.get('https://www.baidu.com', proxies=proxies)
+    # rep = requests.get('http://httpbin.org/get', proxies=proxies)
+    rep = requests.get('https://www.facebook.com/', proxies=proxies)
     print(rep.text)

@@ -123,3 +123,20 @@ server {
 curl http://127.0.0.1:8082/to123123/tool/coderunner/123/456/789
 coderunner/123/456/789
 https://tool.lu/coderunner/123/456/789
+
+再一个列子
+server {
+    listen       8090;
+    server_name  127.0.0.1;
+    access_log logs/test.log;
+    error_log logs/test.error;
+      location ~ /tool/(.*)/(.*)/(.*)$ {#这里是正则过滤条件
+      resolver 8.8.8.8;
+      echo $1 $2 $3;
+      echo https://tool.lu/$1;
+      #proxy_pass         https://tool.lu/$1;
+    }
+}
+请求链接：http://127.0.0.1:8090/tool/$1/$2/$3
+替换链接：https://tool.lu/$3/$2/$1
+【$是一个结束符号，表示把前面正则匹配到的结果存到到$1,$2,$3】

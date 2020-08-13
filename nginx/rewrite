@@ -1,0 +1,15 @@
+server {
+    listen       8090;
+    server_name  127.0.0.1;
+    access_log logs/test.log;
+    error_log logs/test.error;
+      location ~ /tool/(.*)/(.*)/(.*)$ {#这里是正则过滤条件
+      resolver 8.8.8.8;
+      echo $1 $2 $3;
+      echo https://tool.lu/$1;
+      #proxy_pass         https://tool.lu/$1;
+    }
+}
+上下实现功能一样
+
+

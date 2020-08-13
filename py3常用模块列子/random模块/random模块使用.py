@@ -18,7 +18,7 @@ print(random.choice('abcdefghijklmnopqrstuvwxyz!@#$%^&*()'))
 print(random.choices('abcdefghijklmnopqrstuvwxyz!@#$%^&*()', k=100),123123)
 
 # 多个字符中生成指定数量的随机字符：
-print(random.sample('zyxwvutsrqponmlkjihgfedcba', 5))
+print('sample',random.sample('zyxwvutsrqponmlkjihgfedcba', 5))
 
 # 从a-zA-Z0-9生成指定数量的随机字符：
 ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 8))

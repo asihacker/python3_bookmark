@@ -87,3 +87,44 @@ server {
   }
 
 }
+-----------------
+server {
+    listen       8091;
+    server_name  127.0.0.1;
+    access_log logs/test.log;
+    error_log logs/test.error;
+    rewrite ^/tool/(.*)$ https://tool.lu/$1 permanent;
+    }
+
+server {
+    listen       8091;
+    server_name  127.0.0.1;
+    access_log logs/test.log;
+    error_log logs/test.error;
+
+    if ($http_user_agent ~ MSIE) {
+        rewrite ^(.*)$ /msie/$1 break;
+    } //如果UA包含"MSIE"，rewrite请求到/msid/目录下
+
+    if ($http_cookie ~* "id=([^;]+)(?:;|$)") {
+        set $id $1;
+    } //如果cookie匹配正则，设置变量$id等于正则引用部分
+
+    if ($request_method = POST) {
+        return 405;
+    } //如果提交方法为POST，则返回状态405（Method not allowed）。return不能返回301,302
+
+    if ($slow) {
+        limit_rate 10k;
+    } //限速，$slow可以通过 set 指令设置
+
+    if (!-f $request_filename){
+        break;
+        proxy_pass http://127.0.0.1;
+    } //如果请求的文件名不存在，则反向代理到localhost 。这里的break也是停止rewrite检查
+
+    if ($args ~ post=140){
+        rewrite ^ http://example.com/ permanent;
+    } //如果query string中包含"post=140"，永久重定向到example.com
+
+}

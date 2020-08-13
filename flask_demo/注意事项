@@ -1,0 +1,21 @@
+__table_args__ = {'extend_existing': True}
+当models里面存在相同模型的时候，可以在模型里面添加上面这句，否则会提示报错
+
+class NtInsAccount(db.Model):
+    __tablename__ = 'nt_ins_account'
+    __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True, unique=True, info='自增ID')
+    uuid = db.Column(db.String(32), nullable=False, index=True, info='uuid_')
+    email = db.Column(db.String(32), nullable=False, unique=True, info='邮箱')
+    password = db.Column(db.String(32), nullable=False, info='密码')
+    nickname = db.Column(db.String(32), nullable=False, info='用户昵称')
+    level = db.Column(db.Integer, nullable=False, index=True, info='级别 0管理员1一级会员，2二级会员，3三级会员 4普通用户')
+    integral = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue(), info='积分')
+    inviter_id = db.Column(db.Integer, index=True, info='邀请者id')
+    invite_code = db.Column(db.String(32), info='邀请码')
+    underling_number = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue(), info='下线数量')
+    last_login_time = db.Column(db.DateTime, nullable=False, index=True, server_default=db.FetchedValue(),
+                                info='最后登录时间')
+    gmt_create = db.Column(db.DateTime, nullable=False, index=True, server_default=db.FetchedValue(), info='创建时间')
+    gmt_modified = db.Column(db.DateTime, nullable=False, index=True, server_default=db.FetchedValue(), info='更新时间')
+    use_status = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue(), info='0正常 1停用')

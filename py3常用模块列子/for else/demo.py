@@ -17,10 +17,10 @@ def check(item, item_list):
     for key in item_list:
         if item == key:
             print('存在哦')
-            break
     else:
         print('不存在')
+    print('结束了')
 
 
 if __name__ == '__main__':
-    check('a', ['a', 'b', 'c'])
+    check('d', ['a', 'b', 'c'])

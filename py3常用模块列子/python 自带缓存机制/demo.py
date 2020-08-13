@@ -8,7 +8,7 @@
 from functools import lru_cache
 
 
-@lru_cache(None)
+@lru_cache(maxsize=1)
 def add(x, y):
     print("calculating: %s + %s" % (x, y))
     return x + y
