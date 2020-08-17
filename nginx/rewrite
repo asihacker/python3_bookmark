@@ -12,4 +12,17 @@ server {
 }
 上下实现功能一样
 
-
+server {
+    listen       8090;
+    server_name  127.0.0.1;
+    access_log logs/test.log;
+    error_log logs/test.error;
+    rewrite ^/tool/(.*)/(.*)/(.*)$ https://tool.lu/$1;
+    }
+}
+#PS别想了
+rewrite . /index.php last;
+rewrite ^ /index.php last;
+rewrite .* /index.php last;
+效果都是一样的
+比较好的教程 https://www.jianshu.com/p/a1fce9358d44
