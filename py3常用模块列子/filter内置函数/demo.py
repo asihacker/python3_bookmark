@@ -13,3 +13,14 @@ def filter_num(d_str: str):
     """
     num = filter(str.isdigit, d_str)
     return ''.join(num)
+
+
+
+def filter_alp(d_str: str):
+    """
+    过滤文本中的字母
+    :param d_str:
+    :return:
+    """
+    alp = list(filter(lambda d: d in string.ascii_letters, d_str))
+    print(alp)
