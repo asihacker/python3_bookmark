@@ -24,3 +24,5 @@ path = os.path.dirname(path)
 print(path)
 path = os.path.dirname(path)
 print(path)
+import sys
+print(sys.path)

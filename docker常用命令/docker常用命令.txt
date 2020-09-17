@@ -1,7 +1,7 @@
 拉取镜像->运行容器->编辑容器->更新镜像->运行容器=更新后的容器
 
 [模拟启动]
-docker run -d  --name 容器名 -p 本机端口:容器端口 -v $PWD/本机项目目录:/var/www/html --privileged=true 镜像ID
+    docker run -d  --name 容器名 -p 本机端口:容器端口 -v $PWD/本机项目目录:/var/www/html --privileged=true 镜像ID
 
 [启动Docker后台服务]
 service docker start
@@ -79,6 +79,9 @@ docker search [选项] 镜像名
 --automated :只列出 automated build类型的镜像；
 --no-trunc :显示完整的镜像描述；
 -s :列出收藏数不小于指定值的镜像。
+
+[删除镜像]
+docker image rm 镜像名
 
 [提交更新镜像]
 docker commit [选项] 容器名 [仓库[:标签]]

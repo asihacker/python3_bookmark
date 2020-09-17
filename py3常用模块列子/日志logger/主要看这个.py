@@ -15,7 +15,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d'
 )
 log = logging.getLogger('asi')  # 创建一个名叫asi的日志器
-# 下面创建一个处理器，这个处理器可以按照天来记录，还可以现在日志个数
+# 下面创建一个处理器，这个处理器可以按照天来记录，还可以限制日志个数
 log_file_handler = TimedRotatingFileHandler(filename='asi.log', when="S", interval=1, backupCount=7)
 # 把处理器添加到日志器里面
 log.addHandler(log_file_handler)

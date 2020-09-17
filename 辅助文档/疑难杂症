@@ -1,7 +1,0 @@
-/root/.pycharm_helpers/python_stubs/-87021696/skeletons.zip 垃圾下载
-
-
-mac技巧
-~/.bash_profile 在这里文件里面写快捷命令
-source ~/.bash_profile 这样就生效啦（但是重新打开会失效）
-vi ~/.zshrc（在里面添加上面一行，这个上终端打开每次自动运行里面的命令）

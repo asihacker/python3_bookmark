@@ -1,50 +1,42 @@
-# -*- coding: utf-8 -*-
-
-"""
-PyQt5 tutorial
-
-This example shows how to use
-a QComboBox widget.
-
-author: py40.com
-last edited: 2017年3月
-"""
+# coding=utf-8
 import sys
-from PyQt5.QtWidgets import (QWidget, QLabel,
-                             QComboBox, QApplication)
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
 
+class Table(QWidget):
+    def __init__(self,parent=None):
+        super(Table, self).__init__(parent)
+        #设置标题与初始大小
+        self.setWindowTitle('QTableView表格复选框案例')
+        self.resize(500,300)
+        self.tableView=QTableView()
+        self.model = QStandardItemModel(self.tableView)
 
-class Example(QWidget):
-    def __init__(self):
-        super().__init__()
+        #设置数据层次结构，4行4列
+        self.model=QStandardItemModel(4,4)
+        t = QCheckBox(self)
+        #设置水平方向四个头标签文本内容
+        self.model.setHorizontalHeaderLabels(['状态','姓名','身份证','地址'])
 
-        self.initUI()
+        for row in range(4):
+            for column in range(4):
+                item_checked = QStandardItem()
+                item_checked.setCheckState(Qt.Checked)
+                item_checked.setCheckable(True)
+                self.model.setItem(column,0, item_checked)
+                item=QStandardItem('row %s,column %s'%(row,column))
+                #设置每个位置的文本值
+                self.model.setItem(row,column,item)
 
-    def initUI(self):
-        self.lbl = QLabel("Ubuntu", self)
-
-        combo = QComboBox(self)
-        combo.addItem("Ubuntu")
-        combo.addItem("Mandriva")
-        combo.addItem("Fedora")
-        combo.addItem("Arch")
-        combo.addItem("Gentoo")
-
-        combo.move(50, 50)
-        self.lbl.move(50, 150)
-
-        combo.activated[str].connect(self.onActivated)
-
-        self.setGeometry(300, 300, 300, 200)
-        self.setWindowTitle('QComboBox')
-        self.show()
-
-    def onActivated(self, text):
-        self.lbl.setText(text)
-        self.lbl.adjustSize()
-
+        self.tableView.setModel(self.model)
+        #设置布局
+        layout=QVBoxLayout()
+        layout.addWidget(self.tableView)
+        self.setLayout(layout)
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = Example()
+    app=QApplication(sys.argv)
+    table=Table()
+    table.show()
     sys.exit(app.exec_())

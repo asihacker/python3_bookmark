@@ -6,8 +6,7 @@
 # @File    : mingyanSpider.py
 # @Software: PyCharm
 from collections import Counter
-import collections
-collections.UserString
+
 a = Counter()  # a new, empty counter
 b = Counter('gallahad')  # a new counter from an iterable
 c = Counter({'a': 4, 'b': 2})  # a new counter from a mapping
@@ -19,7 +18,7 @@ f = Counter('你好 我叫 陈俊 学 哈哈 你好'.split())
 print(f)
 g = Counter('你好我叫陈俊学哈哈你好'.split('你'))
 print(g)
-g=Counter('askdjakjhdsjkad')
+g = Counter('askdjakjhdsjkad')
 print(g)
 h = Counter([1, 2, 3, 3])
 j = Counter([1, 2, 3, 4, 4, 4])

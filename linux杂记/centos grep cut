@@ -1,0 +1,18 @@
+Linux中的grep和cut
+提取行：
+　　grep
+　　　　--color  着色
+　　　　-v         不包含
+
+提取列：
+　　cut
+　　　　-f      列号 提取第几列
+　　　　-d     分隔符 以什么为分隔符，默认是制表键
+　　　　局限性：如果分隔符不那么好找，或者是不规则个数的空格的时候，就玩不转了
+
+例如：
+　　列出系统中所有用户的用户名：
+　　　　cat /etc/passwd | cut -d ":" -f 1
+
+　　grep和cut联合使用，提取系统中可登录用户的用户名
+　　　　cat /etc/passwd | grep "/bin/bash" | grep -v "root" | cut -d ":" -f 1

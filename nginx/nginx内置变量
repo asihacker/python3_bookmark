@@ -45,7 +45,7 @@ $query_string 与$args相同
 
 $remote_addr 客户端IP地址
 
-$remote_port 客户端的端口
+$remote_port 客户端的端口 67773 68939 这种
 
 $remote_user 客户端的用户名，用于 auth basic module验证
 
@@ -73,7 +73,7 @@ $sent_last_modified 对应请求中的Last-Modified
 
 $server_addr 服务端的地址
 
-$server_port 请求到达服务器端口号
+$server_port 请求到达服务器端口号  9771 39002这种
 
 $server_protocol 请求协议的版本号，HTTP1.0/HTTP1.1
 

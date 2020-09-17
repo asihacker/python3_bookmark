@@ -3,9 +3,10 @@
 # @Time    : 2020/7/31 12:07
 # @Author  : AsiHacker
 # @Site    : 
-# @File    : demo.py
+# @File    : dataclass模块.py
 # @Software: PyCharm
 import yaml
+
 # 教程 https://www.cnblogs.com/klb561/p/9326677.html
 # 写出
 aproject = {'name': 'Silenthand Olleander',

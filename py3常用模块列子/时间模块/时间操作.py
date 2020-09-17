@@ -80,6 +80,23 @@ http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp
     %X 本地相应的时间表示
     %Z 当前时区的名称  # 乱码
     %% %号本身
+    %a 英文星期简写
+%A 英文星期的完全
+%b 英文月份的简写
+%B 英文月份的完全
+%c 显示本地日期时间
+%d 日期，取1-31
+%H 小时， 0-23
+%I 小时， 0-12
+%m 月， 01 -12
+%M 分钟，1-59
+%j 年中当天的天数
+%w 显示今天是星期几
+%W 第几周
+%x 当天日期
+%X 本地的当天时间
+%y 年份 00-99间
+%Y 年份的完整拼写
 """
 a = datetime.datetime.strptime('2018-12-10 19:11:52', '%Y-%m-%d %H:%M:%S')
 print(time.mktime(a.timetuple()))
