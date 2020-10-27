@@ -6,9 +6,8 @@
 # @File    : app_test.py.py
 # @Software: PyCharm
 from celery import Celery
-
-app = Celery('proj', include=['proj.tasks'])
-app.config_from_object('proj.celeryconfig')
+app = Celery('proj', include=['芹菜.proj.tasks'])
+app.config_from_object('芹菜.proj.celeryconfig')
 
 if __name__ == '__main__':
-    app.start()
+    app.worker_main(argv=['-l debug'])

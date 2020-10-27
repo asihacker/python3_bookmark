@@ -15,3 +15,5 @@ c = compile(str, '<string>', 'eval')
 eval(str)
 
 exec(c)
+isinstance()
+issubclass()

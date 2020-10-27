@@ -13,5 +13,5 @@ def test():
 
 
 if __name__ == '__main__':
-    threading.Timer(10, test, args=(4, 5)).start()
+    threading.Timer(3, test).start()
     print('456')

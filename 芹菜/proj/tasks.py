@@ -6,7 +6,9 @@
 # @File    : tasks.py.py
 # @Software: PyCharm
 import time
-from proj.app_test import app
+
+from 芹菜.proj.app_test import app
+
 
 @app.task
 def add(x, y):

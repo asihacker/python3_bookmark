@@ -5,7 +5,7 @@
 # @Site    : 
 # @File    : 正向代理(L).py
 # @Software: PyCharm
-# ssh -L 0.0.0.0:PortB:HostC:PortC user@HostC
+# ssh -L -D -R -L 0.0.0.0:PortB:HostC:PortC user@HostC
 
 # PortB 本地端口
 # HostC 服务器地址

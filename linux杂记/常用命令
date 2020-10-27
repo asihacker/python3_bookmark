@@ -62,5 +62,68 @@ nc 测试服务器端口是否正常工具  nc -w 10 127.0.0.1  8888
 
 lsof -i:80 查看哪个东西占用这个端口（lsof这个命令很好用 具体可以tldr一下）
 
+
+# 压缩文件 file1 和目录 dir2 到 test.tar.gz
+tar -zcvf test.tar.gz file1 dir2
+# 解压 test.tar.gz（将 c 换成 x 即可）
+tar -zxvf test.tar.gz
+# 列出压缩文件的内容
+tar -ztvf test.tar.gz
+
+watch：周期性的执行给定的命令，并将命令的输出以全屏方式显示。
+
+bc：命令行科学计算器。
+
+killall：通过进程名终止进程。
+
+pkill：通过进程名终止进程。
+
+获取字符串长度
+
+    在${}中使用“#”获取长度
+    name="test";
+    echo ${#name}; # 输出为4
+
+
+提取子字符串[切片]
+
+    1:4 从第2个开始 往后截取4个字符
+    ::4 从第一个字符开始 往后截取4个字符
+    name="this is my name";
+    echo ${name:1:4} #输出 is i
+    echo ${name::4} #输出 this
+
+
+shell脚本参数传递
+
+    获取参数值：
+    $0 ： 固定，代表执行的文件名
+    $1 ： 代表传入的第1个参数
+    $n ： 代表传入的第n个参数
+
+    \$#：参数个数
+    \$*： 以一个单字符串显示所有向脚本传递的参数。如"$*"用「"」括起来的情况、以"$1 $2 … $n"的形式输出所有参数
+    \$@：与$*相同，但是使用时加引号，并在引号中返回每个参数。
+    \$\$：脚本运行的当前进程号
+    \$！：后台运行的最后一个进程的ID
+    \$?： 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。
+    \$* 与 $@ 区别
+    相同点：都是引用所有参数。
+    不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 " * " 等价于 "1 2 3"（传递了一个参数），而 "@" 等价于 "1" "2" "3"（传递了三个参数）。
+
+croc安装
+    curl https://getcroc.schollz.com | bash （centos）
+    scoop install croc（windos）
+    curl https://getcroc.schollz.com | bash （centos）
+
+
 设置别名命令（linux和mac）
 教程地址：https://blog.csdn.net/lisongjia123/article/details/77962144?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+---------
+详细教程（166个命令）
+https://www.zhihu.com/question/397371213/answer/1516429359?utm_source=wechat_session&utm_medium=social&utm_oi=995698089314795520&utm_content=group3_Answer&utm_campaign=shareopn
+
+shell脚本的相关知识点
+https://zhuanlan.zhihu.com/p/264346586?utm_source=wechat_session&utm_medium=social&utm_oi=995698089314795520
+

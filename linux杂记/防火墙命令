@@ -1,0 +1,1 @@
+firewll-cmd --permanent --add-port=9999/tcp 添加开放端口

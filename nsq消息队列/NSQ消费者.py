@@ -13,8 +13,8 @@ def handler(message):
 #                channel='asi',
 #                lookupd_poll_interval=15)
 
-r = nsq.Reader(message_handler=handler, nsqd_tcp_addresses=['39.100.77.40:4150'],
-               topic='asi_debug',
+r = nsq.Reader(message_handler=handler, nsqd_tcp_addresses=['161.117.252.224:4150'],
+               topic='test',
                channel='asi',
                lookupd_poll_interval=15)
 

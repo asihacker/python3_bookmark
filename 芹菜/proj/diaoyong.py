@@ -5,7 +5,7 @@
 # @Site    : 
 # @File    : diaoyong.py.py
 # @Software: PyCharm
-from proj.tasks import add
+from 芹菜.proj.tasks import add
 import time
 
 t1 = time.time()
@@ -24,4 +24,4 @@ for r in r_list:
 
 t2 = time.time()
 
-print('共耗时：%s' % str(t2-t1))
+print('共耗时：%s' % str(t2 - t1))

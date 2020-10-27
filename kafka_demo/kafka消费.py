@@ -1,6 +1,6 @@
 from kafka import KafkaConsumer
 
-consumer = KafkaConsumer('textMsg','aaa', group_id='xiaochen1', client_id='xc1',
+consumer = KafkaConsumer('test_ng_account', group_id='xiaochen1', client_id='xc1',
                          bootstrap_servers=['47.112.163.25:9092', '47.112.185.243:9092', '47.112.189.251:9092'])
 for msg in consumer:
     recv = "%s:%d:%d: key=%s value=%s" % (msg.topic, msg.partition, msg.offset, msg.key, msg.value)

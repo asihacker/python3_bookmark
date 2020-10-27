@@ -46,7 +46,6 @@ def task_callback(task):
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
-
     task1 = asyncio.ensure_future(washing1('washing1'))
     task2 = asyncio.ensure_future(washing2('washing2'))
     task3 = asyncio.ensure_future(washing3('washing3'))
