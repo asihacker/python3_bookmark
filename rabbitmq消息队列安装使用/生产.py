@@ -6,7 +6,6 @@ conn = pika.BlockingConnection(pika.ConnectionParameters("127.0.0.1", 5672, '/',
 
 # 开辟管道
 channelx = conn.channel()
-
 # 声明队列，参数为队列名
 channelx.queue_declare(queue="test1", durable=False)  # durable 持久化
 # channelx.queue_bind(queue='test2', exchange='test2')

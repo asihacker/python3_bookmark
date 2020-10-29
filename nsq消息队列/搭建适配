@@ -9,3 +9,16 @@ nohup ./nsqadmin --lookupd-http-address=0.0.0.0:4161 >/dev/null 2>&1 &
 #nphup ./nsq_to_file --topic=test --output-dir=/tmp --lookupd-http-address=0.0.0.0:4161 >dev/null 2>&1 &
 
 curl -d 'hello world 1' 'http://39.100.77.40:4151/pub?topic=test'
+
+
+docker 安装
+
+docker pull nsqio/nsq
+
+docker run --name lookupd -p 4160:4160 -p 4161:4161 -d nsqio/nsq /nsqlookupd
+
+docker run --name nsqd -p 4150:4150 -p 4151:4151 -d nsqio/nsq /nsqd --broadcast-address=172.16.0.50 --lookupd-tcp-address=172.16.0.50:4160
+
+docker run -d --name nsqadmin -p 4171:4171 nsqio/nsq /nsqadmin --lookupd-http-address=172.16.0.50:4161
+
+http://127.0.0.1:4171

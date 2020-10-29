@@ -7,7 +7,7 @@ import requests
 # 参数times用来模拟网络请求的时间
 def get_page():
     time.sleep(10)
-    code = requests.get('http://www.17golink.xyz/').status_code
+    code = requests.get('http://www.baidu.com/').status_code
     return code
 
 

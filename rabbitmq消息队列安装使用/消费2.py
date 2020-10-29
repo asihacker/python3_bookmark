@@ -18,6 +18,7 @@ def dongcallbackfun(cn, method, properties, body):
 
 
 # 接收准备
+# channelx.basic_qos(prefetch_count=1)  # 公平调度，确保每个消费者把一条消费掉后，才接收下一条
 channelx.basic_consume(
     queue="test1",  # 队列名
     on_message_callback=dongcallbackfun,  # 收到消息的回调函数
