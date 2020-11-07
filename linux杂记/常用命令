@@ -116,7 +116,19 @@ croc安装
     scoop install croc（windos）
     curl https://getcroc.schollz.com | bash （centos）
 
+centos冒号的作用
 
+1。:>test.txt 可以清空文件内容
+
+2。可以当占位符
+    if [ "today" == "2011-08-29" ]; then
+        :
+    else
+        :
+    fi
+
+
+shell的for循环： for k in `ls`;do echo $k;done
 设置别名命令（linux和mac）
 教程地址：https://blog.csdn.net/lisongjia123/article/details/77962144?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
 

@@ -1,0 +1,10 @@
+server {
+        listen 80;
+        server_name www.porters.vip;# 请填写真实域名
+        charset utf-8;
+        location /verify/uas/{
+            if ($http_user_agent ~*（python)){
+                return 403;
+        root /root/www/html;
+        index index.html;
+}

@@ -18,7 +18,6 @@ def filter_num(d_str: str):
     return ''.join(num)
 
 
-
 def filter_alp(d_str: str):
     """
     过滤文本中的字母

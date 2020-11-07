@@ -1,0 +1,15 @@
+汇总地址
+#https://zhuanlan.zhihu.com/p/264346586?utm_source=wechat_session&utm_medium=social&utm_oi=995698089314795520
+额外知识点
+1.
+    当运行一个.sh文件或者是shell命令，shell会把当前的环境变量都复制过来，也就是子类和父类的关系。通过以下几个场景解释这个概念。
+
+    证明父能影响子
+
+    直接运行命令export K=V，然后echo $K，能看到输出了V
+    写一个shell脚本，echo $K，能看到输出了V
+    证明子不能影响父
+
+    在一个shell脚本中export K=V，然后echo $K，能看到输出了V。
+    基于1，直接运行命令echo $K，发现输出为空
+如果想让shell脚本中执行的环境变量影响到父环境，那么可以用source来执行
