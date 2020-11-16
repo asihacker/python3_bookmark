@@ -18,7 +18,7 @@ class TooLongExceptin(Exception):
 
 # 2.手动抛出用户自定义类型异常
 def name_Test():
-    name = input("enter your naem:")
+    name = input("enter your name:")
     if len(name) > 4:
         raise TooLongExceptin(len(name))
     else:
@@ -26,4 +26,6 @@ def name_Test():
 
 
 # 调用函数，执行
+a = 5
+assert a == 6, ValueError('a应该要是6')
 name_Test()

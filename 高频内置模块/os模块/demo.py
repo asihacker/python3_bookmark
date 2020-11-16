@@ -23,3 +23,7 @@ if pid == 0:
 else:
     print("B", pid, os.getpid(), os.getppid())
     print(n)
+
+
+dir_list = os.listdir(os.getcwd())
+print(dir_list)

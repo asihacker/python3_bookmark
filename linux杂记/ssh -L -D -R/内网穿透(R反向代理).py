@@ -12,7 +12,7 @@
 
 # 服务器需要进行下面配置
 
-# /etc/ssh/sshd_config 修改GatewayPorts 为 yes
+# /etc/ssh/sshd_config 修改 GatewayPorts 为 yes
 
 # service sshd restart 重启ssh服务
 

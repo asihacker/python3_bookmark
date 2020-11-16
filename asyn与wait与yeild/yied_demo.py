@@ -40,16 +40,16 @@ def read_file():
         else:
             return block
 
-# if __name__ == '__main__':
-#     # threading.Thread(target=sttt).start()
-#     aa = read_file()
-#     for key in aa:
-#         print(key)
-#
-#     # b=bytearray()
-#     #
-#     # b.extend(x)
-#     # for x in aa:
-#     #     print(x)
-#
-#     pass
+if __name__ == '__main__':
+    # threading.Thread(target=sttt).start()
+    aa = read_file()
+    for key in aa:
+        print(key)
+
+    # b=bytearray()
+    #
+    # b.extend(x)
+    # for x in aa:
+    #     print(x)
+
+    pass
