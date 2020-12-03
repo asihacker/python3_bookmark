@@ -1,0 +1,53 @@
+? 命令帮助行
+
+： 输入命令
+
+e/E 1.拦截界面 导出（编辑 主功能键）2.详情页面 编辑/事件日志
+
+o/O 1.拦截界面，可以调整请求排序规则 比如按照size meth 等/设置界面
+
+q/Q 退出/直接退出mitmproxy
+
+tab 下一个
+
+r 重新请求
+
+d/D 删除请求/恢复请求
+
+g/G 到请求列表 头/尾
+
+C 这里很多功能 TODO
+
+f 过滤
+
+space 1.拦截页 翻页 2.详情页 下一个请求
+
+v 1.拦截页 根据o设置的条件 正序 反序排序 2.详情页 查看 y or n(raw文件)
+
+enter 进入
+
+i 拦截的文件 域名（逗号需要用\来做转译，栗子：feezu.cn）feezu\.cn
+
+a/A 放行 单个/全部 i拦截的请求
+
+z 清屏
+
+/ 详情页 检索body内容
+
+m/M 标记请求/进入标记列表
+
+n 创建一个新流
+
+
+mitmproxy -p 8888 指定端口
+
+mitmdump -s script.py 自定义脚本
+
+
+mitmdump --showhost
+正向代理（ Regular Proxy）（常规模式）～常规模式啦
+反向代理 (Reverse)          mitmproxy --mode reverse:http://myip.ipip.net/ (请求本地127.0.0.1:8080就登录访问 myip.ipip.net 并且可以记录flow)
+上游代理（Upstream Proxy）   mitmproxy --mode upstream:http://114.240.101.242:5672 上游代理 翻墙抓包～
+socks代理（SOCKS Proxy）    mitmproxy --mode socks5 -p 1099 socks5代理 把mitmproxy 变成socks5代理 来抓包
+透明代理 （Transparent Proxying）
+

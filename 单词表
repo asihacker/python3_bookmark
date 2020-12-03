@@ -1,0 +1,31 @@
+supervisor
+nginx
+container 容器
+apscheduler 调度
+scheduler 调度
+requirements
+inspect 检查
+intercept 截断
+interface 接口
+SQLAlchemy orm
+firewall 防火墙 systemctl status firewalld 查看防火墙状态
+modify 修改
+replay 重播
+devices 设备
+packages 包
+separate 分开的；单独的
+instance 实例
+private 私有
+public 公开
+protected 受保护的
+extends 继承
+attached 附加  比如adb命令 adb devices》》》》 List of devices attached
+override 推翻
+compile 编译 python -m compileall test.py
+development 开发环境
+production 正式环境
+permanent 永久的 flask 中 session.permanent
+implements 工具器械 java中 class a extends b implements c,d,f{}; 用继承 多个接口
+alembic 净化器  在sqlalchemy中 db数据库的迭代工具 alembic revision --autogenerate -m "message" ｜ alembic upgrade head ｜ alembic downgrade head
+generate 生成 alembic
+forward 转发

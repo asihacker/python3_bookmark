@@ -1,0 +1,2 @@
+frida-ps -U 查看当前所有的包名
+frida -U -f （app包名） -l  （js目录）  --no-pause hookSSL校验

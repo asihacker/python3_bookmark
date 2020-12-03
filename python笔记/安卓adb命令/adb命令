@@ -1,0 +1,48 @@
+查看ADB版本：adb version
+查看手机设备：adb devices
+查看设备型号：adb shell getprop ro.product.model
+查看电池信息：adb shell dumpsys battery
+查看设备ID：adb shell settings get secure android_id
+查看设备IMEI：adb shell dumpsys iphonesubinfo
+查看Android版本 adb shell getprop ro.build.version.release
+查看Android CPU版本 adb shell getprop ro.product.cpu.abi
+查看手机网络信息：adb shell ifconfig
+连接adb：adb connect 127.0.0.1:5555
+查看设备日志：adb logcat
+重启手机设备：adb reboot
+安装一个apk：adb install /path/demo.apk
+卸载一个apk：adb uninstall <package>
+查看系统运行进程：adb shell ps
+查看系统磁盘情况：adb shell ls /path/
+手机设备截屏：adb shell screencap -p /sdcard/aa.png
+手机文件下载到电脑：adb pull /sdcard/aa.png ./
+电脑文件上传到手机：adb push aa.png /data/local/
+手机设备录像：adb shell screenrecord /sdcard/ab.mp4
+手机屏幕分辨率：adb shell wm size
+手机屏幕密度：adb shell wm density
+手机屏幕点击：adb shell input tap xvalue yvalue
+手机屏幕滑动：adb shell input swipe 1000 1500 200 200
+手机屏幕带时间滑动：adb shell input swipe 1000 1500 0 0 1000
+手机文本输入：adb shell input text xxxxx
+手机键盘事件：adb shell input keyevent xx
+连接多个手机设备时，指定手机设备：adb -s serialNumber <command>
+
+模拟器 adb kill-server && adb server && adb shell
+
+adb shell pm list packages：打印设备上的所有软件包
+
+adb shell pm list packages -f：输出包和包相关联的文件
+
+adb shell pm list packages -d：只输出禁用的包由于本机禁用没有，输出为空
+
+adb shell pm list packages -e：只输出启用的包
+
+adb shell pm list packages -s：只输出系统的包
+
+adb shell pm list packages -3：只输出第三方的包
+
+adb shell pm list packages -i：只输出包和安装信息（安装来源）
+
+adb shell pm list packages -u：只输出包和未安装包信息（安装来源）
+
+adb shell pm list packages --user <USER_ID>：根据用户id查询用户的空间的所有包，USER_ID代表当前连接设备的顺序，从零开始
