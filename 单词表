@@ -9,7 +9,7 @@ intercept 截断
 interface 接口
 SQLAlchemy orm
 firewall 防火墙 systemctl status firewalld 查看防火墙状态
-modify 修改
+modify 修改 modified 修改
 replay 重播
 devices 设备
 packages 包
@@ -29,3 +29,9 @@ implements 工具器械 java中 class a extends b implements c,d,f{}; 用继承 
 alembic 净化器  在sqlalchemy中 db数据库的迭代工具 alembic revision --autogenerate -m "message" ｜ alembic upgrade head ｜ alembic downgrade head
 generate 生成 alembic
 forward 转发
+redirect 重定向
+reference 参考
+WSGI Web服务器网关接口
+current_app 是flask里面的i个方法 可以获取当前app
+CURRENT_TIMESTAMP mysql里面的当前时间 current_timestamp
+separators 分割符 json.dumps 里面可以吧空格什么的去掉也可以指定分割符号

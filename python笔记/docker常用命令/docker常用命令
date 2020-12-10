@@ -85,3 +85,5 @@ docker restart 容器名/容器 ID    重启容器
 docker commit  提交，创建个新镜像
 
 docker build -t name:v1.0.0 . 利用 Dockerfile 创建新镜像
+
+docker exec [OPTIONS] CONTAINER COMMAND [ARG...] 进入正在运行的容器 用什么什么交互方式 docker exec -it my-nginx /bin/bash

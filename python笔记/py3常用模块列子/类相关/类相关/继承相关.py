@@ -19,3 +19,7 @@ class MG(Apple):
 
 
 aa = MG()
+
+# 总结 如果上述的解释太过于难以理解，我们可以简单记住，self.method() 将会先在当前类中查看 method() 方法，
+# 如果没有，就在继承链中进行查找，查找顺序就是你继承的顺序从左到右，直到 method() 方法被找到。super().method()
+# 与 self.method() 是差不多的，只是 super().method() 需要跳过当前类而已。

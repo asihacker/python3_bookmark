@@ -40,6 +40,7 @@ def read_file():
         else:
             return block
 
+
 if __name__ == '__main__':
     # threading.Thread(target=sttt).start()
     aa = read_file()
@@ -53,3 +54,8 @@ if __name__ == '__main__':
     #     print(x)
 
     pass
+# def get_content(entry):
+#     for block in entry.get_blocks():
+#         yield block
+# def get_content(entry):
+#     yield from entry.get_blocks()

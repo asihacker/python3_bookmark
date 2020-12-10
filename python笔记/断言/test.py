@@ -19,3 +19,4 @@ def test1(data: str):
 
 if __name__ == '__main__':
     print(test1('wxid——12313123'))
+

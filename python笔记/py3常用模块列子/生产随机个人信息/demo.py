@@ -55,7 +55,7 @@ uk_UA- Ukrainian  乌克兰语 - 乌克兰
 zh_CN- Chinese (China)  （简体中文）
 zh_TW- Chinese (Taiwan) （繁体中文）
 ------性别------
-M:女 F:男
+M:男 F:女
 
 
 @Author  : AsiHacker
