@@ -14,5 +14,6 @@ print(chr(90))
 print(chr(91))
 print(chr(92))
 print(chr(93))
+print(chr(20320))
 
 # chr 的参数应该比0x110000小

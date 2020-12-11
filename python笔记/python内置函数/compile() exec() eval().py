@@ -14,6 +14,12 @@ str = 'print("hello")'
 c = compile(str, '<string>', 'eval')
 eval(str)
 
-exec(c)
-isinstance()
-issubclass()
+exec(c)  # 直接用这个就好了
+str2 = """
+a=1
+b=2
+print(a+b)
+"""
+exec(str2)
+str2 = 'a=1;b=2;print(a+b)'
+exec(str2)

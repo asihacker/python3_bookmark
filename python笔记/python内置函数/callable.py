@@ -7,7 +7,9 @@
 # @Software: PyCharm
 print(callable(0))
 print(callable("runoob"))
-#callable() 函数用于检查一个对象是否是可调用的
+print(callable('add'))
+
+# callable() 函数用于检查一个对象是否是可调用的
 
 def add():
     return

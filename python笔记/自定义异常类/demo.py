@@ -6,7 +6,7 @@
 # @File    : demo.py
 # @Software: PyCharm
 # 1.用户自定义异常类型
-class TooLongExceptin(Exception):
+class TooLongExceptin(BaseException):
     "this is user's Exception for check the length of name "
 
     def __init__(self, leng):

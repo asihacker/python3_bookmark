@@ -6,7 +6,7 @@ scheduler 调度
 requirements
 inspect 检查
 intercept 截断
-interface 接口
+interface 接口 java中修饰接口
 SQLAlchemy orm
 firewall 防火墙 systemctl status firewalld 查看防火墙状态
 modify 修改 modified 修改
@@ -35,3 +35,4 @@ WSGI Web服务器网关接口
 current_app 是flask里面的i个方法 可以获取当前app
 CURRENT_TIMESTAMP mysql里面的当前时间 current_timestamp
 separators 分割符 json.dumps 里面可以吧空格什么的去掉也可以指定分割符号
+abstract 抽象 java中用来修饰抽象类

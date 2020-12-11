@@ -7,4 +7,4 @@
 # @Software: PyCharm
 print(bytes('中国', encoding='utf-8'))
 print(bytes('中国', encoding='UTF-8'))  # 编码格式不区分大写小写
-print(bytes('中国', encoding='gbk'))
+print(bytes('中国', encoding='gbk').hex())

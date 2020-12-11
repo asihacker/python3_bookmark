@@ -6,7 +6,7 @@
 # @Software: PyCharm
 import threading
 
-from python笔记.py3常用模块列子.线程池.线程锁与共享变量.testb import dddd
+from python笔记.线程池.线程锁与共享变量.testb import dddd
 
 data = threading.local()
 
