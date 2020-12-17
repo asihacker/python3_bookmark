@@ -3,7 +3,7 @@
 # @Time    : 2020/9/7 22:29
 # @Author  : AsiHacker
 # @Site    : 
-# @File    : compile() exec() eval().py
+# @File    : compile-exec-eval.py
 # @Software: PyCharm
 # https://www.cnblogs.com/yangmingxianshen/p/7810496.html
 str = 'print("hello")'

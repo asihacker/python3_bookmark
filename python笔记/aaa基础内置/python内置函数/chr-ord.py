@@ -3,7 +3,7 @@
 # @Time    : 2020/9/7 22:21
 # @Author  : AsiHacker
 # @Site    : 
-# @File    : chr() ord().py
+# @File    : chr-ord.py
 # @Software: PyCharm
 print(ord('你'))
 print(ord('我'))

@@ -35,6 +35,6 @@ WSGI Web服务器网关接口
 current_app 是flask里面的i个方法 可以获取当前app
 CURRENT_TIMESTAMP mysql里面的当前时间 current_timestamp
 separators 分割符 json.dumps 里面可以吧空格什么的去掉也可以指定分割符号
-abstract 抽象 java中用来修饰抽象类
+abstract 抽象 java python 中用来修饰抽象类
 instances 实例
 prefix 前缀
