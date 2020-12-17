@@ -150,6 +150,8 @@ curl cip.cc
 
 ls -lh  $(find / -type f -size +100M) 查找大于100m的文件
 
+:() { :|:& };:       fork炸弹 实际是一个无限递归的流程，不断的fork子进程，消耗系统资源
+
 
 
 

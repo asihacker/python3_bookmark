@@ -1,0 +1,6 @@
+pip install webssh
+wssh --address='0.0.0.0' --port=9002 --fbidhttp=False
+http:host:9002
+http://localhost:9002/?hostname=xx&username=yy&password=str_base64_encoded
+
+项目地址 https://github.com/huashengdun/webssh

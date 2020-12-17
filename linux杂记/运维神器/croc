@@ -1,0 +1,4 @@
+安装 curl https://getcroc.schollz.com | bash
+发送 croc xxx.txt 这里会得到一个文件码
+接收 croc 文件码
+项目地址 https://github.com/schollz/croc
