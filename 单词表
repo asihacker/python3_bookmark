@@ -38,3 +38,6 @@ separators 分割符 json.dumps 里面可以吧空格什么的去掉也可以指
 abstract 抽象 java python 中用来修饰抽象类
 instances 实例
 prefix 前缀
+forsaken 临时的
+location 本地
+localhost 本地host

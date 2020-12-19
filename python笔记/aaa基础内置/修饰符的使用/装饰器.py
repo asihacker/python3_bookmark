@@ -4,7 +4,7 @@ import time
 from functools import wraps
 import threading
 # https://www.zhangshengrong.com/p/8AaY32blX2/
-from python笔记.aaa常用三方库笔记.修饰符的使用 import 类装饰器
+from python笔记.aaa基础内置.修饰符的使用 import 类装饰器
 
 
 def check_args(func):

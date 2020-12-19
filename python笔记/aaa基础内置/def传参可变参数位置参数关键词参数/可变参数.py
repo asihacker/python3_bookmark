@@ -1,3 +1,7 @@
+def foo(a: int, b, *, c, d=3):  # * 表示之后的位置参数变为关键词参数
+    pass
+
+
 def add(x: int, y: int):  # 默认参数
     print(x, y)
     return x + y
