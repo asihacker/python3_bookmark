@@ -1,0 +1,18 @@
+命令：vim /etc/security/limits.conf
+
+*           soft  core   unlimit
+*           hard  core   unlimit
+*           soft  fsize  unlimited
+*           hard  fsize  unlimited
+*           soft  data   unlimited
+*           hard  data   unlimited
+*           soft  nproc  65535
+*           hard  nproc  63535
+*           soft  stack  unlimited
+*           hard  stack  unlimited
+*           soft  nofile  409600
+*           hard  nofile  409600
+
+
+内核优化相关文章
+https://www.cnblogs.com/zgqbky/p/12085306.html
