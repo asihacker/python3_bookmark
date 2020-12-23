@@ -12,10 +12,10 @@ from fake_useragent import UserAgent
 ua = UserAgent()
 
 
-print(ua.safari)
+# print(ua.safari)
 
-for k in range(100000):
-    print(ua.safari)
+for k in range(1000):
+    print(ua.chrome)
 # print(ua.msie)
 # print(ua.opera)
 # print(ua.chrome)

@@ -1,8 +1,10 @@
+#!/bin/bash
+#by:AsiHacker
 PYTHON_CACHE=/tmp/python/cache/
 py3="/usr/local/python3/bin/python3"
 pip3="/usr/local/python3/bin/pip3"
 
-function choice_version() {
+choice_version() {
   str="3.6.5 3.6.6 3.6.7 3.6.8 3.6.9 3.7.0 3.7.1 3.7.2 3.7.3 3.7.4 3.7.5 3.7.6 3.7.7 3.8.0 3.8.1 3.8.2 3.9.0"
   array=($str)
   length=${#array[@]}
@@ -27,7 +29,7 @@ function choice_version() {
   fi
 }
 
-function install_dependent() {
+install_dependent() {
   yum update
   yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel libffi-devel gcc make
 }
@@ -64,5 +66,3 @@ if [ -x $pip3 ]; then
 else
   echo "not found pip3 install failed"
 fi
-
-#http://gitlab.gzntkj.com/lemon/facebookchat/raw/master/pyinstall.sh

@@ -4,8 +4,6 @@ import datetime
 import threading
 from queue import Queue
 
-from python笔记.aaa基础内置.asyn与wait与yeild.zhenji.aes_secure import AESCipher
-
 
 class StreamClient(object):
     def __init__(self, host: str, port: int, heartbeat_int: int):
@@ -21,7 +19,7 @@ class StreamClient(object):
         self.loop = asyncio.get_event_loop()
         # self.loop = asyncio.new_event_loop()
         self.sequence_number = 1
-        self.cipher = AESCipher('0123456789abcdef0123456789abcdef'.encode())
+        self.cipher = '123'
         self.reader = None
         self.writer = None
         self.encrypt = False
@@ -236,41 +234,6 @@ class StreamClient(object):
         if logon_result:
             self.loop.create_task(self._start_heartbeat())
             self.loop.create_task(self._queue_send())
-
-            # self._change_info({
-            #     "gsm.version.baseband": "MOLY.LR12A.R3.MP.V32.2",
-            #     "ro.hardware": "mt6765",
-            #     "ro.build.fingerprint": "alps/full_yk919_lwg65_32/yk919_lwg65_32:8.1.0/O11019/1580268964:userdebug/test-keys",
-            #     "ro.product.board": "",
-            #     "ro.board.platform": "mt6765",
-            #     "ro.build.version.codename": "REL",
-            #     "ro.product.cpu.abi": "armeabi-v7a",
-            #     "ro.product.device": "yk919_lwg65_32",
-            #     "ro.build.characteristics": "default",
-            #     "ro.product.model": "yk919_lwg65_32",
-            #     "ro.build.host": "wish-ThinkPad-X390",
-            #     "ro.build.version.incremental": "1580268964",
-            #     "ro.build.tags": "test-keys",
-            #     "ro.build.type": "userdebug",
-            #     "ro.build.user": "wish",
-            #     "ro.build.display.id": "ifull_yk919_lwg65_32-userdebug 8.1.0 O11019 1580268964 test-keys",
-            #     "ro.product.manufacturer": "alps",
-            #     "ro.product.name": "full_yk919_lwg65_32",
-            #     "ro.serialno": "0123456789ABCDEF",
-            #     "ro.sf.lcd_density": "240",
-            #     "ro.product.brand": "alps",
-            #     "ro.build.version.release": "8.1.0",
-            #     'simMcc': '460',
-            #     'simMnc': '00',
-            #     'imsi': '',
-            #     'imei1': '354765085303335',
-            #     'imei2': '354765085303333',
-            #     'meid1': '354765085303335',
-            #     'meid2': '354765085303333',
-            #     'wifimac': 'b8:d7:af:7a:99:47',
-            #     'btmac': 'b4:bf:f6:76:66:b2',
-            # })
-
             try:
                 while True:
                     prototype, body = await self._read_message()

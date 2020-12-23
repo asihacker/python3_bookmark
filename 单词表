@@ -1,7 +1,7 @@
-supervisor
+supervisor 一个py写的守护进程的工具 还有pm2类型功能
+[\s\S]*?
 nginx
 container 容器
-apscheduler 调度
 scheduler 调度
 requirements
 inspect 检查
