@@ -1,0 +1,4 @@
+pip install pylane 安装
+
+pylane inject <PID> <YOUR_PYTHON_FILE> 注入
+pylane shell <PID> 操作调用

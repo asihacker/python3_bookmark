@@ -1,0 +1,17 @@
+前缀Source path:... /Users/chenjunxue/PycharmProjects/bookmark/python笔记/py3常用模块列子/debug修饰器pysnooper/demo.py
+前缀Starting var:.. out = []
+前缀14:48:02.298614 call        14 def demo_func():
+前缀14:48:02.299820 line        20     profile = dict()
+前缀New var:....... profile = {}
+前缀14:48:02.300051 line        21     profile["name"] = "写代码的明哥"
+前缀Modified var:.. profile = {'name': '写代码的明哥'}
+前缀14:48:02.300476 line        22     profile["age"] = 27
+前缀Modified var:.. profile = {'name': '写代码的明哥', 'age': 27}
+前缀14:48:02.300963 line        23     profile["gender"] = "male"
+前缀Modified var:.. profile = {'name': '写代码的明哥', 'age': 27, 'gender': 'male'}
+前缀14:48:02.301459 line        24     out.append(100)
+前缀Modified var:.. out = [100]
+前缀14:48:02.301833 line        25     return profile
+前缀14:48:02.302263 return      25     return profile
+前缀Return value:.. {'name': '写代码的明哥', 'age': 27, 'gender': 'male'}
+前缀Elapsed time: 00:00:00.004034

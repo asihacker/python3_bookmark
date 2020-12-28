@@ -17,12 +17,12 @@ redis_config = {
     'password': 'nantian888',
     'db': 8,
     'max_connections': 10,
-    'decode_responses': True
+    'decode_responses': True  # 这样写取出的数据会有byte自动转化为字符串格式，但是部分用到redis的三方库，可能不兼容这个设置
 }
 
 # localCache = LRUCache(maxsize=9999)
-_pool = redis.ConnectionPool(**redis_config)
-redis = redis.StrictRedis(connection_pool=_pool)
+connection_pool = redis.ConnectionPool(**redis_config)
+redis = redis.StrictRedis(connection_pool=connection_pool)
 redis.set("ssr1", "1212414", ex=10)
 redis.set("ssr2", "34545", ex=10)
 print(redis.keys('ssr*'))

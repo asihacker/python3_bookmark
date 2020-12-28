@@ -1,0 +1,42 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyArgumentEqualDefaultInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyArgumentListInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="PyAugmentAssignmentInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyBehaveInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyClassicStyleClassInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyMissingOrEmptyDocstringInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyMissingTypeHintsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="15">
+            <item index="0" class="java.lang.String" itemvalue="cacheout" />
+            <item index="1" class="java.lang.String" itemvalue="sanic" />
+            <item index="2" class="java.lang.String" itemvalue="furl" />
+            <item index="3" class="java.lang.String" itemvalue="uuid" />
+            <item index="4" class="java.lang.String" itemvalue="APScheduler" />
+            <item index="5" class="java.lang.String" itemvalue="cos-python-sdk-v5" />
+            <item index="6" class="java.lang.String" itemvalue="redis" />
+            <item index="7" class="java.lang.String" itemvalue="Sanic-Cors" />
+            <item index="8" class="java.lang.String" itemvalue="jieba" />
+            <item index="9" class="java.lang.String" itemvalue="sqlalchemy" />
+            <item index="10" class="java.lang.String" itemvalue="singledispatch" />
+            <item index="11" class="java.lang.String" itemvalue="alembic" />
+            <item index="12" class="java.lang.String" itemvalue="pysocks" />
+            <item index="13" class="java.lang.String" itemvalue="demjson" />
+            <item index="14" class="java.lang.String" itemvalue="kafka-python" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/12/23 19:11
 # @Author  : AsiHacker
-# @File    : websocket-client-demo.py
+# @File    : websocket-client-task.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 import websocket

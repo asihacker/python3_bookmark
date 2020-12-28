@@ -1,0 +1,7 @@
+APScheduler==3.6.3
+click==7.1.2
+PyQt5==5.15.0
+PyQt5-sip==12.8.0
+pytz==2020.1
+six==1.15.0
+tzlocal==2.1
