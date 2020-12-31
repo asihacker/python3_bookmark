@@ -7,6 +7,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.schedulers.tornado import TornadoScheduler
 
+
 job_store = {
     'redis': RedisJobStore(db=15,
                            jobs_key='apscheduler.jobs',

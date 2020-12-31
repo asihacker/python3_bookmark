@@ -6,6 +6,7 @@
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 import asyncio
+from abc import ABC
 
 import click
 import tornado.httpserver
@@ -13,8 +14,10 @@ import tornado.ioloop
 import tornado.web
 import tornado.websocket
 
+import tornado.options
 
-class WebSocketHandler(tornado.websocket.WebSocketHandler):
+
+class WebSocketHandler(tornado.websocket.WebSocketHandler, ABC):
     """
     doc
     """
@@ -22,7 +25,7 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
 
     def check_origin(self, origin):
         """
-        检查来源默认为TRUE，后期可以在这里做验权
+         允许所有跨域通讯，解决403问题
         :param origin:
         :return:
         """
@@ -34,7 +37,7 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
         :return:
         """
         WebSocketHandler.c.add(self.request.server_connection.context.address[1])
-        print('客户进入', self.request.server_connection.context.address[1], len(WebSocketHandler.c))
+        print('客户进入', self.request.remote_ip, len(WebSocketHandler.c))
 
     def on_message(self, message):
         """
@@ -43,25 +46,40 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
         :return:
         """
         print("收到消息", message)
+        # self.write_message(message, binary=True)#二进制数据
         self.write_message(message)
+
+    def on_ping(self, data: bytes) -> None:
+        print(data)
+        pass
+
+    def on_pong(self, data: bytes) -> None:
+        print(data)
 
     def on_close(self):
         """
         客户端断开事件
         :return:
         """
-        print('客户离开', self.request.host)
+        print('客户离开', self.request.remote_ip)
         WebSocketHandler.c.remove(self.request.server_connection.context.address[1])
-        print('客户离开', self.request.host, len(WebSocketHandler.c))
+        print('客户离开', self.request.remote_ip, len(WebSocketHandler.c))
 
 
 class Application(tornado.web.Application):
+    """
+    App
+    """
+
     def __init__(self):
         handlers = [
             (r'/', WebSocketHandler)
         ]
         settings = {
-            'template_path': 'static'
+            'debug': True,  # Debug模式和自动重载
+            'template_path': 'static',
+            # 'compress_response': False,#压缩数据
+            'websocket_ping_interval': 3,#心跳
         }
         tornado.web.Application.__init__(self, handlers, **settings)
 
@@ -81,6 +99,8 @@ def websocket_port(p: int):
     print('ws', f"0.0.0.0:{p}")
     tornado.ioloop.IOLoop.instance().start()
 
+
+# tornado.options.define("port", default=9898, type=int)
 
 if __name__ == '__main__':
     websocket_port()
