@@ -42,3 +42,19 @@ class C(ABC):
         ...
 
     x = property(_get_x, _set_x)
+
+
+class D(C):
+
+    def my_abstract_method(self):
+        pass
+
+    @classmethod
+    def my_abstract_classmethod(cls):
+        pass
+
+    @staticmethod
+    def my_abstract_staticmethod():
+        pass
+# control + I 快速实现接口
+

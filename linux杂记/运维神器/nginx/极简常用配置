@@ -1,0 +1,63 @@
+1、静态HTTP服务器
+server
+ {
+    listen  80; # 端口号
+    location / {
+        root  /usr/share/nginx/html; # 静态文件路径
+    }
+}
+2、Http代理，反向代理：作为web服务器最常用的功能之一，尤其是反向代理。
+server
+ {
+    listen 80;
+    location / {
+        proxy_pass http://192.168.20.1:8080; # 应用服务器HTTP地址
+    }
+}
+3、负载均衡
+upstream myapp {
+    server 192.168.20.1:8080; # 应用服务器1
+    server 192.168.20.2:8080; # 应用服务器2
+}
+
+server
+ {
+    listen 80;
+    location / {
+        proxy_pass http://myapp;
+ }
+ ------------------
+ upstream myapp {
+    ip_hash;# 根据客户端IP地址Hash值将请求分配给固定的一个服务器处理
+    server 192.168.20.1:8080;
+    server 192.168.20.2:8080;
+}
+
+server {
+    listen 80;
+    location / {
+      proxy_pass http://myapp;
+    }
+}
+-------------------
+upstream myapp {
+    server 192.168.20.1:8080weight=3;# 该服务器处理3/4请求
+    server 192.168.20.2:8080;# weight默认为1，该服务器处理1/4请求
+}
+
+server{
+    listen 80;
+    location / {
+        proxy_pass http://myapp;
+    }
+}
+4、web缓存
+server　　
+ {
+    listen 80;
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME /scripts$fastcgi_script_name; #文件路径
+        fastcgi_pass 127.0.0.1:9000; # PHP-FPM地址和端口号　　　　 #另一种方式：fastcgi_pass unix:/var/run/php5-fpm.sock;
+    }
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="jobs">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.19">
+    <root id="1">
+      <ServerVersion>3.31.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="apscheduler_jobs"/>
+    <table id="7" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <column id="8" parent="6" name="id">
+      <Position>1</Position>
+      <DataType>VARCHAR(191)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="9" parent="6" name="next_run_time">
+      <Position>2</Position>
+      <DataType>FLOAT|0s</DataType>
+    </column>
+    <column id="10" parent="6" name="job_state">
+      <Position>3</Position>
+      <DataType>BLOB|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="11" parent="6" name="sqlite_autoindex_apscheduler_jobs_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="12" parent="6" name="ix_apscheduler_jobs_next_run_time">
+      <ColNames>next_run_time</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="13" parent="6">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_apscheduler_jobs_1</UnderlyingIndexName>
+    </key>
+    <column id="14" parent="7" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="15" parent="7" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="16" parent="7" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="17" parent="7" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="18" parent="7" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+  </database-model>
+</dataSource>

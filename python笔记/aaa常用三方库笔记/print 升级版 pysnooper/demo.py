@@ -10,7 +10,7 @@ import pysnooper
 out = list()
 
 
-@pysnooper.snoop(prefix="前缀", watch=['out'], thread_info=True)  # output='debug.log'
+@pysnooper.snoop()  # output='debug.log'
 def demo_func():
     """
 

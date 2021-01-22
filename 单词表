@@ -1,9 +1,9 @@
 supervisor 一个py写的守护进程的工具 还有pm2类型功能
-[\s\S]*?
+[\s\S]*? [\s\S]*?
 nginx
 container 容器
 scheduler 调度
-requirements
+requirements python依赖包
 inspect 检查
 intercept 截断
 interface 接口 java中修饰接口
@@ -41,3 +41,9 @@ prefix 前缀
 forsaken 临时的
 location 本地
 localhost 本地host
+periodic 周期，celery里面添加定时任务
+lazy 懒散
+second 秒
+month 月
+year 年
+extract 提取 摘录

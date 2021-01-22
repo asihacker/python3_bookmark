@@ -27,7 +27,6 @@ executors = {
 
 def task_func(a):
     print(threading.current_thread().getName())
-    print(a)
     return a
 
 

@@ -57,8 +57,6 @@ def download(urls: Iterable[str], dest_dir: str):
 
 
 if __name__ == "__main__":
-    # Try with https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso
-    if sys.argv[1:]:
-        download(sys.argv[1:], "/")
-    else:
-        print("Usage:\n\tpython downloader.py URL1 URL2 URL3 (etc)")
+    from rich import print
+
+    print("Hello, [bold magenta]World[/bold magenta]!", ":vampire:", locals())

@@ -40,7 +40,7 @@ def on_close(ws):
 
 
 websocket.enableTrace(True)
-ws = websocket.WebSocketApp("ws://127.0.0.1:9898",
+ws = websocket.WebSocketApp("ws://172.16.0.75:9999/tradexServer",
                             on_message=on_message,
                             on_error=on_error,
                             on_ping=on_ping,

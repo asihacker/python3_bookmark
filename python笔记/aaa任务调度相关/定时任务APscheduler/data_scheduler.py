@@ -34,3 +34,4 @@ sched.add_job(my_job, 'date', run_date=datetime(2020, 9, 25, 16, 30, 0), args=['
 # sched.add_job(my_job, 'date', run_date=date(2019, 9, 20), args=['text'])
 
 sched.start()  # 调度器是一个循环事件
+print(123)

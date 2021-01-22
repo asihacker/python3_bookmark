@@ -7,27 +7,12 @@
 # @Software: PyCharm
 import threading
 
-aa = [2, 2, 3, 4, 5, 6, 7, 7, 8, 9, 9, 9, 0]
-# print(aa.index(9))
-# aa.reverse()
-# aa.sort()
-# print(aa)
-# bb = [*aa]
-# bb=aa
-bb = aa.copy()
-# breakpoint()
-print(id(aa))
-print(id(bb))
+test_list = ['jb1', 'jb2', 'jb3']
 
 
-def test2(n):
-    for i in range(n):
-        yield i
-
-
-def sttt():
-    for i in test2(50):
-        print(i)
+def get_test(test_list: list):
+    for key in test_list:
+        yield key  # yield 就是返回，但是她可以记住上次的位置
 
 
 def read_file():
@@ -42,20 +27,11 @@ def read_file():
 
 
 if __name__ == '__main__':
-    # threading.Thread(target=sttt).start()
+    tt = get_test(test_list)
+    print(next(tt))
+    print(next(tt))
+    print(next(tt))
+    # print(next(tt))
     aa = read_file()
     for key in aa:
         print(key)
-
-    # b=bytearray()
-    #
-    # b.extend(x)
-    # for x in aa:
-    #     print(x)
-
-    pass
-# def get_content(entry):
-#     for block in entry.get_blocks():
-#         yield block
-# def get_content(entry):
-#     yield from entry.get_blocks()

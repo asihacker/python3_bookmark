@@ -32,6 +32,7 @@ def job_function():
 
 # 每小时（上下浮动120秒区间内）运行`job_function`
 sched.add_job(job_function, 'interval', hours=1, jitter=120)
+sched.add_job(job_function, 'interval', minutes=1, jitter=120)
 # jitter振动参数，给每次触发添加一个随机浮动秒数，一般适用于多服务器，避免同时运行造成服务拥堵。
 
 threading.Thread(target=sched.start).start()

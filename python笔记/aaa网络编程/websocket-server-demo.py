@@ -79,7 +79,8 @@ class Application(tornado.web.Application):
             'debug': True,  # Debug模式和自动重载
             'template_path': 'static',
             # 'compress_response': False,#压缩数据
-            'websocket_ping_interval': 3,#心跳
+            'websocket_ping_interval': 3,  # 心跳
+            'websocket_ping_timeout': 30,  # 心跳超时断开
         }
         tornado.web.Application.__init__(self, handlers, **settings)
 

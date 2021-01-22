@@ -1,0 +1,1 @@
+增加父ID判断，if os.getppid() == 1，实例化apscheduler，否则不实例化，问题解决

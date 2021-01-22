@@ -1,0 +1,15 @@
+出现这种问题的原因是要安装的软件包默认不在centos的光盘yum仓库中，因此我们需要配置 epel仓库
+
+1、配置阿里云网络源
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+
+or
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+
+2、配置epel源
+
+ yum install -y epel-release
+
+注：Centos-7.repo提供了centos7官方发行版提供的软件包，epel源提供除了官方发行版以外的额外的软件包，适用于RHEL、CentOS和Scientific Linux。

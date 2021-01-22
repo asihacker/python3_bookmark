@@ -5,7 +5,7 @@
 # @Site    : 
 # @File    : 重试.py
 # @Software: PyCharm
-#https://www.jianshu.com/p/f68342acecc4 教程地址
+# https://www.jianshu.com/p/f68342acecc4 教程地址
 from tenacity import retry, stop_after_attempt, retry_if_result, retry_if_exception_type
 
 

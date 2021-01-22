@@ -21,7 +21,7 @@
 # print(a_str.endswith('>'))  # 用于判断字符串是否以指定后缀结尾
 # print(a_str.startswith('<'))  # 用于判断字符串是否以指定后缀结尾
 # print(a_str.replace('a', 'A', 2))  # 替换字符串
-# print(a_str.split())  # 分割字符串
+# print(a_str.split())  # 分割字符串 分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等
 # print(a_str.ljust(20, '*'))
 # print(a_str.rjust(20, '*'))
 # print(a_str.upper())

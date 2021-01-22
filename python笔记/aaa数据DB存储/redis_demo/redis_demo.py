@@ -23,9 +23,22 @@ redis_config = {
 # localCache = LRUCache(maxsize=9999)
 connection_pool = redis.ConnectionPool(**redis_config)
 redis = redis.StrictRedis(connection_pool=connection_pool)
-redis.set("ssr1", "1212414", ex=10)
-redis.set("ssr2", "34545", ex=10)
-print(redis.keys('ssr*'))
-for key in range(20):
-    time.sleep(1)
-    print(redis.keys('ssr*'))
+# print(redis.incr(name='testincr'))
+# print(redis.incr(name='testincr2'))
+# print(redis.incr(name='testincr3'))
+# del_list = ['testincr', 'testincr2', 'testincr3']
+# print(redis.delete(*del_list))
+# redis.set("ssr1", "1212414", ex=10)
+# redis.set("ssr2", "34545", ex=10)
+# print(redis.keys('ssr*'))
+# for key in range(20):
+#     time.sleep(1)
+#     print(redis.keys('ssr*'))
+lock = redis.lock(name='123123')
+lock.acquire()
+print(123)
+lock.release()
+
+print(lock.acquire())
+print(123123)
+lock.release()

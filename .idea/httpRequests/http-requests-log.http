@@ -1,0 +1,32 @@
+GET http://www.facebook.com/resources
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://www.baidu.com/resources
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-09-15T111856.200.html
+
+###
+
+GET http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+###
+
