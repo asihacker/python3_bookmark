@@ -6,7 +6,6 @@
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 import base64
-import datetime
 import hashlib
 import hmac
 import random
@@ -25,22 +24,6 @@ def get_nonce_str():
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=11))
 
 
-def get_sin():
-    """
-
-    :return:
-    """
-    return ''.join(random.choices(string.ascii_lowercase + string.digits, k=24))
-
-
-def dict_cookies_to_str(cookies: dict):
-    a_list = []
-    for k, v in cookies.items():
-        a = f"{k}={v}"
-        a_list.append(a)
-    return '; '.join(a_list)
-
-
 def get_password(name: str, password: str):
     """
     密码加密
@@ -48,8 +31,9 @@ def get_password(name: str, password: str):
     :param password:
     :return:
     """
-    return hashlib.md5(
-        f'{hashlib.md5(name.encode()).hexdigest()[2:17]}{password}{hashlib.md5(name.encode()).hexdigest()[2:17]}'.encode()).hexdigest()
+    c = hashlib.md5(name.encode()).hexdigest()[2:17]
+    a: str = f'{c}{password}{c}'
+    return hashlib.md5(a.encode()).hexdigest()
 
 
 def get_sign(params: dict, key: str = 'c47297f9e0fe99ef289ae514b96bd34b'):
@@ -64,7 +48,6 @@ def get_sign(params: dict, key: str = 'c47297f9e0fe99ef289ae514b96bd34b'):
                    isinstance(params[value], str) and params[value]]
     params_list.append(f'appSecurit={key}')
     da = '&'.join(params_list)
-    print(da)
     da_base64 = base64.b64encode(da.encode())
     return hmac.new(key.encode('utf-8'), da_base64, digestmod=sha256).hexdigest()
 
@@ -89,10 +72,7 @@ def login(name: str, password: str):
     session.cookies.set(name, password)
     session.headers.update({
         'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'})
-    # session.get('https://www.yabo416.com/entry/login')
-    # session.get('https://www.yabo416.com/static/v1/pwa_status')
-    # session.get('https://www.yabo416.com/common/v1/get_time')
-    # print(session.cookies.get_dict())
+
     post_data = {
         'uuid': get_uuid(),
         'name': name,
@@ -118,52 +98,7 @@ def login(name: str, password: str):
     session.headers.update(headers)
     rsp = session.post('https://www.yabo416.com/member/v2/web_login', data=post_data)
     print(rsp.json())
-    print(session.cookies.get_dict())
     session.headers.update({'x-api-token': rsp.json()['data']['token']})
-    # 登录成功
-    post_data_pre_info = {
-        'appKey': '249aaea6de9a2e00c1',
-        'timestamp': str(int(time.time())),
-        'nonce_str': get_nonce_str(),
-    }
-    sign = get_sign(params=post_data_pre_info)
-    post_data_pre_info.update({'sign': sign})
-
-    rsp = session.get('https://www.yabo416.com/static/v1/pre_info', params=post_data_pre_info)
-    print(rsp.json())
-    # 登录后查询信息
-    post_data_menber = {
-        'isNewMenber': 1,
-        'isApp': 0,
-        'appKey': '249aaea6de9a2e00c1',
-        'timestamp': str(int(time.time())),
-        'nonce_str': get_nonce_str(),
-    }
-    rsp = session.post('https://www.yabo416.com/activity_newplay_api/new/isNewMenber', params=post_data_menber)
-    print(rsp.json())
-
-    post_data_pre_info = {
-        'appKey': '249aaea6de9a2e00c1',
-        'timestamp': str(int(time.time())),
-        'nonce_str': get_nonce_str(),
-    }
-    sign = get_sign(params=post_data_pre_info)
-    post_data_pre_info.update({'sign': sign})
-
-    rsp = session.get('https://www.yabo416.com/member/v1/info', params=post_data_pre_info)
-    print(rsp.json())
-    # 登录后查询信息2
-
-    post_data_sport = {
-        'api_name': 'SPORT',
-        'appKey': '249aaea6de9a2e00c1',
-        'timestamp': str(int(time.time())),
-        'nonce_str': get_nonce_str(),
-    }
-    sign = get_sign(params=post_data_sport)
-    post_data_sport.update({'sign': sign})
-    rsp = session.post('https://www.yabo416.com/member/v1/api/status', data=post_data_sport)
-    # SPORT
     post_data_launch = {
         'api_name': 'SPORT',
         'is_app': '',
@@ -177,9 +112,7 @@ def login(name: str, password: str):
     rsp = session.post('https://www.yabo416.com/cg/v1/game/sport/launch', data=post_data_launch)
     # launch
     url = rsp.json()['data']['html']
-    print(">>>>>>>>",url)
-
-    # url = f'https://xj-mbs-yabo.q8825h.com/m/zh-cn/sports?theme=YABO&sni={get_sin()}'
+    print(">>>>>>>>", url)
     headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         'Host': 'xj-mbs-yabo.q8825h.com',
@@ -269,7 +202,7 @@ def login(name: str, password: str):
         for i, k in enumerate(key['e']):
             if '1x2' in k['o']:
                 print('>>>', k['pk'], k['i'][0], k['i'][1], k['o']['1x2'], k['i'][10], k['i'][11], sep='\t')
-                if k['i'][0] == '哈拉':
+                if k['i'][0] == '悉尼':
                     cc = {
                         k['o']['1x2'][0]: k['o']['1x2'][1],
                         k['o']['1x2'][2]: k['o']['1x2'][3],
@@ -282,13 +215,15 @@ def login(name: str, password: str):
                     score_a = k['i'][11]
                     rmb = 10
                     pk = k['pk']
+                    SingleList = f'{direction}@{odds}@null@{score_h}:{score_a}@{rmb}@true@{odds}@{pk}@true@{pk}@false'
                     post_data3 = {
-                        'SingleList': f'{direction}@{odds}@null@{score_h}:{score_a}@{rmb}@true@{odds}@4616954@true@{pk}@false',
+                        'SingleList': f'{direction}@{odds}@null@{score_h}:{score_a}@{rmb}@true@{odds}@{pk}@true@{pk}@false',
                         'ComboList': '',
-                        'NoOfCombine': '1',
-                        'source': '8',
+                        'NoOfCombine': 1,
+                        'source': 8,
                     }
-                    print(post_data3)
+                    # post_data3 = f'SingleList={SingleList}&ComboList=&NoOfCombine=1&source=8'
+                    print('下单参数》》》》》', post_data3)
                     headers = {
                         'Accept': '*/*',
                         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
