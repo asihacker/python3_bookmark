@@ -152,6 +152,11 @@ ls -lh  $(find / -type f -size +100M) 查找大于100m的文件
 
 :() { :|:& };:       fork炸弹 实际是一个无限递归的流程，不断的fork子进程，消耗系统资源
 cp -r 递归复制（可以复制有目录的文件夹 cp -r a/ b/）
+nohup python3 -u xxx.py params1 > nohup.out 2>&1 &  centos后台运行
+lspci | grep -i nvidia 判断是否有gpu，并查看型号
+lsattr 命令用于显示文件属性。
+cd - 返回上次目录
+!! 执行上次命令
 
 
 

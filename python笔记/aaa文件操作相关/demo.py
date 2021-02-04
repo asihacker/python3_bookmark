@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/12/31 10:22
 # @Author  : AsiHacker
-# @File    : demo.py
+# @File    : redis常用方法.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 import os

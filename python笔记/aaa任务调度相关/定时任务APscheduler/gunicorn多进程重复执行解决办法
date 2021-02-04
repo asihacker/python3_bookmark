@@ -4,6 +4,7 @@
 
 不要在部署（指用gunicorn这种多worker的服务器）的时候使用BackgroundScheduler随app一起启动，这种模式你development的时候用用就可以了
 
-部署的时候应该要把apscheduler作为独立的进程启动（使用BlockingScheduler），也就是说你除了启动一个gunicorn的服务，还要启动一个apscheduler的进程，通常把他写成command用Flask命令行启动。
+部署的时候应该要把apscheduler作为独立的进程启动（使用BlockingScheduler），也就是说你除了启动一个gunicorn的服务，还要启动一个apscheduler
+的进程，通常把他写成command用Flask命令行启动。
 
 同理可推到所有需要常驻后台运行的服务

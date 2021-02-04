@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2021/1/22 14:05
+# @Time    : 2021/1/23 12:33
 # @Author  : AsiHacker
 # @File    : redis常用方法.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
-import pretty_errors
-if __name__ == '__main__':
-    with open('status.json') as f:
-        a = json.load(f)
-    a['34eds']
+# https://blog.csdn.net/lly1122334/article/details/106258571 教程地址
+# 可以打印网页代码,可以排序

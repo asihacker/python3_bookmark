@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2021/1/22 14:05
+# @Time    : 2021/1/26 10:05
 # @Author  : AsiHacker
 # @File    : redis常用方法.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
-import pretty_errors
-if __name__ == '__main__':
-    with open('status.json') as f:
-        a = json.load(f)
-    a['34eds']
+import os
+import sys
+
+from rich import print
+from rich.columns import Columns
+
+directory = os.listdir(sys.argv[1])
+print(Columns(directory))

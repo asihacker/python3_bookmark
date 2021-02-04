@@ -6,6 +6,20 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
 
 
+# 指定具体值，或者每分钟，或者每几分钟，或者每周几等当时
+#     year (int|str) – 4-digit year
+#     month (int|str) – month (1-12)
+#     day (int|str) – day of the (1-31)
+#     week (int|str) – ISO week (1-53)
+#     day_of_week (int|str) – number or name of weekday (0-6 or mon,tue,wed,thu,fri,sat,sun)
+#     hour (int|str) – hour (0-23)
+#     minute (int|str) – minute (0-59)
+#     second (int|str) – second (0-59)
+#     start_date (datetime|str) – earliest possible date/time to trigger on (inclusive)
+#     end_date (datetime|str) – latest possible date/time to trigger on (inclusive)
+#     timezone (datetime.tzinfo|str) – time zone to use for the date/time calculations (defaults to scheduler timezone)
+
+
 def job_function():
     print("Hello World")
 

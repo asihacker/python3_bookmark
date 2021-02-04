@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2021/1/22 14:05
+# @Time    : 2021/2/1 20:01
 # @Author  : AsiHacker
 # @File    : redis常用方法.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
-import pretty_errors
+import re
+
 if __name__ == '__main__':
-    with open('status.json') as f:
-        a = json.load(f)
-    a['34eds']
+    a = re.findall(r'^[0-9]*$', '123019230912390')
+    print(a)
+    aa = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    bb = [2, 4, 6, 8]
+    print(set(aa) - set(bb))
