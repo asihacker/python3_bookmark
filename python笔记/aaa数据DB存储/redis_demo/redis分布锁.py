@@ -7,6 +7,7 @@
 # @notice  : True masters always have the heart of an apprentice.
 # redis 锁
 import redis
+import atexit
 
 redis_config = {
     "host": '127.0.0.1',
@@ -16,14 +17,23 @@ redis_config = {
     'max_connections': 10,
 }
 
-
 connection_pool = redis.ConnectionPool(**redis_config)
 redis = redis.StrictRedis(connection_pool=connection_pool)
-lock = redis.lock(name='123123')
-lock.acquire()
-print(123)
+lock = redis.lock(name='scheduler.lock2222')
+
+result = lock.acquire(blocking=False)
+print(result)
 lock.release()
 
-print(lock.acquire())
-print(123123)
-lock.release()
+# result = lock.acquire(blocking=False)
+# print(result)
+# lock.release()
+#
+# print(lock.acquire())
+# print(123123)
+# def test():
+#     print('注销锁')
+#     lock.release()
+#
+#
+# atexit.register(test)
