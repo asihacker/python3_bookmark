@@ -19,4 +19,4 @@ a = BeautifulSoup(r.text, 'html.parser')
 print(a.prettify())
 c = a.find_all('h4')
 for key in c:
-    print(key.find('a').get_text())
+    print(key.find('bet').get_text())

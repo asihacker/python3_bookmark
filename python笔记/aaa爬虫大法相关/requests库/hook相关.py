@@ -21,8 +21,8 @@
 #         print(key, value)
 #
 #
-# a = AsiSession()
-# rsp = a.get(method='GET', url='http://www.baidu.com')
+# bet = AsiSession()
+# rsp = bet.get(method='GET', url='http://www.baidu.com')
 # print(rsp)
 import requests
 import curlify

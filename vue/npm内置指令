@@ -1,0 +1,4 @@
+npm init 初始化项目
+npm install xxx 安装模块
+npm install xxx -g 全局安装模块
+

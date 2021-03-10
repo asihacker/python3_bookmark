@@ -188,6 +188,15 @@ cat 2019-02-22.log | grep  "^\(表名:\|SQL:\).*$" | grep -v -i 'select'
 #如果是覆盖，就使用 ">"
 cat 2019-02-22.log | grep  "^\(表名:\|SQL:\).*$" | grep -v -i 'select' >> 20190222.log
 
+性能监控
+uptime  该命令将会打印出当前时间  系统运行了多久 当前登陆用户数  系统平均负载
+free 监控内存及交换分区的使用情况--free
 
 
+$grep -5 'parttern' inputfile //打印匹配行的前后5行
 
+$grep -C 5 'parttern' inputfile //打印匹配行的前后5行
+
+$grep -A 5 'parttern' inputfile //打印匹配行的后5行
+
+$grep -B 5 'parttern' inputfile //打印匹配行的前5行

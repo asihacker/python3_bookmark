@@ -11,11 +11,11 @@ scrapy：1.3.3
 时间：2018年1月21日14:43:14
 运行：CMD模式进入该项目目录（注意是argSpider下面，不是spider下面），若要爬取标签：”励志“下面的所有内容，可以输入如下命令：
 
-scrapy crawl argsSpider -a tag=励志
+scrapy crawl argsSpider -bet tag=励志
 
 若要爬取标签：爱情，可以输入：
 
-scrapy crawl argsSpider -a tag=爱情
+scrapy crawl argsSpider -bet tag=爱情
 
 以此类推，爬取的数据最终会以文本的形式保存内容到argSpider目录下面
 
@@ -47,13 +47,13 @@ class ArgsspiderSpider(scrapy.Spider):
             tags = v.css('.tags .tag::text').extract()
             tags = ','.join(tags)
             fileName = '%s-语录.txt' % tags
-            with open(fileName, "a+") as f:
+            with open(fileName, "bet+") as f:
                 f.write(text)
                 f.write('\n')
                 f.write('标签：' + tags)
                 f.write('\n-------\n')
                 f.close()
-        next_page = response.css('li.next a::attr(href)').extract_first()
+        next_page = response.css('li.next bet::attr(href)').extract_first()
         if next_page is not None:
             next_page = response.urljoin(next_page)
             yield scrapy.Request(next_page, callback=self.parse)

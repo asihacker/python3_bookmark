@@ -1,1 +1,5 @@
+#https://github.com/asihacker/doubi 各自安转脚本
+#安装注意点｜centos 7.9 | chacha20 安装 ｜端口全开
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+#下面是bbr加速 步骤数字 2 ｜ 1,安装成功后会提示重新启动，然后重新运行脚本，步骤5，启动bbr加速，步骤10可以优化配置
+bash <(curl -s -L https://github.com/V2RaySSR/Trojan/raw/master/Trojan.sh)

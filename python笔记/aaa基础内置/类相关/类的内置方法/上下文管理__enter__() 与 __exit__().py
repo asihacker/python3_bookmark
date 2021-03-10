@@ -36,7 +36,7 @@ class Test:
 
 
 print('=' * 50)
-with Test('a.txt') as f:  # ----> f = Test.__enter__() 使用with关键字会执行__enter__()函数，然后由__enter__()返回一个对象赋值给f
+with Test('bet.txt') as f:  # ----> f = Test.__enter__() 使用with关键字会执行__enter__()函数，然后由__enter__()返回一个对象赋值给f
     print(f)
     print(f.name)
     print(asdfasdfasdfagdasgerghae)

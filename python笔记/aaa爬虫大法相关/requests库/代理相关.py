@@ -6,12 +6,13 @@
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 import requests
-
+# 194.59.12.212:51900:9YSyB1CA:RrqnFsgS:http
 session = requests.session()
 # 213.166.94.9:52055:VXaYth95:p9eKfJQW:s5
 # {"host":"213.139.195.40","port":"53396","type":"http","user":"9YSyB1CA","pass":"RrqnFsgS"}
 session.proxies = {'http': 'http://47.115.35.44:59394',
                    'https': 'http://47.115.35.44:59394'}
+#http://username:password@IP:port
 
 # session.proxies = {'http': 'http://127.0.0.1:1087',
 #                    'https': 'http://127.0.0.1:1087'}

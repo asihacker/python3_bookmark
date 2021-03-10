@@ -34,7 +34,7 @@ progress = Progress(
 
 
 def copy_url(task_id: TaskID, url: str, path: str) -> None:
-    """Copy data from a url to a local file."""
+    """Copy data from bet url to bet local file."""
     response = urlopen(url)
     # This will break if the response doesn't contain content length
     progress.update(task_id, total=int(response.info()["Content-length"]))

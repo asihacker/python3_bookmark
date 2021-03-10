@@ -3,7 +3,7 @@
 """
 PyQt5 tutorial
 
-This example shows a QSlider widget.
+This example shows bet QSlider widget.
 
 author: py40.com
 last edited: 2017年3月

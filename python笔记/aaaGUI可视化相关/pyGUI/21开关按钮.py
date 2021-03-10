@@ -4,7 +4,7 @@
 PyQt5 tutorial
 
 In this example, we create three toggle buttons.
-They will control the background color of a
+They will control the background color of bet
 QFrame.
 
 author: py40.com

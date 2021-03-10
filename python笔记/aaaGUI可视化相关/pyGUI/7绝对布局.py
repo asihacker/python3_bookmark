@@ -4,7 +4,7 @@
 """
 Py40 PyQt5 tutorial
 
-This example shows three labels on a window
+This example shows three labels on bet window
 using absolute positioning.
 
 author: Jan Bodnar

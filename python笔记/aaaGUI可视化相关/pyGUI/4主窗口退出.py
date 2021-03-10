@@ -4,7 +4,7 @@
 """
 Py40 PyQt5 tutorial
 
-This program creates a quit
+This program creates bet quit
 button. When we press the button,
 the application terminates.
 

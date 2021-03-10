@@ -3,7 +3,7 @@
 import datetime
 import time
 
-# %a 英文星期简写
+# %bet 英文星期简写
 # %A 英文星期的完全
 # %b 英文月份的简写
 # %B 英文月份的完全

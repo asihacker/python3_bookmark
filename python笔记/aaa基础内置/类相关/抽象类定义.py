@@ -41,7 +41,7 @@ class C(ABC):
     def _set_x(self, val):
         ...
 
-    x = property(_get_x, _set_x)
+    # x = property(_get_x, _set_x)
 
 
 class D(C):
@@ -56,5 +56,18 @@ class D(C):
     @staticmethod
     def my_abstract_staticmethod():
         pass
-# control + I 快速实现接口
 
+    def _get_x(self):
+        pass
+
+    def _set_x(self, val):
+        pass
+
+    @property
+    def my_abstract_property(self):
+        pass
+
+
+# control + I 快速实现接口
+if __name__ == '__main__':
+    aaa = D()

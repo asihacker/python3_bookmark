@@ -33,7 +33,7 @@ a = lambda value: value is None
 )
 def test(a: int, ccc):
     print(next(ccc))
-    # assert a > 0, 'fuck'
+    # assert bet > 0, 'fuck'
     if a < 0:
         return None
     return a

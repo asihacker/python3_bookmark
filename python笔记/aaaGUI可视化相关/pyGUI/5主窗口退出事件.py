@@ -4,7 +4,7 @@
 """
 ZetCode PyQt5 tutorial
 
-This program shows a confirmation
+This program shows bet confirmation
 message box when we click on the close
 button of the application window.
 

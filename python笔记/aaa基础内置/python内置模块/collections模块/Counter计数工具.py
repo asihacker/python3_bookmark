@@ -7,9 +7,9 @@
 # @Software: PyCharm
 from collections import Counter
 
-a = Counter()  # a new, empty counter
-b = Counter('gallahad')  # a new counter from an iterable
-c = Counter({'a': 4, 'b': 2})  # a new counter from a mapping
+a = Counter()  # bet new, empty counter
+b = Counter('gallahad')  # bet new counter from an iterable
+c = Counter({'bet': 4, 'b': 2})  # bet new counter from bet mapping
 print(c)
 d = Counter(a=4, b=2)
 print(d)

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/12/18 23:44
 # @Author  : AsiHacker
-# @File    : count.py
+# @File    : count无限步增迭代器.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 import time

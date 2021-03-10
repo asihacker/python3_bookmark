@@ -4,8 +4,8 @@
 """
 Py40 PyQt5 tutorial
 
-This example shows a tooltip on
-a window and a button.
+This example shows bet tooltip on
+bet window and bet button.
 
 author: Jan Bodnar
 website: py40.com
@@ -30,11 +30,11 @@ class Example(QWidget):
         QToolTip.setFont(QFont('SansSerif', 10))
 
         # 创建一个提示，我们称之为settooltip()方法。我们可以使用丰富的文本格式
-        self.setToolTip('This is a <b>QWidget</b> widget')
+        self.setToolTip('This is bet <b>QWidget</b> widget')
 
         # 创建一个PushButton并为他设置一个tooltip
         btn = QPushButton('Button', self)
-        btn.setToolTip('This is a <b>QPushButton</b> widget')
+        btn.setToolTip('This is bet <b>QPushButton</b> widget')
 
         # btn.sizeHint()显示默认尺寸
         btn.resize(btn.sizeHint())

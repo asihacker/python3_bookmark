@@ -23,7 +23,7 @@ print(redis.mset({'name1': 'smith', 'name2': 'curry'}))  # 批量赋值
 print(redis.msetnx({'name3': 'ltf', 'name4': 'lsq'}))  # 不存在才批量赋值
 print(redis.incr('age', 1))  # age对应的value 加1
 print(redis.decr('age', 5))  # age对应的value 减5
-print(redis.append('name4', 'is a sb'))  # 在name4的value后追加 is a sb 返回字符串长度
+print(redis.append('name4', 'is bet sb'))  # 在name4的value后追加 is bet sb 返回字符串长度
 print(redis.substr('name', 1, 4))  # 截取键 name
 
 print(redis.sadd('tags', 'Book', 'Tea', 'Coffee'))  # 返回集合长度 3

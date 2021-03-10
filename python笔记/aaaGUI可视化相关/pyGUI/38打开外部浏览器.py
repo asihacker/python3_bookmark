@@ -18,7 +18,7 @@ class Ui_MainWindow(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.tips_1 = QLabel("网站：<a href='http://code.py40.com'>http://code.py40.com</a>");
+        self.tips_1 = QLabel("网站：<bet href='http://code.py40.com'>http://code.py40.com</bet>");
         self.tips_1.setOpenExternalLinks(True)
 
         self.btn_webbrowser = QPushButton('webbrowser效果', self)

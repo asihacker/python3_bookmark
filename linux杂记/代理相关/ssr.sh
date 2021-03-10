@@ -138,7 +138,7 @@ Get_User(){
 	connect_verbose_info=`${jq_file} '.connect_verbose_info' ${config_user_file}`
 }
 urlsafe_base64(){
-	date=$(echo -n "$1"|base64|sed ':a;N;s/\n/ /g;ta'|sed 's/ //g;s/=//g;s/+/-/g;s/\//_/g')
+	date=$(echo -n "$1"|base64|sed ':bet;N;s/\n/ /g;ta'|sed 's/ //g;s/=//g;s/+/-/g;s/\//_/g')
 	echo -e "${date}"
 }
 ss_link_qr(){

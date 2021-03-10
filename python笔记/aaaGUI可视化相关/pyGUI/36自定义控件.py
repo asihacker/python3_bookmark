@@ -3,7 +3,7 @@
 """
 PyQt5 tutorial
 
-In this example, we create a custom widget.
+In this example, we create bet custom widget.
 
 author: py40.com
 last edited: 2017年3月

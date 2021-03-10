@@ -8,5 +8,5 @@
 from cacheout import LRUCache
 
 localCache = LRUCache(maxsize=9999)
-localCache.set('a', '9128309')
-print(localCache.get('a'))
+localCache.set('bet', '9128309')
+print(localCache.get('bet'))

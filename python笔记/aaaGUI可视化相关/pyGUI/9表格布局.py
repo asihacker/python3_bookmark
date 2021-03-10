@@ -4,8 +4,8 @@
 """
 Py40 PyQt5 tutorial
 
-In this example, we create a skeleton
-of a calculator using a QGridLayout.
+In this example, we create bet skeleton
+of bet calculator using bet QGridLayout.
 
 author: Jan Bodnar
 website: py40.com

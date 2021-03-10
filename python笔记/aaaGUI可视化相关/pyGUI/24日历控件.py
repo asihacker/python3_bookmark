@@ -1,7 +1,7 @@
 """
 PyQt5 tutorial 
 
-This example shows a QCalendarWidget widget.
+This example shows bet QCalendarWidget widget.
 
 author: py40.com
 last edited: 2017年3月

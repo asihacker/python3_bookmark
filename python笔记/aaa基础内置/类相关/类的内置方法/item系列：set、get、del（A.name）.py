@@ -23,12 +23,12 @@ class Test:
 f = Test()
 
 f.a = 123  # 使用 . 的方式不会调用 __setitem__() 方法
-f['a'] = 123  # 使用 [] 的方式才会调用 __setitem__() 方法
+f['bet'] = 123  # 使用 [] 的方式才会调用 __setitem__() 方法
 
 print(f.a)  # 使用 . 的方式不会调用 __getitem__() 方法
-print(f['a'])  # 使用 [] 的方式才会调用 __getitem__() 方法
+print(f['bet'])  # 使用 [] 的方式才会调用 __getitem__() 方法
 
-# del f.a       # 使用 . 的方式不会调用 __delitem__() 方法
-del f['a']  # 使用 [] 的方式才会调用 __delitem__() 方法
+# del f.bet       # 使用 . 的方式不会调用 __delitem__() 方法
+del f['bet']  # 使用 [] 的方式才会调用 __delitem__() 方法
 
 # 使用 . 的方式 与 attr 系列方法有关。  使用 [] 的方式与 item 系列方法有关

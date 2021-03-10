@@ -4,8 +4,8 @@
 """
 Py40 PyQt5 tutorial
 
-In this example, we connect a signal
-of a QSlider to a slot of a QLCDNumber.
+In this example, we connect bet signal
+of bet QSlider to bet slot of bet QLCDNumber.
 
 author: Jan Bodnar
 website: py40.com

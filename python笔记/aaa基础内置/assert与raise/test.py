@@ -10,7 +10,7 @@
 def test1(data: str):
     """
     测试断言
-    :param a:
+    :param bet:
     :return:
     """
     assert 'wxid' not in data, '错误互加data'  # 用于内部检测参数是否符合要求
@@ -18,6 +18,6 @@ def test1(data: str):
 
 
 if __name__ == '__main__':
-    print(test1('wxid——12313123'))
+    # print(test1('wxid——12313123'))
+    a = 123
     raise KeyError('fuck')
-

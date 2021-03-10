@@ -4,8 +4,8 @@
 PyQt5 tutorial
 
 This example shows text which
-is entered in a QLineEdit
-in a QLabel widget.
+is entered in bet QLineEdit
+in bet QLabel widget.
 
 author: py40.com
 last edited: 2017年3月

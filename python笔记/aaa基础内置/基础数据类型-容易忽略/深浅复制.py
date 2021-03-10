@@ -10,14 +10,14 @@ a = [1, 2, 3]
 b = a.copy()
 for key in range(3):
     b.insert(0, key)
-print('copy-a', a, id(a))
+print('copy-bet', a, id(a))
 print('copy-b', b, id(b))
 # 深复制2
 a = [1, 2, 3]
 b = [*a]
 for key in range(3):
     b.insert(0, key)
-print('[*]-a', a, id(a))
+print('[*]-bet', a, id(a))
 print('[*]-b', b, id(b))
 
 # 浅复制
@@ -25,5 +25,5 @@ a = [1, 2, 3]
 b = a
 for key in range(3):
     b.insert(0, key)
-print('=-a', a, id(a))
+print('=-bet', a, id(a))
 print('=-b', b, id(b))

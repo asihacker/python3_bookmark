@@ -4,9 +4,9 @@
 """
 Py40 PyQt5 tutorial
 
-This program creates a skeleton of
-a classic GUI application with a menubar,
-toolbar, statusbar, and a central widget.
+This program creates bet skeleton of
+bet classic GUI application with bet menubar,
+toolbar, statusbar, and bet central widget.
 
 author: Jan Bodnar
 website: py40.com

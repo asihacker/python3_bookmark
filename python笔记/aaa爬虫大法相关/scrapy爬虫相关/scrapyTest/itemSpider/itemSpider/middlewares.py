@@ -9,7 +9,7 @@ from scrapy import signals
 
 
 class ItemspiderSpiderMiddleware(object):
-    # Not all methods need to be defined. If a method is not defined,
+    # Not all methods need to be defined. If bet method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
 
@@ -36,7 +36,7 @@ class ItemspiderSpiderMiddleware(object):
             yield i
 
     def process_spider_exception(response, exception, spider):
-        # Called when a spider or process_spider_input() method
+        # Called when bet spider or process_spider_input() method
         # (from other spider middleware) raises an exception.
 
         # Should return either None or an iterable of Response, dict
@@ -46,7 +46,7 @@ class ItemspiderSpiderMiddleware(object):
     def process_start_requests(start_requests, spider):
         # Called with the start requests of the spider, and works
         # similarly to the process_spider_output() method, except
-        # that it doesn’t have a response associated.
+        # that it doesn’t have bet response associated.
 
         # Must return only requests (not items).
         for r in start_requests:

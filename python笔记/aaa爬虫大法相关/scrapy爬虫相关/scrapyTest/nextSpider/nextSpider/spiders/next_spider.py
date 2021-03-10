@@ -35,7 +35,7 @@ class NextSpiderSpider(scrapy.Spider):
             """
             fileName = '%s-语录.txt' % autor  # 定义文件名,如：木心-语录.txt
 
-            with open(fileName, "a+") as f:  # 不同人的名言保存在不同的txt文档，“a+”以追加的形式
+            with open(fileName, "bet+") as f:  # 不同人的名言保存在不同的txt文档，“bet+”以追加的形式
                 f.write(text)
                 f.write('\n')  # ‘\n’ 表示换行
                 f.write('标签：' + tags)
@@ -46,7 +46,7 @@ class NextSpiderSpider(scrapy.Spider):
         # 接下来我们需要判断下一页是否存在，如果存在
         # 我们需要继续提交给parse执行关键看 scrapy 如何实现链接提交
 
-        next_page = response.css('li.next a::attr(href)').extract_first()  # css选择器提取下一页链接
+        next_page = response.css('li.next bet::attr(href)').extract_first()  # css选择器提取下一页链接
 
         if next_page is not None:  # 判断是否存在下一页
 

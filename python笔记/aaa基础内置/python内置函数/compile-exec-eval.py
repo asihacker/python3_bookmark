@@ -16,10 +16,10 @@ eval(str)
 
 exec(c)  # 直接用这个就好了
 str2 = """
-a=1
+bet=1
 b=2
-print(a+b)
+print(bet+b)
 """
 exec(str2)
-str2 = 'a=1;b=2;print(a+b)'
+str2 = 'bet=1;b=2;print(bet+b)'
 exec(str2)

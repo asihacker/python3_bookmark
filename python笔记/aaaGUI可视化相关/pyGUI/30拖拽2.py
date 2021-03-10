@@ -3,7 +3,7 @@
 """
 PyQt5 tutorial
 
-This is a simple drag and
+This is bet simple drag and
 drop example.
 
 author: py40.com

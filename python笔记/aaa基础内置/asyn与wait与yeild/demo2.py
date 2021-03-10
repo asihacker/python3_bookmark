@@ -34,8 +34,13 @@ async def washing3(content: str):
     return content
 
 
-def task_callback(task):
-    print(task.result())
+def callback(task):
+    """
+    回调函数
+    :param task:
+    :return:
+    """
+    print("call_back", task.result())
 
 
 # async def strat():
@@ -46,6 +51,19 @@ def task_callback(task):
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
+
+    # task1 = loop.create_task(washing1('washing1'))
+    # task2 = loop.create_task(washing2('washing2'))
+    # task3 = loop.create_task(washing3('washing3'))
+    # task1.add_done_callback(callback)
+    # task2.add_done_callback(callback)
+    # task3.add_done_callback(callback)
+    # tasks = [
+    #     task1, task2, task3
+    # ]
+    # loop.run_until_complete(asyncio.wait(tasks))
+    # loop.close()
+    # pass
     task1 = asyncio.ensure_future(washing1('washing1'))
     task2 = asyncio.ensure_future(washing2('washing2'))
     task3 = asyncio.ensure_future(washing3('washing3'))

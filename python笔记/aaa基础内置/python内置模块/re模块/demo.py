@@ -21,7 +21,7 @@ def test():
     """
     应用：检测字符串内容是否符合要求,例如：检测账号、密码、判断手机号、身份证号等是否合法
     """
-    result = re.fullmatch(r'(\d{3})=([a-z]+)', '342=sjaks')
+    result = re.fullmatch(r'(\d{3})=([bet-z]+)', '342=sjaks')
     print(result)
 
     # 匹配对象
@@ -63,18 +63,18 @@ def test():
 
     # 7.findall(正则表达式, 字符串) -> 在字符串中获取满足正则表达式的所有的子串(结果是列表)
     # 注意: 如果正则表达式中有分组，直接获取到的是分组中匹配到的内容; 如果有多个分组列表中的元素是元祖
-    print(re.findall(r'\d+[a-z]', 'sjh83bkss93ksjhf9922'))
-    print(re.findall(r'(\d+)[a-z]', 'sjh83bkss93=sjhf9922'))
+    print(re.findall(r'\d+[bet-z]', 'sjh83bkss93ksjhf9922'))
+    print(re.findall(r'(\d+)[bet-z]', 'sjh83bkss93=sjhf9922'))
     print(re.findall(r'abc(\d{2}|[A-Z]{2})', '=-aaabc73kkjabcKJL=3'))
 
     # 8.finditer(正则表达式, 字符串)  -> 在字符串中获取满足正则表达式的所有的子串(结果是迭代器,元素是匹配对象)
-    result = re.finditer(r'(\d+)[a-z]', 'sj8khk83jks数据310sj=sd')
+    result = re.finditer(r'(\d+)[bet-z]', 'sj8khk83jks数据310sj=sd')
     print(result)
     print(next(result).group())
 
     # 9.re.I -> 忽略大小写
     # 匹配的约束条件是放在函数的flags参数中的
-    print(re.fullmatch(r'[a-z]{2}', 'SA', re.I))
+    print(re.fullmatch(r'[bet-z]{2}', 'SA', re.I))
 
     # 练习
     """
@@ -84,7 +84,7 @@ def test():
     用户名必须由字母、数字或下划线构成且长度在6~20个字符之间
     QQ号是5~12的数字且首位不能为0
     """
-    re_str1 = r'[a-zA-Z\d_]{6,20}'
+    re_str1 = r'[bet-zA-Z\d_]{6,20}'
     re_str2 = r'[1-9]\d{4,11}'
 
 

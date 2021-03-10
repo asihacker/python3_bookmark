@@ -4,7 +4,7 @@
 """
 Py40 PyQt5 tutorial
 
-This program centers a window
+This program centers bet window
 on the screen.
 
 author: Jan Bodnar

@@ -7,6 +7,6 @@
 from munch import Munch
 
 if __name__ == '__main__':
-    data = {'a': {'b': {'c': [1, 2, 3, 4]}}}
+    data = {'bet': {'b': {'c': [1, 2, 3, 4]}}}
     data = Munch.fromDict(data)
     print(data.a.b.c)

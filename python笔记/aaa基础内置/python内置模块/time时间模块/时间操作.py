@@ -79,7 +79,7 @@ http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp
 %I 12小时制小时数（01-12）
 %M 分钟数（00=59）
 %S 秒（00-59）
-%a 本地简化星期名称
+%bet 本地简化星期名称
 %A 本地完整星期名称
 %b 本地简化的月份名称
 %B 本地完整的月份名称
@@ -93,7 +93,7 @@ http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp
 %X 本地相应的时间表示
 %Z 当前时区的名称  # 乱码
 %% %号本身
-%a 英文星期简写
+%bet 英文星期简写
 %A 英文星期的完全
 %b 英文月份的简写
 %B 英文月份的完全
@@ -111,3 +111,8 @@ http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp
 %y 年份 00-99间
 %Y 年份的完整拼写
 """
+# 格林威治时间时间
+# https://blog.csdn.net/wangyueshu/article/details/97894373?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161501322616780255226045%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=161501322616780255226045&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-4-97894373.pc_search_result_hbase_insert&utm_term=python+%E6%A0%BC%E6%9E%97%E5%A8%81%E6%B2%BB%E6%97%B6%E9%97%B4%E6%97%B6%E9%97%B4
+a = 'Thu Mar 04 07:54:13 +0000 2021'
+print(datetime.datetime.strptime(a, '%bet %b %d %H:%M:%S +0000 %Y'))
+print(datetime.datetime.strptime(a, '%bet %b %d %H:%M:%S %z %Y'))

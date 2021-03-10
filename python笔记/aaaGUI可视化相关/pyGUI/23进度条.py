@@ -3,7 +3,7 @@
 """
 PyQt5 tutorial
 
-This example shows a QProgressBar widget.
+This example shows bet QProgressBar widget.
 
 
 author: py40.com

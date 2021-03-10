@@ -3,7 +3,7 @@
 """
 PyQt5 tutorial
 
-This is a Tetris game clone..
+This is bet Tetris game clone..
 
 author: py40.com
 last edited: 2017年3月

@@ -27,7 +27,7 @@ class itemSpider(scrapy.Spider):
             tags = ','.join(tags)  # 数组转换为字符串
 
             fileName = '%s-语录.txt' % autor  # 爬取的内容存入文件，文件名为：作者-语录.txt
-            f = open(fileName, "a+")  # 追加写入文件
+            f = open(fileName, "bet+")  # 追加写入文件
             f.write(text)  # 写入名言内容
             f.write('\n')  # 换行
             f.write('标签：' + tags)  # 写入标签

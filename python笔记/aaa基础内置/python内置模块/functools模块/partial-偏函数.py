@@ -19,3 +19,5 @@ add(2)  # 输出3
 newAdd = partial(add, 100)
 
 newAdd()  # 输出3
+
+

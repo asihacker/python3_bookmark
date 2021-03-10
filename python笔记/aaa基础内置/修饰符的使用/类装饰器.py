@@ -41,7 +41,7 @@ class check_time(object):
         return wrapper
 
 
-@check_args(requests_args=['a', 'b', 'c'])
+@check_args(requests_args=['bet', 'b', 'c'])
 @check_time()
 def ayy(*args, **kwargs):
     print(ayy.__name__)

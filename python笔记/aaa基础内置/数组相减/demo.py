@@ -13,3 +13,11 @@ if __name__ == '__main__':
     aa = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     bb = [2, 4, 6, 8]
     print(set(aa) - set(bb))
+    print(aa + bb)
+    print(aa.extend(bb))
+    print(aa)
+    aaa = [[1], [2], [1, 2, 3, 4]]
+    bbb = [5, 6, 7, 8]
+    print(aaa + bbb)
+    print(bbb.extend(aaa))
+    print(bbb)

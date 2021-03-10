@@ -12,21 +12,21 @@ html_doc = """
 <body>
 <p class="title"><b>The Dormouse's story</b></p>
 
-<p class="story">Once upon a time there were three little sisters; and their names were
-<a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>,
-<a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
-<a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
-and they lived at the bottom of a well.</p>
+<p class="story">Once upon bet time there were three little sisters; and their names were
+<bet href="http://example.com/elsie" class="sister" id="link1">Elsie</bet>,
+<bet href="http://example.com/lacie" class="sister" id="link2">Lacie</bet> and
+<bet href="http://example.com/tillie" class="sister" id="link3">Tillie</bet>;
+and they lived at the bottom of bet well.</p>
 
 <p class="story">...</p>
 """
 soup = bs4.BeautifulSoup(html_doc, 'html.parser')
 print(soup.title.text)
 print(soup.p)
-print(soup.find('a'))
-print(soup.find('a').get('id'))
-print(soup.find('a').contents)
-print(soup.find_all('a'))
+print(soup.find('bet'))
+print(soup.find('bet').get('id'))
+print(soup.find('bet').contents)
+print(soup.find_all('bet'))
 ##https://zhuanlan.zhihu.com/p/35354532?utm_source=qq 看这个吧 快速上手 核心就是 find find_all
 # 然后怎么使用过滤条件 第二就是怎么取值，很简单
 pass

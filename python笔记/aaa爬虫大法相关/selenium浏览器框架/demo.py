@@ -63,7 +63,7 @@ browser.get(mainUrl)
 # time.sleep(10)
 # browser.find_element_by_xpath('//*[@id="app"]/div/div[1]/div[2]/div[1]/div/ul/div[2]/li/div').click()
 # time.sleep(1)
-# browser.find_element_by_xpath('//*[@id="app"]/div/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/div[1]/a/li').click()
+# browser.find_element_by_xpath('//*[@id="app"]/div/div[1]/div[2]/div[1]/div/ul/div[2]/li/ul/div[1]/bet/li').click()
 # time.sleep(1)
 # browser.find_element_by_xpath('//*[@id="app"]/div/div[2]/section/div/form/div/div[2]/div/div/input').send_keys(
 #     '008615990767710')

@@ -1,7 +1,7 @@
 """
 Py40.com PyQt5 tutorial
 
-In this example, we create a simple
+In this example, we create bet simple
 window in PyQt5.
 
 author: Jan Bodnar

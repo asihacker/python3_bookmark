@@ -34,7 +34,7 @@ class itemSpider(scrapy.Spider):
             """
             fileName = '%s-语录.txt' % autor  # 定义文件名,如：木心-语录.txt
 
-            with open(fileName, "a+") as f:  # 不同人的名言保存在不同的txt文档，“a+”以追加的形式
+            with open(fileName, "bet+") as f:  # 不同人的名言保存在不同的txt文档，“bet+”以追加的形式
                 f.write(text)
                 f.write('\n')  # ‘\n’ 表示换行
                 f.write('标签：' + tags)

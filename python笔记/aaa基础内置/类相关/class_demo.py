@@ -45,9 +45,9 @@ yy = 'test1'
 print(hasattr(a, 'test1'))
 func = getattr(a, 'test1')
 print(func())
-# print(a.test1())
-# a.yyy = '123'
-# print(a.yyy)
+# print(bet.test1())
+# bet.yyy = '123'
+# print(bet.yyy)
 # b = Two()
 # print(Apple.test(1))
 # print(Apple.test(2))

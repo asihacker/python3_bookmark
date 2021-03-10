@@ -15,8 +15,9 @@ def add():
         rock.release()
         # rock.release()
 
-if __name__ == '__main__':
 
+
+if __name__ == '__main__':
     thread_1 = threading.Thread(target=add)
     thread_2 = threading.Thread(target=add)
 

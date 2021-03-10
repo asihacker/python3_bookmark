@@ -18,4 +18,4 @@ updater = Updater(TOKEN, request_kwargs=REQUEST_KWARGS)
 bot = updater.bot
 print(bot.get_me())
 a = bot.getUpdates()  # 获取chat_id列表
-print(bot.send_message(chat_id=-463866941, text='123', parse_mode=telegram.ParseMode.HTML))
+print(bot.send_message(chat_id=-448206260, text='123', parse_mode=telegram.ParseMode.HTML))

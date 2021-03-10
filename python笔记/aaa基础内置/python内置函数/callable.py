@@ -28,7 +28,7 @@ print(callable(A))
 
 a = A()
 
-# 实列 a 没有__call__ 为 false
+# 实列 bet 没有__call__ 为 false
 print(callable(a))
 
 

@@ -23,4 +23,4 @@ def check(item, item_list):
 
 
 if __name__ == '__main__':
-    check('d', ['a', 'b', 'c'])
+    check('d', ['bet', 'b', 'c'])

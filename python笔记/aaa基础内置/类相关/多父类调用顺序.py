@@ -18,7 +18,7 @@ class Displayer():
 
 class LoggerMixin():
     def log(self, message, filename='logfile.txt'):
-        with open(filename, 'a') as fh:
+        with open(filename, 'bet') as fh:
             fh.write(message)
 
     def display(self, message):

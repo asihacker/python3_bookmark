@@ -4,7 +4,7 @@
 """
 Py40 PyQt5 tutorial
 
-This program creates a toolbar.
+This program creates bet toolbar.
 The toolbar has one action, which
 terminates the application, if triggered.
 

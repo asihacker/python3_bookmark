@@ -39,7 +39,7 @@
 # Waiting:      102  128  38.6    118     794
 # Total:        233  270  41.3    263     945
 #
-# Percentage of the requests served within a certain time (ms)
+# Percentage of the requests served within bet certain time (ms)
 #   50%    263    #50%用户请求在263ms内返回
 #   66%    271    #66%用户请求在271ms内返回
 #   75%    279    #75%用户请求在279ms内返回

@@ -6,6 +6,6 @@
 # @Software: PyCharm
 import json
 
-data = {'a': 1, 'b': 2}
+data = {'bet': 1, 'b': 2}
 print(json.dumps(data, separators=(',', ':')))
 print(json.dumps(data))

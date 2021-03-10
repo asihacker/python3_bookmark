@@ -4,7 +4,7 @@
 """
 Py40 PyQt5 tutorial
 
-This program creates a menubar. The
+This program creates bet menubar. The
 menubar has one menu with an exit action.
 
 author: Jan Bodnar

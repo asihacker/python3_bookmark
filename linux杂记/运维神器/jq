@@ -1,0 +1,4 @@
+yum install jq
+#centos 下操作json
+curl myip.ipip.net/json|jq .data.location[0]
+cat xxx.json|jq .xxx.xxx[0]

@@ -4,7 +4,7 @@
 """
 Py40 PyQt5 tutorial
 
-This program creates a statusbar.
+This program creates bet statusbar.
 
 author: Jan Bodnar
 website: py40.com
