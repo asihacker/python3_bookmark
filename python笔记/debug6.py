@@ -37,5 +37,7 @@ def login_king(username: str, password: str, proxies: str):
 
 # 81ns8ztcm23817144l265575b0
 if __name__ == '__main__':
-    login_king(username='money888go', password='Wahaha82', proxies='http://47.119.136.230:59394')
+    # login_king(username='money888go', password='Wahaha82', proxies='http://47.119.136.230:59394')
     # test()
+    a = [1.2, None, 2.01]
+    print(a[::-1])

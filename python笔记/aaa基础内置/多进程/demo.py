@@ -9,8 +9,12 @@ import multiprocessing
 
 
 # https://www.cnblogs.com/g2thend/p/12526485.html
+import time
+
+
 def worker(num):
     """thread worker function"""
+    time.sleep(10)
     print(multiprocessing.current_process().name)
     print('Worker:', num)
 
