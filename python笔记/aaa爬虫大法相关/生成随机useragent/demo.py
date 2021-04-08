@@ -14,7 +14,7 @@ ua = UserAgent()
 
 # print(ua.safari)
 
-for k in range(1000):
+for k in range(200):
     print(ua.chrome)
 # print(ua.msie)
 # print(ua.opera)

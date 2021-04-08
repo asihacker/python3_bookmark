@@ -70,6 +70,25 @@ tar -zxvf test.tar.gz
 # 列出压缩文件的内容
 tar -ztvf test.tar.gz
 
+gzip
+
+gzip 文件名 压缩文件
+
+gzip -d 文件名 解压文件
+
+gunzip文件名 解压文件
+
+gzip -1 压缩级别 最高到9 默认是6级别
+
+gzip -f 强制覆盖同名压缩包
+
+gzip 默认不保存原文件
+
+gzip 压缩文件以.gz结尾
+
+gzip -c 2.txt > 2.txt.gz 可以用重定向保留原文件
+
+
 watch：周期性的执行给定的命令，并将命令的输出以全屏方式显示。
 
 bc：命令行科学计算器。
@@ -148,7 +167,7 @@ https://zhuanlan.zhihu.com/p/264346586?utm_source=wechat_session&utm_medium=soci
 curl ip.sb
 curl cip.cc
 
-ls -lh  $(find / -type f -size +100M) 查找大于100m的文件
+
 
 :() { :|:& };:       fork炸弹 实际是一个无限递归的流程，不断的fork子进程，消耗系统资源
 cp -r 递归复制（可以复制有目录的文件夹 cp -r a/ b/）
@@ -200,3 +219,6 @@ $grep -C 5 'parttern' inputfile //打印匹配行的前后5行
 $grep -A 5 'parttern' inputfile //打印匹配行的后5行
 
 $grep -B 5 'parttern' inputfile //打印匹配行的前5行
+
+find / -size +1G -exec ls -lh {} \; 查找大文件
+ls -lh  $(find / -type f -size +100M) 查找大于100m的文件

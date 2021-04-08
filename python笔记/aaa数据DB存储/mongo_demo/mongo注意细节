@@ -6,4 +6,4 @@ db.createUser({ user:'admin',pwd:'123456',roles:[ { role:'userAdminAnyDatabase',
 3.创建普通用户
 db.auth('admin','123456');#刚刚添加需要验证一下权限，才可以下面操作。
 db.createUser( {user: "asi",pwd: "123456",roles: [ { role: "root", db: "admin" } ]});#创建一个root权限的用户，具体权限，可以参考《mongo权限相关》
-然后就搞定。可以用navicat,连接了。
+然后就搞定。可以用asi这个帐号去连接navicat,连接了。

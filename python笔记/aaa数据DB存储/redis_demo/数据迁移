@@ -1,2 +1,7 @@
 https://segmentfault.com/a/1190000019549903?utm_source=tag-newest
 有用宝塔的，就勾选上数据持久化，把dumps模块弄出来就可以了
+RedisDump提供了强大的Redis数据的导入和导出功能，现在就来看下它的具体用法。
+
+首先，确保已经安装好了RedisDump。
+
+RedisDump提供了两个可执行命令：redis-dump用于导出数据，redis-load用于导入数据。
