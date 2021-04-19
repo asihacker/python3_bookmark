@@ -6,6 +6,7 @@
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 import itertools
-test_data = {'bet', 'b', 'c', 'd'}
-for i in itertools.permutations(test_data, 3):
+
+test_data = {1, 2, 3, 4}
+for i in itertools.permutations(test_data, 2):
     print(i)

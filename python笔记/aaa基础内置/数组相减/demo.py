@@ -10,7 +10,7 @@ import re
 if __name__ == '__main__':
     a = re.findall(r'^[0-9]*$', '123019230912390')
     print(a)
-    aa = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    aa = [1, 2, 3]
     bb = [2, 4, 6, 8]
     print(set(aa) - set(bb))
     print(aa + bb)
@@ -21,3 +21,5 @@ if __name__ == '__main__':
     print(aaa + bbb)
     print(bbb.extend(aaa))
     print(bbb)
+    a = {1, 2, 3, 4, 6, 6}
+    print(print(a))

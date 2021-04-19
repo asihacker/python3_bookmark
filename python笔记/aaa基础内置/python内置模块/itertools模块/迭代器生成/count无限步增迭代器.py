@@ -8,7 +8,7 @@
 import itertools
 import time
 
-natuals = itertools.count(1)  # “无限”迭代器,每次加1
+natuals = itertools.count(0.1)  # “无限”迭代器,每次加1
 print(next(natuals))
 print(next(natuals))
 print(next(natuals))

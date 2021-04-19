@@ -6,6 +6,7 @@
       <w>autorestart</w>
       <w>iloc</w>
       <w>levelname</w>
+      <w>mongoimport</w>
       <w>navicat</w>
       <w>saveas</w>
       <w>sshd</w>

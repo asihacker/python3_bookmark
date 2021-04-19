@@ -1,0 +1,3 @@
+yum install vnstat -y
+vnstat -d 5  统计近5天流量情况
+vnstat --help

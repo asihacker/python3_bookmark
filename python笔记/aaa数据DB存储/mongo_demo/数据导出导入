@@ -1,4 +1,8 @@
 导入
-mongoimport --host 127.0.0.1 --port 27017 -u root -p 123456 --db  zhibo -c user_watched --type json --file C:\tools\bk\user_watched.json
+mongoimport --host 127.0.0.1 --port 27017 -u root -p 123456 --db  okooo -c okooo --type csv --file ./okooo.csv
 导出
-mongoexport --host 127.0.0.1 --port 27017 --db zhibo --collection platefrom_data --out  D:/test/plateform.json
+mongoexport --host 127.0.0.1 --port 27017 --db okooo --collection okooo --out  ./okooo.json
+
+
+
+mongoimport --host 127.0.0.1 --port 27017 -u admin -p 123456 --db okooo -c okooo --type csv --file okooo.csv --headerline --authenticationDatabase=admin
