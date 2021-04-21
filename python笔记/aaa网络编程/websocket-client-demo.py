@@ -7,7 +7,6 @@
 # @notice  : True masters always have the heart of an apprentice.
 import websocket
 
-
 def on_message(ws, message):
     print(ws)
     print(message)
@@ -40,7 +39,7 @@ def on_close(ws):
 
 
 websocket.enableTrace(True)
-ws = websocket.WebSocketApp("ws://172.16.0.75:9999/tradexServer",
+ws = websocket.WebSocketApp("wss://stream.binance.com:9443",
                             on_message=on_message,
                             on_error=on_error,
                             on_ping=on_ping,

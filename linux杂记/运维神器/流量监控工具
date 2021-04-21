@@ -1,0 +1,13 @@
+https://www.vpser.net/manage/iftop.html
+可以监控每个端口的流量实时情况，具体看连接
+
+
+
+yum install vnstat -y
+vnstat -d 5  统计近5天流量情况
+vnstat --help
+
+
+yum install nethogs
+查看实时哪些进程吃流量
+nethogs
