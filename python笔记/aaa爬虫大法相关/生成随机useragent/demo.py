@@ -14,8 +14,11 @@ ua = UserAgent()
 
 # print(ua.safari)
 
-for k in range(200):
-    print(ua.chrome)
+for k in range(100):
+    c = ua.chrome
+    print(c)
+    if 'Mac' in c:
+        print(c)
 # print(ua.msie)
 # print(ua.opera)
 # print(ua.chrome)

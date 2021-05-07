@@ -13,5 +13,5 @@ def foo(a=1):
 
 
 param = Parameter('bet', Parameter.KEYWORD_ONLY, default=20)
-param = str(param)
+# param = str(param)
 foo(param)  # 详单于 foo(bet='20')

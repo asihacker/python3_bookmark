@@ -29,7 +29,7 @@ a = lambda value: value is None
 @retry(
     retry=retry_if_result(lambda value: value is None),
     stop=stop_after_attempt(3),
-    retry_error_callback=lambda retry_state: retry_state.outcome.result()
+    retry_error_callback=lambda retry_state: retry_state.outcome.result()  # 表示返回原函数的返回值
 )
 def test(a: int, ccc):
     print(next(ccc))

@@ -10,7 +10,7 @@ import websocket
 def on_message(ws, message):
     print(ws)
     print(message)
-    ws.send('1111111111111111111111111111111111'.encode('utf-8'), opcode=websocket.ABNF.OPCODE_BINARY)
+    # ws.send('1111111111111111111111111111111111'.encode('utf-8'), opcode=websocket.ABNF.OPCODE_BINARY)
 
 
 def on_error(ws, error):
@@ -39,7 +39,7 @@ def on_close(ws):
 
 
 websocket.enableTrace(True)
-ws = websocket.WebSocketApp("wss://stream.binance.com:9443",
+ws = websocket.WebSocketApp("ws://127.0.0.1:9898",
                             on_message=on_message,
                             on_error=on_error,
                             on_ping=on_ping,

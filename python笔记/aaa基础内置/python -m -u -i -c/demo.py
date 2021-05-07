@@ -11,6 +11,14 @@
 #           pydoc -p 9090 test.py 打开一个网页也阅读py的文档
 #           pdb test.py 调试模式来运行py代码
 #           venv asi 生成虚拟环境
+#           json.tool json解析工具 # echo '{"amount":3.4}' | python -m json.tool
+#           idlelib example.py 可视化编辑器 简化版本idea
+#           zipapp myapp -m "example:main" 打包python
+#          encodings.rot_13 加密｜echo "xxx" | python -m encodings.rot_13
+#          base64 -d base64加解密 echo "aGFoYQo=" | python -m base64 -d（-d 解码，没有-d就编码）
+#          mimetypes 识别文件或者url的mime类型 ｜python -m mimetypes sample.py｜python -m mimetypes https://docs.python.org/3/library/mimetypes.html
+#          sysconfig 查看python配置
+#          site 命令查看系统路径
 
 # python -u print 实时输出，不在缓存读取
 # python -i 执行.py文件后进入交互模式

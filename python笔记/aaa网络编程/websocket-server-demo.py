@@ -7,6 +7,7 @@
 # @notice  : True masters always have the heart of an apprentice.
 import asyncio
 from abc import ABC
+from typing import Optional
 
 import click
 import tornado.httpserver
@@ -61,9 +62,14 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler, ABC):
         客户端断开事件
         :return:
         """
-        print('客户离开', self.request.remote_ip)
+        print('客户离开', self.request.remote_ip, self.close_code, self.close_reason)
         WebSocketHandler.c.remove(self.request.server_connection.context.address[1])
         print('客户离开', self.request.remote_ip, len(WebSocketHandler.c))
+
+    # def on_ws_connection_close(
+    #         self, close_code: Optional[int] = None, close_reason: Optional[str] = None
+    # ) -> None:
+    #     print(close_code, close_reason)
 
 
 class Application(tornado.web.Application):

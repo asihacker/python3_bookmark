@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2021/4/21 22:06
 # @Author  : AsiHacker
-# @File    : demo.py
+# @File    : func_demo.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 from decorator import decorator

@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2021/1/26 10:05
+# @Time    : 2021/4/22 23:15
 # @Author  : AsiHacker
-# @File    : redis常用方法.py
+# @File    : |=符号.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
-import os
-import sys
+a = {1, 3}
+b = {2}
+a |= b
+print(a)
+c = a | b
+print(c)
 
-from rich import print
-from rich.columns import Columns
-
+e = -100
+print(~e)  # 等价于-e-1

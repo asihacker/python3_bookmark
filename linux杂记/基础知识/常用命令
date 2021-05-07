@@ -154,6 +154,9 @@ for k in `seq 100`;do echo $k;done #这里seq ～= range（100）
 
 for k in `seq 100`;do echo $k`curl --proxy http://127.0.0.1:8080 "http://wttr.in/Dunedin?0" -s`;done
 
+for k in `find fb2019  -name '*.txt'`;do cp $k fbdata/;done
+for k in `find fb2019  -name '*.txt'`;do echo $k;done
+
 设置别名命令（linux和mac）
 教程地址：https://blog.csdn.net/lisongjia123/article/details/77962144?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
 

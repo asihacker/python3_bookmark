@@ -7,7 +7,7 @@
 # @notice  : True masters always have the heart of an apprentice.
 import json
 
-import chardet
+import chardet  # 还包含一个命令行工具chardetect xx.txt |或者输入字符串然后ctrl + D
 import redis
 
 # 以下代码是向redis 发命令

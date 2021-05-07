@@ -15,6 +15,7 @@ import click
 @click.command()
 @click.option('--name', '-n', prompt='你的名字是什么？', help='输入你的名字', type=str, required=True)
 @click.option('--birthday', '-b', default=[1995, 2, 11], nargs=3, help='输入你的具体年月日 -b 1995 2 11',
+              prompt='输入你的具体年月日 -b 1995 2 11',
               type=(int, int, int))  # 这里可以定义每一个参数的类型
 @click.option('--interest', '-i', default=['game', 'mp3', 'mp4'], multiple=True, type=str,  # type=list 你会看到不一样的结果～
               help='输入你的兴趣爱好 -i game -i study')

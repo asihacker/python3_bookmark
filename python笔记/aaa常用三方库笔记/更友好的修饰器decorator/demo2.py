@@ -12,18 +12,18 @@ from decorator import decorator
 
 
 @decorator
-def warn_slow(func, timelimit=60, *args, **kw):
+def warn_slow(func, time_limit=60, *args, **kw):
     t0 = time.time()
     result = func(*args, **kw)
     dt = time.time() - t0
-    if dt > timelimit:
+    if dt > time_limit:
         print('%s took %d seconds', func.__name__, dt)
     else:
         print('%s took %d seconds', func.__name__, dt)
     return result
 
 
-@warn_slow(timelimit=600)  # warn if it takes more than 10 minutes
+@warn_slow(time_limit=600)  # warn if it takes more than 10 minutes
 def run_calculation(tempdir, outdir):
     pass
 

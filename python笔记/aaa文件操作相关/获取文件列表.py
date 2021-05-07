@@ -8,8 +8,8 @@
 from pathlib import Path
 from glob import glob
 
-txt_files = list(Path('./tmp_level0').glob("*py"))
-print(txt_files)
+# txt_files = list(Path('./tmp_level0').glob("*py"))
+# print(txt_files)
 files = list(glob('*py'))
 print(files)
 
