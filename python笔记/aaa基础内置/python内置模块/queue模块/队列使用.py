@@ -9,8 +9,8 @@ from queue import Queue
 
 q = Queue(2)
 print(q.put(1))
-# print(q.put('bet'))
-# # print(q.put('b', block=False))  # block是否阻塞
+print(q.put('bet'))
+# print(q.put('b', block=False))  # block是否阻塞
 # print(q.maxsize)  # 队列最大
 # print(q.qsize())  # 队列大小
 # print(q.full())  # 队列是否满啦

@@ -9,7 +9,7 @@ import time
 
 import pyperclip
 
-name = 'AsiHacker'
+name = 'AsiHacker123123'
 pyperclip.copy(name)
 time.sleep(5)
 pyperclip.paste()

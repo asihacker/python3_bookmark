@@ -33,9 +33,8 @@ fields.Email(*args, **kwargs) 邮箱字符串类型
 fields.List(cls_or_instance, type], **kwargs) 列表类型，常用于接收数组数据
 
 fields.Dict(keys, type] = None, values, …) 字典类型，常用于接收json类型数据
-————————————————
-版权声明：本文为CSDN博主「haeasringnar」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/haeasringnar/article/details/109339949
+
+https://blog.csdn.net/haeasringnar/article/details/109339949
 """
 
 

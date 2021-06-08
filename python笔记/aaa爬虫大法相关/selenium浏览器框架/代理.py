@@ -10,7 +10,6 @@ import time
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
 
-
 ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
 capabilities = DesiredCapabilities.CHROME
 chrome_options = webdriver.ChromeOptions()
@@ -33,3 +32,4 @@ browser.get("https://httpbin.org/get")
 time.sleep(5)
 browser.get("http://www.okooo.com/soccer/match/1123586/odds/")
 
+# 有的网站可以需要 browser.switch_to() frame

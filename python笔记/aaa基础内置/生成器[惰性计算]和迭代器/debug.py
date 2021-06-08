@@ -1,3 +1,6 @@
+###生成器是种特殊的迭代器!!!!!!!!!
+
+
 def add(n, i):
     return n + i
 
@@ -11,7 +14,7 @@ g = test()
 
 for n in [1, 10, 6]:
     # g = [add(n, i) for i in g] #如果是这样，那你的理解是对的
-    g = (add(n, i) for i in g)
+    g = (add(n, i) for i in g) #[k for k in xxx]列表迭代器｜(k for k in xxx)生成器 （）是定义生成器
     print(type(g))
 
 print(f'最后的结果:{list(g)}')

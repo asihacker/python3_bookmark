@@ -10,6 +10,9 @@
 # https://www.cnblogs.com/neozheng/p/14096030.html
 from typing import Iterable, Union, Optional
 
+a = ...
+print(a)
+
 
 def greeting(name):
     return 'Hello ' + name
@@ -76,18 +79,31 @@ test1('1')
 test1(1.00210923)
 test1()
 
-# def test2(a: Optional[float]):#作用几乎和带默认值的参数等价
-#     print(type(a), a)
-#
-#
-# test2(1)
-# test2('1')
-# test2(1.00210923)
 
-# def test3(a: Union[int, str, float]):
-#     print(type(a), a)
+def test2(a: Optional[float]):  # 作用几乎和带默认值的参数等价 a:int
+    print(type(a), a)
+
+
 #
-#
-# test3(1)
-# test3('1')
-# test3(1.00210923)
+test2(1)
+test2('1')
+test2(1.00210923)
+
+
+def test3(a: Union[int, str, float]):
+    print(type(a), a)
+
+
+test3(1)
+test3('1')
+test3(1.00210923)
+
+
+def test4(a: Union[list[str], dict[str, int]]):
+    print(1)
+
+
+test4(a=['2'])
+test4(a=[1])
+test4(a={'a': 1})
+test4(a={'a': '1'})

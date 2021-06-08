@@ -7,6 +7,6 @@
 # @notice  : True masters always have the heart of an apprentice.
 import itertools
 
-ns = itertools.repeat('A', 10)  # 也是无限迭代，但是第2个参数可以限制迭代次数
+ns = itertools.repeat('A', 1000)  # 也是无限迭代，但是第2个参数可以限制迭代次数
 for n in ns:
     print(n)

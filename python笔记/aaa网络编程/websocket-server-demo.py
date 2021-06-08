@@ -7,15 +7,13 @@
 # @notice  : True masters always have the heart of an apprentice.
 import asyncio
 from abc import ABC
-from typing import Optional
 
 import click
 import tornado.httpserver
 import tornado.ioloop
+import tornado.options
 import tornado.web
 import tornado.websocket
-
-import tornado.options
 
 
 class WebSocketHandler(tornado.websocket.WebSocketHandler, ABC):

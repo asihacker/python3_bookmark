@@ -22,8 +22,9 @@ DIM, NORMAL, BRIGHT, RESET_ALL
 来源：简书
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 """
-print(Fore.RED + 'some red text')
+print(Fore.GREEN + 'some red text')
 print(Back.BLACK + 'and with a green background')
+print(Back.RED + 'and with a green background')
 print(Style.DIM + 'and in dim text')
 print(Style.RESET_ALL)
 print('back to normal now')

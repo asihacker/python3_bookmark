@@ -10,8 +10,8 @@ from itertools import combinations, product
 test_data = {1, 2, 3, 4}
 test_data2 = {66, 67, 68, 69}
 test_data3 = {76, 77, 78, 79}
-# for i in combinations(test_data, 2):
-#     print(i)
+for i in combinations(test_data, 2):
+    print(i)
 # for i in combinations(test_data, 2):
 #     for i2 in combinations(test_data2, 2):
 #         for i3 in combinations(test_data3, 2):

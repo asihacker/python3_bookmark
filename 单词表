@@ -50,3 +50,16 @@ month 月
 year 年
 extract 提取 摘录
 convert 转化
+scope 范围
+additional 额外的
+claims 声称
+category 类别
+Nested 嵌套
+Constant 常量
+Crown 皇冠
+predict 预测 isclass()，ismodule()
+declare 声明
+single 单一的
+mro 「方法解析顺序」（Method Resolution Order，或MRO）
+currentframe 当前帧 inspect模块中
+stack 堆栈

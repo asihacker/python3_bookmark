@@ -1,13 +1,13 @@
 import random
 import string
 
-# random.seed() 随机数种子
-# TODO：choices和sample的区别
+# https://blog.csdn.net/ckk727/article/details/99548223
+random.seed()  # 随机数种子
 # 随机整数：
 print(random.randint(1, 50))
 
-# 随机选取0到100间的偶数：
-print(random.randrange(0, 101, 1))
+# 随机选取0到100间的偶数：开始 停止 是2的倍数 ，填3就是是3的倍数
+print(random.randrange(0, 101, 2))
 
 # 随机浮点数：
 print(random.random())
@@ -26,7 +26,7 @@ print(ran_str)
 
 # 多个字符中选取指定数量的字符组成新字符串：
 print(''.join(random.sample(
-    ['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd',
+    ['z', 'y', 'x', 'w', 'v', 'u8bf7编码的解码', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd',
      'c', 'b', 'bet'], 5)))
 
 # 随机选取字符串：

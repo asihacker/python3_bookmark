@@ -12,13 +12,14 @@ from fake_useragent import UserAgent
 ua = UserAgent()
 
 
-# print(ua.safari)
+print(help(ua.chrome))
 
-for k in range(100):
-    c = ua.chrome
-    print(c)
-    if 'Mac' in c:
-        print(c)
+# for k in range(100):
+#     c = ua.chrome
+#
+#     print(c)
+#     if 'Mac' in c:
+#         print(c)
 # print(ua.msie)
 # print(ua.opera)
 # print(ua.chrome)

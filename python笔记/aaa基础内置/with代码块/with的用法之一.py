@@ -19,9 +19,9 @@ with ThreadPoolExecutor(max_workers=20, thread_name_prefix='asi') as t:
     for page in range(50):
         obj = t.submit(index, "https://www.baidu.com")
         obj_list.append(obj)
-    for future in as_completed(obj_list):
-        data = future.result()
-        print(f"main: {data}")
+    # for future in as_completed(obj_list):
+    #     data = future.result()
+    #     print(f"main: {data}")
 print(123)
 # with open('../自动安装py包/requirements.txt', 'r') as f:
 #     content = ''.join([key.replace('/n', '/r/n').rjust(40, '*') for key in f.readlines()])

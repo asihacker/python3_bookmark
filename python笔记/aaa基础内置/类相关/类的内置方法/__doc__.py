@@ -6,7 +6,9 @@
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 class Test:
-    '我是描述信息'
+    """
+    我是描述信息
+    """
     pass
 
 

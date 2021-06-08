@@ -7,7 +7,13 @@
 # @notice  : True masters always have the heart of an apprentice.
 import random
 
+# 方法1
+a = [1, 2, 3]
+print(random.choices(a, weights=[0.1, 0.4, 0.5], k=50))
 
+
+# 方法2
+# https://www.cnblogs.com/zywscq/p/5469661.html
 def random_weight(weight_data):
     """
     权重

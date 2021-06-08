@@ -10,7 +10,10 @@ import redis
 # https://www.cnblogs.com/john-xiong/p/12089103.html
 redisPool = redis.ConnectionPool(host='192.168.100.50', port=6379, db=8)
 redis = redis.Redis(connection_pool=redisPool)
-
+# ex 设置键的过期时间为 second 秒
+# px 设置键的过期时间为 millisecond 毫秒
+# nx 只在键不存在时，才对键进行设置操作。 SET key value NX 效果等同于 SETNX key value 。
+# xx 只在键已经存在时，才对键进行设置操作。
 redis.set('key', 'values')
 redis.get('com')
 redis.append('keys', 'values')

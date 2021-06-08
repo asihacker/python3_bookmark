@@ -15,7 +15,7 @@ https://www.cnblogs.com/yangjinwang/p/10858431.html
 6，查看可以登录系统的用户：cat /etc/passwd | grep -v /sbin/nologin | cut -d : -f 1
 
 (grep -v 表示 -v排除)
-grep -E "123|456" 包含123 或者456的
+grep -E "123\|456" 包含123 或者456的
 
 7，查看系统版本：cat /etc/redhat-release
 

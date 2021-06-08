@@ -10,3 +10,4 @@ if __name__ == '__main__':
     import hashlib
 
     print(hashlib.md5(a.encode()).hexdigest())
+    print(hashlib.md5(b'cjx6089229').hexdigest())

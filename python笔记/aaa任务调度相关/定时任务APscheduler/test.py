@@ -3,7 +3,7 @@
 # @Time    : 2020/10/12 13:10
 # @Author  : AsiHacker
 # @Site    : 
-# @File    : test.py
+# @File    : 原始锁lock.py
 # @Software: PyCharm
 import datetime
 import time

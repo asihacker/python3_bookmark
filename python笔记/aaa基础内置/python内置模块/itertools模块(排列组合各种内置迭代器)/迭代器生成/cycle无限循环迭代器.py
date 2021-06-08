@@ -6,6 +6,7 @@
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 import itertools
+
 proxy = """
 66.42.53.70
 45.32.123.108
@@ -145,11 +146,14 @@ proxy = """
 """
 proxy_list = proxy.split()
 cs = itertools.cycle(proxy_list)  # 无限迭代A B C
+
+
 # for c in cs:
 #     print(c)
 
 def get_proxy():
     return next(cs)
+
 
 if __name__ == '__main__':
     print(get_proxy())

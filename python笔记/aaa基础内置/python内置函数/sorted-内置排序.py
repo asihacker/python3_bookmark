@@ -14,6 +14,8 @@ aaa = lambda item: item.get('math')
 print(aaa(students[0]))
 students.sort(key=lambda item: int(item.get('math')), reverse=True)  # 这里可以按照自定义规则排序 key 则是你的自定义规则 注意这里的int
 print(students)
+students.sort(key=lambda item: int(item.get('math')), reverse=False)  # 这里可以按照自定义规则排序 key 则是你的自定义规则 注意这里的int
+print(students)
 # students = [{"name": "zhangsan1", "math": "89", "english": "87"},
 #             {"name": "zhangsan2", "math": "65", "english": "87"},
 #             {"name": "zhangsan3", "math": "99", "english": "87"},
@@ -32,5 +34,5 @@ print(students)
 # a.sort(reverse=True)
 # print(a)
 
-print(students.sort(key=lambda items: items['math']))
-print(students)
+# print(students.sort(key=lambda items: items['math']))
+# print(students)

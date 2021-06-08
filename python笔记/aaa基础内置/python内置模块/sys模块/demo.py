@@ -7,6 +7,8 @@
 # @notice  : True masters always have the heart of an apprentice.
 import sys
 
+a = '123'
+print(sys.getsizeof(a))  # 查看占用大小
 print(sys.path)  # path是一个目录列表，供Python从中查找第三方扩展模块
 print(sys.platform)  # 返回操作系统平台名称
 print(sys.version)  # 获取Python解释器的版本信息

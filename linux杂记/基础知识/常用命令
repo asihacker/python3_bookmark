@@ -225,3 +225,5 @@ $grep -B 5 'parttern' inputfile //打印匹配行的前5行
 
 find / -size +1G -exec ls -lh {} \; 查找大文件
 ls -lh  $(find / -type f -size +100M) 查找大于100m的文件
+
+kill -HUP pid 如果想要更改配置而不需停止并重新启动服务，请使用该命令。在对配置文件作必要的更改后，发出该命令以动态更新服务配置。

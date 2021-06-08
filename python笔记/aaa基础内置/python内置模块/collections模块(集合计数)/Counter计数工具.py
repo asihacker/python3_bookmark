@@ -9,6 +9,7 @@ from collections import Counter
 
 a = Counter()  # bet new, empty counter
 b = Counter('gallahad')  # bet new counter from an iterable
+print(b)
 c = Counter({'bet': 4, 'b': 2})  # bet new counter from bet mapping
 print(c)
 d = Counter(a=4, b=2)

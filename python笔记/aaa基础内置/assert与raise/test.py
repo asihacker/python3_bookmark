@@ -13,11 +13,12 @@ def test1(data: str):
     :param bet:
     :return:
     """
-    assert 'wxid' not in data, '错误互加data'  # 用于内部检测参数是否符合要求
+    assert 'wxid' in data, '错误互加data'  # 用于内部检测参数是否符合要求
     return data
 
 
 if __name__ == '__main__':
-    # print(test1('wxid——12313123'))
-    a = 123
-    raise KeyError('fuck')
+    print(test1('wxid——12313123'))
+    raise Exception('123')
+    # a = 123
+    # raise KeyError('fuck')

@@ -6,7 +6,7 @@
 # @File    : hash.py
 # @Software: PyCharm
 print(hash(123123))
-print(hash('123123'))  # 字符串通进程下 hash一致 ，不通进程hash不一致
+print(hash('123123'))  # 字符串同进程下 hash一致 ，不同进程hash不一致
 print(hash('123123'))
 print(hash('123123'))
 print(hash('123123'))

@@ -1,3 +1,12 @@
+POST https://httpbin.org/post
+Content-Type: application/x-www-form-urlencoded
+
+id=999&value=content
+
+<> 2021-06-02T125157.200.json
+
+###
+
 GET http://www.facebook.com/resources
 Accept: */*
 Cache-Control: no-cache

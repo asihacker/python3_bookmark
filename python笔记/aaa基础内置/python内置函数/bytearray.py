@@ -6,6 +6,7 @@
 # @File    : bytearray.py
 # @Software: PyCharm
 # 当source参数为字符串时，encoding参数也必须提供，函数将字符串使用str.encode方法转换成字节数组
+print('fuck你'.encode('utf-8'))
 b = bytearray('fuck你'.encode('utf-8'))
 print(len(b))
 print(b)
@@ -15,5 +16,7 @@ print(b.hex())
 # 当source参数为整数时，返回这个整数所指定长度的空字节数组
 b = bytearray(2)
 print(b)
-b = u'fuck你'
+b = u8bf7编码的解码'fuck你'
 print(bytes('fuck你'.encode('utf-8')).hex())
+# bytearray=> fuck\xe4\xbd\xa0
+# bytes=>6675636be4bda0

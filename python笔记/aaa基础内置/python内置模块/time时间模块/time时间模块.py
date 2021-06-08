@@ -15,12 +15,13 @@ print(time.localtime(30))
 # 将元组格式的时间转换为秒数代表的时间
 print(time.mktime((2018, 2, 4, 11, 8, 23, 0, 0, 0)))  # 1517713703.0
 # 返回性能计数器的值
-print(time.perf_counter())
+print(time.perf_counter())  # perf_counter()会包含sleep()休眠时间，适用测量短持续时间
+print(time.monotonic())  # 这个和上面的作用差不多
 # 返回当前进程使用CPU的时间
-print(time.process_time())
+print(time.process_time())  # process_time()不包括sleep()休眠时间期间经过的时间
 # time.sleep(10)
 # 将当前时间转换为指定格式的字符串
-print(time.strftime('%Y-%m-%d %H:%M:%S'))
+print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
 st = '2018年3月20日'
 # 将指定时间字符串恢复成struct_time对象。
 print(time.strptime(st, '%Y年%m月%d日'))

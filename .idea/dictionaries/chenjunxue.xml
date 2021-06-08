@@ -4,12 +4,19 @@
       <w>apscheduler</w>
       <w>asctime</w>
       <w>autorestart</w>
+      <w>groupby</w>
       <w>iloc</w>
       <w>levelname</w>
       <w>mongoimport</w>
       <w>navicat</w>
+      <w>pproxy</w>
       <w>saveas</w>
+      <w>sched</w>
+      <w>setnx</w>
+      <w>shortuuid</w>
+      <w>singledispatch</w>
       <w>sshd</w>
+      <w>updata</w>
     </words>
   </dictionary>
 </component>

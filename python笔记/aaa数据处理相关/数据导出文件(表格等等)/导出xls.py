@@ -14,9 +14,9 @@ f = xlwt.Workbook()
    sheet1
 '''
 # 创建sheet
-sheet1 = f.add_sheet(u'sheet1', cell_overwrite_ok=True)
-row0 = ['编号', '单位', '网站备案号', '域名', u'外链名称', u'不良网站名', u'不良url地址', u'地市', u'ip地址', u'截图', u'备注', u'审核时间', u'父链接',
-        u'源码超链接']
+sheet1 = f.add_sheet(u8bf7编码的解码'sheet1', cell_overwrite_ok=True)
+row0 = ['编号', '单位', '网站备案号', '域名', u8bf7编码的解码'外链名称', u8bf7编码的解码'不良网站名', u8bf7编码的解码'不良url地址', u8bf7编码的解码'地市', u8bf7编码的解码'ip地址', u8bf7编码的解码'截图', u8bf7编码的解码'备注', u8bf7编码的解码'审核时间', u8bf7编码的解码'父链接',
+        u8bf7编码的解码'源码超链接']
 row1 = [row0 for _ in range(100)]
 # 生成第一行
 for h in range(len(row1)):
