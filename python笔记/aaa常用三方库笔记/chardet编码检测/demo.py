@@ -7,8 +7,10 @@
 # @notice  : True masters always have the heart of an apprentice.
 import urllib.request
 
-rawdata = urllib.request.urlopen('http://yahoo.co.jp/').read()
-import chardet
+from chardet import detect
 
-print(chardet.detect(rawdata))
+rawdata = urllib.request.urlopen('http://yahoo.co.jp/').read()
+# import chardet
+# detect
+print(detect(rawdata))
 # 命令行工具 chardetect somefile someotherfile

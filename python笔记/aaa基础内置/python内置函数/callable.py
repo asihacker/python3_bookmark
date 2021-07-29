@@ -11,15 +11,15 @@ print(callable('add'))
 
 # callable() 函数用于检查一个对象是否是可调用的
 
-def add():
-    """
+def add2():
+    """2
     123
     :return:
     """
     return
 
 
-print(callable(add))
+print(callable(add2))
 
 
 class A(object):

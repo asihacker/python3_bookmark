@@ -12,6 +12,7 @@ from flashtext import KeywordProcessor
 keyword_processor = KeywordProcessor()
 # 2. 添加关键词
 keyword_processor.add_keyword('New Delhi', 'NCR region')
+keyword_processor.add_keyword('New Delhi', 'NCRC region')
 # 3. 替换关键词
 new_sentence = keyword_processor.replace_keywords('I love Big Apple and new delhi.new delhi｜new delhi｜new delhi')
 # 4. 结果

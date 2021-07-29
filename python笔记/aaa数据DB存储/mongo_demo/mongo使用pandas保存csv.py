@@ -13,4 +13,4 @@ b = ["d", "e", "f"]
 # 字典中的key值即为csv中列名
 dataframe = pd.DataFrame({'one_name': a, 'two_name': b})
 # 将DataFrame存储为csv,index表示是否显示行名，default=True
-dataframe.to_csv("test.csv", index=False, sep=',')
+dataframe.to_csv("debug.csv", index=False, sep=',')

@@ -99,3 +99,17 @@ autorestart=true
 stdout_logfile=/home/ykt_mq/Prod/cloud_flask_mq/Debug.out.log
 redirect_stderr=true
 user=root
+
+
+
+[program:whatsapp-send-server-kafka-prod]
+command=/home/asihacker/prod/whatsapp-send-server/venv/bin/python app/task_whatsapp/steam.py
+directory=/home/asihacker/prod/whatsapp-send-server
+autorestart=true
+stdout_logfile=/home/asihacker/prod/whatsapp-send-server/logs/kafka.out.log
+stderr_logfile=/home/asihacker/prod/whatsapp-send-server/logs/kafka.err.log
+stdout_logfile_maxbytes=2MB
+stderr_logfile_maxbytes=2MB
+priority=999
+user=root
+environment=FLASK_ENV=Production

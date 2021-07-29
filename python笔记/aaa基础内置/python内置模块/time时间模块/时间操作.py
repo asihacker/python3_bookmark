@@ -1,4 +1,5 @@
-import datetime, time
+import datetime
+import time
 
 d_time = datetime.datetime.now()
 print('获取本地时间', d_time, type(d_time))
@@ -30,7 +31,7 @@ print('字符串=>datetime', d_time, type(d_time))
 # 字符串时间到 datetime 2020-11-03 10:33:43 <class 'datetime.datetime'>
 
 
-a = datetime.datetime.strptime('2018-12-10 19:11:52', '%Y-%m-%d %H:%M:%S')
+a = datetime.datetime.strptime('2018-12-10 19:11:52', '%Y-%m-%d %H:%M:%S')  # takes no keyword arguments
 a = time.mktime(a.timetuple())
 print('字符串=>时间戳', a)
 # 字符串=>时间戳 1544440312.0

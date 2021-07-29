@@ -11,3 +11,9 @@ vnstat --help
 yum install nethogs
 查看实时哪些进程吃流量
 nethogs
+交互命令：
+以下是NetHogs的一些交互命令(键盘快捷键)
+m : 修改单位
+r : 按流量排序
+s : 按发送流量排序
+q : 退出命令提示符

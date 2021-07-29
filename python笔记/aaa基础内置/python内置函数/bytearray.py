@@ -16,7 +16,7 @@ print(b.hex())
 # 当source参数为整数时，返回这个整数所指定长度的空字节数组
 b = bytearray(2)
 print(b)
-b = u8bf7编码的解码'fuck你'
+b = u'8bf7编码的解码fuck你'
 print(bytes('fuck你'.encode('utf-8')).hex())
 # bytearray=> fuck\xe4\xbd\xa0
 # bytes=>6675636be4bda0

@@ -26,7 +26,7 @@ import os
 # 分离扩展名：os.path.splitext()
 #
 # 获取路径名：os.path.dirname()
-print(os.path.basename('~/test.txt'))
+print(os.path.basename('~/debug.txt'))
 # 获取文件名：os.path.basename()
 #
 # 运行shell命令: os.system()
@@ -39,9 +39,9 @@ print(os.path.basename('~/test.txt'))
 #
 # 重命名：os.rename（old， new）
 #
-# 创建多级目录：os.makedirs（r“c：\python\test”）
+# 创建多级目录：os.makedirs（r“c：\python\debug”）
 #
-# 创建单个目录：os.mkdir（“test”）
+# 创建单个目录：os.mkdir（“debug”）
 #
 # 获取文件属性：os.stat（file）
 #
@@ -53,22 +53,22 @@ print(os.path.basename('~/test.txt'))
 #
 #
 # 文件操作：
-# os.mknod("test.txt") 创建空文件
-# fp = open("test.txt",w) 直接打开一个文件，如果文件不存在则创建文件
+# os.mknod("debug.txt") 创建空文件
+# fp = open("debug.txt",w) 直接打开一个文件，如果文件不存在则创建文件
 #
 # 关于open 模式：
 #
 # w 以写方式打开，
-# bet 以追加模式打开 (从 EOF 开始, 必要时创建新文件)
+# a 以追加模式打开 (从 EOF 开始, 必要时创建新文件)
 # r+ 以读写模式打开
 # w+ 以读写模式打开 (参见 w )
-# bet+ 以读写模式打开 (参见 bet )
+# a+ 以读写模式打开 (参见 bet )
 # rb 以二进制读模式打开
 # wb 以二进制写模式打开 (参见 w )
 # ab 以二进制追加模式打开 (参见 bet )
 # rb+ 以二进制读写模式打开 (参见 r+ )
 # wb+ 以二进制读写模式打开 (参见 w+ )
-# ab+ 以二进制读写模式打开 (参见 bet+ )
+# ab+ 以二进制读写模式打开 (参见 a+ )
 #
 # fp.read([size]) #size为读取的长度，以byte为单位
 #

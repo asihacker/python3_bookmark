@@ -1,3 +1,15 @@
+GET http://httpbin.org/ip
+
+<> 2021-06-16T135234.200.json
+
+###
+
+GET http://httpbin.org/ip
+
+<> 2021-06-16T135221.200.json
+
+###
+
 POST https://httpbin.org/post
 Content-Type: application/x-www-form-urlencoded
 

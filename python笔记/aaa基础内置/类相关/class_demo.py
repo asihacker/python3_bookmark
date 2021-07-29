@@ -25,7 +25,7 @@ class Apple(object):
         return cls.ddd
 
     def test1(self):
-        # 这里我想调用 test 类方法
+        # 这里我想调用 debug 类方法
         Apple.test(id=3)
         print(111)
 
@@ -49,7 +49,7 @@ print(func())
 # bet.yyy = '123'
 # print(bet.yyy)
 # b = Two()
-# print(Apple.test(1))
-# print(Apple.test(2))
-# print(Apple.test(3))
-# print(Apple.test(4))
+# print(Apple.debug(1))
+# print(Apple.debug(2))
+# print(Apple.debug(3))
+# print(Apple.debug(4))

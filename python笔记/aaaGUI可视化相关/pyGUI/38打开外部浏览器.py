@@ -34,8 +34,8 @@ class Ui_MainWindow(QWidget):
         self.setLayout(grid)
 
         self.resize(250, 150)
-        self.setMinimumSize(266, 304);
-        self.setMaximumSize(266, 304);
+        self.setMinimumSize(266, 304)
+        self.setMaximumSize(266, 304)
         self.center()
         self.setWindowTitle(self.item_name)
         self.show()

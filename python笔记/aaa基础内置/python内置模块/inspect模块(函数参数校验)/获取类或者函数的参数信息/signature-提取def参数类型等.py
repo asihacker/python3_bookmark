@@ -5,8 +5,8 @@
 # @File    : signature-提取def参数类型等.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
-from inspect import signature
 from inspect import Parameter
+from inspect import signature
 
 
 # https://www.jianshu.com/p/c455650f4adc?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
@@ -31,7 +31,11 @@ if __name__ == '__main__':
     sig = signature(test2)
     # keys = sig.parameters.keys()
     # print(sig, keys, list(keys))
-
+    # sig.bind(1, 1, 1, 1, 1, 1, 1)
+    # 下面是bind作用
+    # 检查函数参数是否匹配签名
+    # 使用函数签名的bind的方法，检查函数参数是否匹配签名。
+    # 延续上面的例子，通过函数签名的bind方法，接受函数参数，如果匹配，返回参数BoundArguments实例，如果不匹配，则抛出TypeError，并给出详细的异常信息。
     for name, param in sig.parameters.items():
         print(name, param.name, param.annotation, param.kind, param.default, param.empty)
         if param.default == Parameter.empty:
@@ -39,10 +43,10 @@ if __name__ == '__main__':
         #     print('没有默认值')
         # print(param.annotation)
         # print(param)
-# POSITIONAL_ONLY  - 只能是位置参数
-# POSITIONAL_OR_KEYWORD - 位置参数或者关键词参数
-# VAR_POSITIONAL - 可选位置参数，对应*args
-# VAR_KEYWORD - 可选关键词参数，对应**kwargs
+    # POSITIONAL_ONLY  - 只能是位置参数
+    # POSITIONAL_OR_KEYWORD - 位置参数或者关键词参数
+    # VAR_POSITIONAL - 可选位置参数，对应*args
+    # VAR_KEYWORD - 可选关键词参数，对应**kwargs
 
     from inspect import Signature, Parameter
 

@@ -7,15 +7,19 @@
       <w>groupby</w>
       <w>iloc</w>
       <w>levelname</w>
+      <w>lpop</w>
       <w>mongoimport</w>
       <w>navicat</w>
       <w>pproxy</w>
+      <w>pythonstartup</w>
       <w>saveas</w>
       <w>sched</w>
+      <w>scrapydweb</w>
       <w>setnx</w>
       <w>shortuuid</w>
       <w>singledispatch</w>
       <w>sshd</w>
+      <w>telnetlib</w>
       <w>updata</w>
     </words>
   </dictionary>

@@ -1,0 +1,3 @@
+如何让执行的 SQL 语句增加前缀？
+session.query(User.name).prefix_with('HIGH_PRIORITY').all()
+HIGH_PRIORITY >>高优先级

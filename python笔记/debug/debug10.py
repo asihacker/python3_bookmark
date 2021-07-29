@@ -1,0 +1,1 @@
+print(any([None,'123']))

@@ -24,6 +24,14 @@ class Foo:
         # del self.item #无限递归了
         self.__dict__.pop(item)
 
+    def __get__(self, instance, owner):
+        """
+
+        :param instance:
+        :param owner:
+        :return:
+        """
+
 
 # __setattr__添加/修改属性会触发它的执行
 f1 = Foo(10)

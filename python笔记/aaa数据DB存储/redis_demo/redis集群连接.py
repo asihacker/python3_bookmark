@@ -5,7 +5,7 @@
 # @Site    : 
 # @File    : redis集群连接.py
 # @Software: PyCharm
-# redis-py-cluster==2.0.0 请使用这个版本 redis 3.5.3
+# redis-py-cluster==2.1.3 请使用这个版本 redis 3.5.3
 from rediscluster import RedisCluster
 
 redis_cluster_config = [

@@ -11,5 +11,8 @@ test_data = {1, 2, 3, 4}
 for i in itertools.combinations_with_replacement(test_data, 2):
     print(i)
 print('---------')
+for i in itertools.combinations(test_data, 2):
+    print(i)
+print('---------')
 for nums in itertools.permutations(test_data, 2):
     print(nums)

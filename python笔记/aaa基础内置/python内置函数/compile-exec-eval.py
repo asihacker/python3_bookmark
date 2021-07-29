@@ -12,6 +12,7 @@ eval(c)  # 计算指定表达式的值。也就是说它要执行的python代码
 
 str = 'print("hello")'
 c = compile(str, '<string>', 'eval')
+print(c)
 eval(str)
 
 exec(c)  # 动态执行python代码。也就是说exec可以执行复杂的python代码，而不像eval函数那样只能计算一个表达式的值。

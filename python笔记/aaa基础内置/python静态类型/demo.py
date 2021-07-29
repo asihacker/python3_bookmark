@@ -48,11 +48,11 @@ greet_all(names)  # Ok!
 
 
 # Dict[int, str] int代表key类型， str代表val类型
-# def test(t: dict[int, str]) -> dict:
+# def debug(t: dict[int, str]) -> dict:
 #     return t
 #
 #
-# test({1: '234'})  # {1: '234'}
+# debug({1: '234'})  # {1: '234'}
 
 
 # def greeting3(names: Iterable[str]) -> None:
@@ -70,21 +70,23 @@ greet_all(names)  # Ok!
 
 # Union
 # 接受多个指定类型，但不接受除此外的类型
-def test1(a: Union[str, int, None] = None):
+def test1(a: Union[str, int, None]):
     print(type(a), a)
 
 
 test1(1)
 test1('1')
 test1(1.00210923)
-test1()
+test1(None)
+test1(None)
 
 
-def test2(a: Optional[float]):  # 作用几乎和带默认值的参数等价 a:int
+def test2(a: Optional[float]):  # Optional[X] == Union[X, None].
     print(type(a), a)
 
 
 #
+test2(None)
 test2(1)
 test2('1')
 test2(1.00210923)

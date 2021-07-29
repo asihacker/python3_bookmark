@@ -3,7 +3,7 @@
 # @Time    : 2020/6/3 23:31
 # @Author  : AsiHacker
 # @Site    : 
-# @File    : asyncio-demo-2.py
+# @File    : asyncio-demo.txt.txt-2.py
 # @Software: PyCharm
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -14,6 +14,7 @@
 # @Software: PyCharm
 import asyncio
 import threading
+import time
 
 
 async def washing1(content: str):
@@ -30,6 +31,7 @@ async def washing2(content: str):
 
 async def washing3(content: str):
     await asyncio.sleep(3)
+    # time.sleep(3) #这里可以看出为什么要使用 await asyncio.sleep
     print(threading.current_thread().name, 'washing3')
     return content
 
@@ -40,7 +42,8 @@ def callback(task):
     :param task:
     :return:
     """
-    print("call_back", task.result())
+    # print("call_back", task.result())
+    pass
 
 
 # async def strat():

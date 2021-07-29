@@ -71,7 +71,7 @@ def save_excel(data_list: list, file_name: str):
     """
     f = xlwt.Workbook()
     # 创建sheet
-    sheet1 = f.add_sheet(u8bf7编码的解码'sheet1', cell_overwrite_ok=True)
+    sheet1 = f.add_sheet(u'sheet1', cell_overwrite_ok=True)
     # 生成第一行
 
     for h in range(len(data_list)):

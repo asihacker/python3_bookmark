@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2021/5/26 09:20
 # @Author  : AsiHacker
-# @File    : asyncio-demo-1.py
+# @File    : asyncio-demo.txt.txt-1.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 import pyautogui as pag
@@ -16,7 +16,7 @@ pag.click(50, 167)
 # 其中x，y是坐标，clicks 是点击次数，interval 是点击间隔，button 指代三个鼠标按钮的哪一个，duiation 是点击之间的间隔。
 # 输入
 # 输入 ASCII 字符和键盘击键、热键分别如下：
-# 输入 ASCII 字符串是typewrite(message='test message.',interval=0.5)
+# 输入 ASCII 字符串是typewrite(message='debug message.',interval=0.5)
 # 击键是press('esc')
 # 按下是KeyDown('ctrl')
 # 松开是KeyUp('ctrl')

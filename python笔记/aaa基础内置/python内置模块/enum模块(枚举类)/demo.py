@@ -8,7 +8,6 @@
 from enum import Enum, unique
 
 
-
 # 使用枚举类有哪些好处
 # 枚举类可以方便地表示星期，月份等常数类型，如果你不用枚举类，那么你只能用数字或者字符串。
 # 如果你使用数字，用1-7来表示星期数，但一个数字在程序中不仅可以表示星期数，可能还有其他许多含义，
@@ -48,7 +47,7 @@ for k in Color:
 print(Color.red)
 print(Color['red'])
 # print(Color(60))
-Color.red = 10  # 枚举类无法改变值
+# Color.red = 10  # 枚举类无法改变值
 
 
 # 比如在facebook协议中使用枚举类来定义固定参数标记
@@ -62,3 +61,6 @@ class PostParam(Enum):
     FB_ONLY = 411331705596297
     EVENT_PUBLIC = 1493271774218406
     EVENT_INVITE_ONLY = 599950423437029
+
+
+print(300645083384735 == PostParam.EVERYONE.value)

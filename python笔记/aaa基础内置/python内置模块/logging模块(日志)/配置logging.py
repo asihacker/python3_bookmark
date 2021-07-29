@@ -6,7 +6,7 @@ import time
 from logging.handlers import TimedRotatingFileHandler
 
 # logging.basicConfig(
-#     filename=f'{datetime.datetime.now().strftime("%H:%M:%S")}test.log',
+#     filename=f'{datetime.datetime.now().strftime("%H:%M:%S")}debug.log',
 #     level=logging.DEBUG,
 #     format='%(asctime)s %(filename)s[line:%(lineno)d] %(message)s',
 #     datefmt='%Y-%m-%d'
@@ -35,9 +35,9 @@ format参数中可能用到的格式化串：
 """
 for _ in range(100):
     time.sleep(1)
-    log.info('test info')
-    log.debug('test debug')
-    log.warning('test warning')
-    log.error('test error')
-    log.critical('test critical')
+    log.info('debug info')
+    log.debug('debug debug')
+    log.warning('debug warning')
+    log.error('debug error')
+    log.critical('debug critical')
     log.info('44444')

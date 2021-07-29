@@ -6,7 +6,7 @@
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
 # 命令行工具 pdf2txt.py samples/simple1.pdf
-# pdf2txt.py test.pdf
+# pdf2txt.py debug.pdf
 """
 -P password : PDF password
 -o output : 输出文件名。

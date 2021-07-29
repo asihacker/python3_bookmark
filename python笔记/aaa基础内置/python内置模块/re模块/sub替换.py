@@ -18,3 +18,7 @@ b = ''.join(re.findall(r'\d', a))
 print(b)
 print(re.sub('\D', '', a))
 print(a[1::2])
+
+phone = '12345678901'
+pat = re.compile(r'(\d{3})(\d{4})(\d{4})')
+print(pat.sub(r'\1****\3', phone))

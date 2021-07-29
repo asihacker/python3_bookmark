@@ -23,11 +23,11 @@ b = set('alacazam')
 
 print(a, b)
 
-print('a 和 b 的差集', a - b)  # bet 和 b 的差集
-print('b 和 a 的差集', b - a)  # bet 和 b 的差集
+print('a 和 b 的差集', a - b)  # a 和 b 的差集
+print('b 和 a 的差集', b - a)  # b 和 a 的差集
 
-print('a 和 b 的并集', a | b)  # bet 和 b 的并集
+print('a 和 b 的并集', a | b)  # a 和 b 的并集
 
-print('a 和 b 的交集', a & b)  # bet 和 b 的交集
+print('a 和 b 的交集', a & b)  # a 和 b 的交集
 
-print('a 和 b 的对称差', a ^ b)  # bet 和 b 中不同时存在的元素
+print('a 和 b 的对称差', a ^ b)  # a 和 b 中不同时存在的元素

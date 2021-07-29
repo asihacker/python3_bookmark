@@ -52,7 +52,7 @@ sched.add_job(job_function, CronTrigger.from_crontab('0 0 1-15 may-aug *'))
 sched.add_job(job_function, 'cron', hour='*', jitter=120)  # 这里也支持震动参数
 
 
-@sched.scheduled_job('cron', id='test', second=5)
+@sched.scheduled_job('cron', id='debug', second=5)
 def test():
     print(datetime.now())
     # 2021-01-05 18:27:05.002295

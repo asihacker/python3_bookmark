@@ -1,0 +1,13 @@
+1.组合索引(a,b,c)[最左原则]
+    a,b 走
+    a,c 走
+    b,a 走（mysql优化器）
+    c,a 走（mysql优化器）
+    b,c 不走
+    c,b 不走
+2.where 条件 类型 要区别开。
+select * from users where app_id=16519794949 and openid='sadfasdf' limit 1
+select * from users where app_id='16519794949' and openid='sadfasdf' limit 1
+第二个走索引，第一个不走索引，就是因为app_id是varchar类型
+
+3.where 必须使用 is null 使用 = null 直接无效，问题是还不报错

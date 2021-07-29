@@ -63,3 +63,7 @@ single 单一的
 mro 「方法解析顺序」（Method Resolution Order，或MRO）
 currentframe 当前帧 inspect模块中
 stack 堆栈
+fetch 拉取 取来
+expose 暴露
+distinct 独特的
+upgrade 升级

@@ -8,7 +8,7 @@
 from dataclasses import dataclass
 
 
-# 可以省略def __init__()
+# 可以省略def __init__() 但是灵活性会差一些
 # 可以Apple().kg
 @dataclass
 class Apple(object):
@@ -29,4 +29,3 @@ if __name__ == '__main__':
     print(aaa.kg)
     aaa.kg = 'asi'
     print(aaa.kg)
-

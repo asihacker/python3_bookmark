@@ -12,7 +12,7 @@ from pathlib import Path
 print(os.path.exists('path_to_check'))
 
 # pathlib 模块中 exists() 用法
-print(Path('directory_path').exists())
+print(Path('demo.py').exists())
 
 # 检查路径是否是目录
 os.path.isdir('test_folder')

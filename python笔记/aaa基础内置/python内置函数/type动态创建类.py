@@ -19,4 +19,5 @@
 t = type("hello", (), {"a": 1, "hello": 'asi'})
 c = t()
 print(c.a)
+print(c.hello)
 print(t.a)

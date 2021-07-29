@@ -29,7 +29,7 @@ class Goods:
 
 
 obj = Goods()
-obj.price  # 获取商品价格
+print(obj.price)
 obj.price = 200  # 修改商品原价
 print(obj.price)
 del obj.price  # 删除商品原价

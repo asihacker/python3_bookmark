@@ -15,10 +15,14 @@ session = requests.session()
 #                    'https': 'http://nicky_lam:25u8XyBQ1262yiE5_country-UnitedStates_session-CiS8ZN0x:proxy.packetstream.io:31112'}
 # # http://username:password@IP:port
 #
-session.proxies = {'http': 'http://170.106.106.52:4972',
-                   'https': 'http://170.106.106.52:4972'}
-rsp = session.get('https://httpbin.org/get')
-print(rsp.json())
+# session.proxies = {'http': 'http://170.106.106.52:4972',
+#                    'https': 'http://170.106.106.52:4972'}
+# rsp = session.get('https://httpbin.org/get')
+# print(rsp.json())
+session.proxies = {'http': 'http://104.227.87.213:8800',
+                   'https': 'http://104.227.87.213:8800'}
+rsp = session.get('http://httpbin.org/get')
+print(rsp.text)
 
 # session = requests.session()
 # proxy = {"http": "socks5://127.0.0.1:1086", "https": "socks5://127.0.0.1:1086"}

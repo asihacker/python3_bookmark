@@ -7,9 +7,13 @@
 # @notice  : True masters always have the heart of an apprentice.
 import websocket
 
+
+# https://github.com/websocket-client/websocket-client
+
 def on_message(ws, message):
     print(ws)
     print(message)
+    ws.close(status=1011, reason=b'qowome')
     # ws.send('1111111111111111111111111111111111'.encode('utf-8'), opcode=websocket.ABNF.OPCODE_BINARY)
 
 
@@ -33,9 +37,12 @@ def on_open(ws, *args):
     ws.send('你好'.encode('utf-8'), opcode=websocket.ABNF.OPCODE_BINARY)
 
 
-def on_close(ws):
-    print(ws)
-    print("### closed ###")
+def on_close(ws, close_status_code, close_msg):
+    # Because on_close was triggered, we know the opcode = 8
+    print("on_close args:")
+    if close_status_code or close_msg:
+        print("close status code: " + str(close_status_code))
+        print("close message: " + str(close_msg))
 
 
 websocket.enableTrace(True)

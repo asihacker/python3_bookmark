@@ -11,4 +11,6 @@ c = (1, 2, 3, 4, 5)
 print(type(a), type(b), type(c))
 
 print(sum(a))
+print(sum(b))
+print(sum(c))
 print(sum(range(6)))

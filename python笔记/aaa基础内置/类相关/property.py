@@ -1,6 +1,6 @@
 class Apple:
     """
-    test
+    debug
     """
 
     def __init__(self):

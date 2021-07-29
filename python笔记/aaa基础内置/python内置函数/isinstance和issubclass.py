@@ -5,6 +5,8 @@
 # @Site    : 
 # @File    : 自定义异常.py
 # @Software: PyCharm
+
+
 class A(object):
     pass
 
@@ -12,6 +14,8 @@ class A(object):
 a = A()
 
 isinstance(a, A)
+
+
 # true
 
 

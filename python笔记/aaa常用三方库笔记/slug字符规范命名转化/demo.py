@@ -13,6 +13,7 @@ print(slugify('Any text'))
 print(slugify('陈俊学'))
 print(slugify('Asi*^Hac$%^ker', separator='*'))
 print(slugify('18970084363.jpgj qkjwe'))
+print(slugify('Я ♥ борщ'))
 # to_lower              # 如果为True，则将文本转换为小写
 # max_length            # 输出字符串最大长度
 # separator             # 分隔符字符串

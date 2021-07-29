@@ -28,7 +28,7 @@ print(t.name)
 # print(t.aaa)
 
 
-# t.xxxxxxxxxxxxx = 'test'   # 会调用setattr然后通过t.__dict__['xxxxxxxxx'] = 'test' 由于__dict__不存在所以不能设置
+# t.xxxxxxxxxxxxx = 'debug'   # 会调用setattr然后通过t.__dict__['xxxxxxxxx'] = 'debug' 由于__dict__不存在所以不能设置
 # t.__dict__    # 没有这个属性。
 
 class Test2:

@@ -27,12 +27,12 @@ import random
 #   加锁时，多个线程间会等待一个线程结束（因为设置的是阻塞锁）后，第二个线程才开始写，不会相互
 #       覆盖（见test.log.withlock)
 def demo(name="null"):
-    fp = open("test.log", "bet+")
+    fp = open("debug.log", "bet+")
     cnt = 0
     # 在3s内随机等待一段时间,打乱加锁顺序
     time.sleep(float(random.randint(0, 300)) / 300)
     fcntl.flock(fp, fcntl.LOCK_EX)
-    print("call demo by %s" % name)
+    print("call demo.txt.txt by %s" % name)
 
     # 在10s内进行写入，为了避免写入的内容过多，写0.5s，停0.5s
     for i in range(10):

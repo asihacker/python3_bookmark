@@ -16,6 +16,8 @@ import tornado.web
 import tornado.websocket
 
 
+# https://github.com/jbalogh/tornado-websocket-client
+
 class WebSocketHandler(tornado.websocket.WebSocketHandler, ABC):
     """
     doc
@@ -47,13 +49,14 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler, ABC):
         print("收到消息", message)
         # self.write_message(message, binary=True)#二进制数据
         self.write_message(message)
+        # self.close()
 
     def on_ping(self, data: bytes) -> None:
-        print(data)
+        print('ping', data)
         pass
 
     def on_pong(self, data: bytes) -> None:
-        print(data)
+        print('pong', data)
 
     def on_close(self):
         """
@@ -82,7 +85,7 @@ class Application(tornado.web.Application):
         settings = {
             'debug': True,  # Debug模式和自动重载
             'template_path': 'static',
-            # 'compress_response': False,#压缩数据
+            'compress_response': False,  # 压缩数据
             'websocket_ping_interval': 3,  # 心跳
             'websocket_ping_timeout': 30,  # 心跳超时断开
         }

@@ -10,8 +10,8 @@ print(time.ctime(30))  # Thu Jan  1 08:00:30 1970
 print(time.gmtime(30))
 # 将当前时间转换为struct_time对象。
 print(time.gmtime())
-# 将以秒数为代表的时间转换为代表当前时间的struct_time对象
-print(time.localtime(30))
+# 时间戳转换为struct_time对象 10位
+print(time.localtime(1623473531))
 # 将元组格式的时间转换为秒数代表的时间
 print(time.mktime((2018, 2, 4, 11, 8, 23, 0, 0, 0)))  # 1517713703.0
 # 返回性能计数器的值

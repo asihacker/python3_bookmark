@@ -14,7 +14,7 @@ keyword_processor.add_keyword('Big Apple', 'New York')  # 第一个参数代表�
 keyword_processor.add_keyword('Bay Area')
 keyword_processor.add_keyword('love')
 # 3. 处理目标句子并提取相应关键词 span_info=True 标记关键词位置
-keywords_found = keyword_processor.extract_keywords('I love Big Apple and Bay Area.', span_info=True)
+keywords_found = keyword_processor.extract_keywords('I love Big Apple and Bay Area.love love love', span_info=True)
 # 4. 结果
 print(keywords_found)
 # ['New York', 'Bay Area']

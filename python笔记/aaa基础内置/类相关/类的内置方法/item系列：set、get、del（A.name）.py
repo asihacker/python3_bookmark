@@ -40,6 +40,9 @@ class Test:
         print('__delitem__')
         self.__dict__.pop(key)
 
+    def test(self):
+        print('func')
+
     def __getattribute__(self, attr):
         print("开始属性校验拦截功能")
         print(attr)
@@ -47,7 +50,7 @@ class Test:
 
 
 f = Test()
-
+f.test()
 f.a = 123  # 使用 . 的方式不会调用 __setitem__() 方法,使用__setattr__方法
 f['bet'] = 123  # 使用 [] 的方式才会调用 __setitem__() 方法
 
@@ -58,3 +61,4 @@ print(f['bet'])  # 使用 [] 的方式才会调用 __getitem__() 方法
 del f['bet']  # 使用 [] 的方式才会调用 __delitem__() 方法
 delattr(f, 'bet')
 # 使用 . 的方式 与 attr 系列方法有关。  使用 [] 的方式与 item 系列方法有关
+f.test()

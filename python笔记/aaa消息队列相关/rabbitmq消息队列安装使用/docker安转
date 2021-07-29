@@ -1,9 +1,11 @@
 rabbitmq
 
 安装
-sudo docker pull rabbitmq：management
+sudo docker pull rabbitmq:management
 启动 admin admin
 docker run -dit --name Myrabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -p 15672:15672 -p 5672:5672 rabbitmq:management
+
+后台地址 http://127.0.0.1:15672
 
 python调用详细教程 https://www.cnblogs.com/ajianbeyourself/p/3920724.html
 
@@ -16,3 +18,25 @@ vhost：虚拟主机，一个broker里可以开设多个vhost，用作不同用�
 producer：消息生产者，就是投递消息的程序。
 consumer：消息消费者，就是接受消息的程序。
 channel：消息通道，在客户端的每个连接里，可建立多个channel，每个channel代表一个会话任务
+
+
+命令行批量删除
+首先定位到 rabbitMQ 安装目录的sbin 目录下。打开cmd窗口。
+关闭应用的命令为： rabbitmqctl stop_app
+清除的命令为： rabbitmqctl reset
+重新启动命令为： rabbitmqctl start_app
+ps
+查看所有队列命令： rabbitmqctl list_queues
+
+
+
+[program:whatsapp-send-server-flow-test]
+command=/usr/local/bin/python3 flask celery-flower --loglevel=info --address='0.0.0.0' --port=5556
+directory=/home/asihacker/test/whatsapp-send-server
+autorestart=true
+stdout_logfile=/home/asihacker/test/whatsapp-send-server/logs/flow.out.log
+stderr_logfile=/home/asihacker/test/whatsapp-send-server/logs/flow.err.log
+stdout_logfile_maxbytes=2MB
+stderr_logfile_maxbytes=2MB
+user=root
+environment=FLASK_ENV=Testing

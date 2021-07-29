@@ -5,14 +5,16 @@
 # @File    : alive-progress.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
+import time
+
 from alive_progress import alive_bar, showtime, show_bars
-showtime()
+# showtime()
 # show_bars()
 # import time
-#
-# items = range(1011)  # retrieve your set of items
-# with alive_bar(len(items)) as bar:  # declare your expected total
-#     for item in items:  # iterate as usual
-#         # process each item
-#         bar()  # call after consuming one item
-#         time.sleep(0.1)
+
+items = range(100)  # retrieve your set of items
+with alive_bar(len(items)) as bar:  # declare your expected total
+    for item in items:  # iterate as usual
+        # process each item
+        bar()  # call after consuming one item
+        time.sleep(0.1)

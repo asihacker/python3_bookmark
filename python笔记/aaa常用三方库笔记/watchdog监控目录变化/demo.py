@@ -74,7 +74,7 @@ if __name__ == "__main__":
     observer = Observer()
     event_handler = FileEventHandler()
     # 监控目录
-    observer.schedule(event_handler, "test", True)
+    observer.schedule(event_handler, "debug", True)
     observer.start()
     try:
         while True:

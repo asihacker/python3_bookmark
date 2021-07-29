@@ -32,9 +32,10 @@ def do_work(a: Union[str, int, float]) -> str:
 # 总结来说就是时间精度不够
 
 # enterabs时间精度更高，这个列子就还原了上面的问题，提高了时间的精度
-sch = sched.scheduler(time.time, time.sleep)
+sch = sched.scheduler(time.time, time.sleep)  # 这里第2个参数为延时函数
 start_time = datetime.datetime.now() + datetime.timedelta(seconds=3)
 start_time_ts = start_time.timestamp()
+print(time.time_ns())
 print(start_time_ts)
 sch.enterabs(start_time_ts, 2, do_work, argument=('asihacker',))
 sch.enterabs(start_time_ts, 1, do_work, kwargs={'a': 123})

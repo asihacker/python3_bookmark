@@ -23,7 +23,7 @@
   --sys             更改系统代理设置（mac、windows）
   --reuse           设置SO\u重用端口（仅限Linux）
   --daemon          作为守护程序运行（仅限Linux）
-  --test TEST       为所有远程代理测试此url并退出
+  --debug TEST       为所有远程代理测试此url并退出
   --version         显示程序的版本号并退出
 
 """

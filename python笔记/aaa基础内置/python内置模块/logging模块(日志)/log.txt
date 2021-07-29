@@ -1,0 +1,8 @@
+2021-06-16 12:30:37,198 - __main__ - INFO - Start print log
+2021-06-16 12:30:37,198 - __main__ - WARNING - Something maybe fail.
+2021-06-16 12:30:37,198 - __main__ - ERROR - Faild to open sklearn.txt from logger.error
+Traceback (most recent call last):
+  File "/Users/chenjunxue/PycharmProjects/bookmark/python笔记/aaa基础内置/python内置模块/logging模块(日志)/日志打印异常.py", line 27, in <module>
+    open("sklearn.txt", "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'sklearn.txt'
+2021-06-16 12:30:37,198 - __main__ - INFO - Finish

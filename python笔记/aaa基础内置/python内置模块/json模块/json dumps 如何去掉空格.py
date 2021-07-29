@@ -8,4 +8,4 @@ import json
 
 data = {'bet': 1, 'b': 2}
 print(json.dumps(data, separators=(',', ':')))
-print(json.dumps(data))
+print(json.dumps(data,indent=100))

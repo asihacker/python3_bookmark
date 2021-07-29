@@ -52,7 +52,7 @@ scheduler = TornadoScheduler(job_defaults=job_defaults, jobstores=job_store)  # 
 
 
 def redis_job(key: str):
-    print('test', key)
+    print('debug', key)
     pass
 
 

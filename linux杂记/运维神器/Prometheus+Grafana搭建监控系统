@@ -1,3 +1,6 @@
 wget https://github.com/prometheus/prometheus/releases/download/v2.27.0/prometheus-2.27.0.linux-amd64.tar.gz
-wget https://github.com/prometheus/mysqld_exporter/releases/download/v0.13.0-rc.0/mysqld_exporter-0.13.0-rc.0.linux-amd64.tar.gz
 #https://grafana.com/grafana/download?platform=docker
+
+教程地址
+
+https://blog.csdn.net/finghting321/article/details/107865604

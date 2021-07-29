@@ -7,7 +7,7 @@
 # @notice  : True masters always have the heart of an apprentice.
 from urllib.parse import quote, unquote
 
-a = '/test+/test'
+a = '/debug+/debug'
 c = quote(a, safe='')  # safe表示哪些不编码
 print(c)
 print(unquote(c, encoding='UTF-8'))

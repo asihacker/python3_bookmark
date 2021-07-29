@@ -7,7 +7,7 @@
 # @notice  : True masters always have the heart of an apprentice.
 class Dict(dict):
     """
-    demo
+    demo.txt.txt
     """
 
     def __init__(self, *args, **kwargs):
@@ -18,6 +18,9 @@ class Dict(dict):
 
     def __setattr__(self, key, value):
         self[key] = value
+    # 或者下面2行也可以实现
+    # __setattr__ = dict.__setitem__
+    # __getattr__ = dict.__getitem__
 
 
 a = {'data': {'name': 'asi', 'age': 18}}

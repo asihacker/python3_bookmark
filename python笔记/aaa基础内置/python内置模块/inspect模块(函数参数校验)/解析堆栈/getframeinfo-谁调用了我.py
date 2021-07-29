@@ -5,12 +5,15 @@
 # @File    : getframeinfo-谁调用了我.py
 # @Software: PyCharm
 # @notice  : True masters always have the heart of an apprentice.
+import traceback
 from inspect import getframeinfo, currentframe
 
 
 def foo():
     who = getframeinfo(currentframe().f_back)[2]
     print('{} call me'.format(who))
+    s = traceback.extract_stack()  # 这个也可以实现
+    print(s[-2][2])
 
 
 def a():

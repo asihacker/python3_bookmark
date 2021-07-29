@@ -12,8 +12,8 @@
 # 如果不想看到警告可以 python -W ignore Process启动子进程.py !!!!!
 import warnings
 
-# warnings.filterwarnings(action='ignore', category=DeprecationWarning, module='*')
-warnings.warn('nihaskdjnakjsd')
+# warnings.filterwarnings("ignore")  # 这样可以忽略警告
+warnings.filterwarnings(action='error')  # 这里指定针对异常的处理态度，这里指定为error则可以被try捕捉
 
 """
 Warning	所有警告类别类的基类，它是 Exception 的子类
@@ -36,4 +36,9 @@ class Apple:
 
 
 c = Apple()
-c.test()
+
+try:
+    c.test()
+except Warning as w:
+    print(w)
+    pass
